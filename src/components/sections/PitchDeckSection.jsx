@@ -6,35 +6,136 @@ import Link from "next/link";
 import SectionLabel2 from "../common/SectionLabel2";
 import { pitchDeckLogoData } from "@/constants/aboutPage";
 import FilledMailIcon from "@/assets/icons/filled-mail-icon.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const PitchDeckSection = () => {
+  const labelRef = useRef();
+  const headingRef = useRef();
+  const headingRef2 = useRef();
+  const descRef = useRef();
+  const formRef = useRef();
+  const phoneImgRef = useRef();
+  const logoRef = useRef();
+
+  useEffect(() => {
+    // Wobble/shake animation
+    gsap.to(labelRef.current, {
+      rotation: "+=3", // Rotate 3 degrees back and forth
+      duration: 0.15, // Very short duration for quick wobble
+      yoyo: true, // Go back and forth
+      repeat: -1, // Infinite repeat
+      ease: "sine.inOut", // Best ease for wobble effects
+      repeatDelay: 0.5, // Small pause between wobbles
+    });
+
+    gsap.to(headingRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: headingRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(headingRef2.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: headingRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(descRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: descRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(formRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: formRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(phoneImgRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: phoneImgRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.fromTo(
+      gsap.utils.toArray(logoRef.current.children),
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1, // 👈 Faster stagger
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: logoRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+  }, []);
+
   return (
     <section className="relative mx-auto flex max-w-[152rem] justify-end overflow-hidden">
       <div className="flex w-full max-w-[128rem] flex-col justify-between lg:flex-row 2xl:max-w-[132.1rem]">
         <div className="flex w-full flex-col items-center px-[3rem] py-[5rem] text-center lg:max-w-[55.6rem] lg:items-start lg:py-[8.9rem] lg:text-left xl:px-[0rem]">
-          <div className="rotate-[-2deg]">
-            <div className="">
-              <SectionLabel2 text="Pitch Deck" bgColor="bg-[#FF37B3]" />
-            </div>
+          <div ref={labelRef} className="rotate-[-2deg]">
+            <SectionLabel2 text="Pitch Deck" bgColor="bg-[#FF37B3]" />
           </div>
 
-          <div className="overflow-hidden">
-            <div className="mt-[1.1rem] lg:max-w-[54rem]">
-              <SectionTitle label="Send yourself or a colleague our Pitch Deck." />
-            </div>
+          <div
+            ref={headingRef}
+            className="mt-[1.1rem] opacity-0 lg:max-w-[54rem]"
+          >
+            <SectionTitle label="Send yourself or a colleague our Pitch Deck." />
           </div>
 
-          <div className="mt-[2rem] mb-[2.6rem] overflow-hidden text-[1.8rem] leading-[2.6rem] font-normal text-[#333333] lg:max-w-[51rem]">
-            <div className="">
-              Want to learn more about us? Our company deck offers an in-depth
-              look at our agency, the projects we&apos;ve handled, the solutions
-              we provide, and the culture we foster.
-            </div>
+          <div
+            ref={descRef}
+            className="mt-[2rem] mb-[2.6rem] text-[1.8rem] leading-[2.6rem] font-normal text-[#333333] opacity-0 lg:max-w-[51rem]"
+          >
+            Want to learn more about us? Our company deck offers an in-depth
+            look at our agency, the projects we&apos;ve handled, the solutions
+            we provide, and the culture we foster.
           </div>
 
           <form
+            ref={formRef}
             action=""
-            className="flex w-full flex-col gap-[1rem] md:flex-row"
+            className="flex w-full flex-col gap-[1rem] opacity-0 md:flex-row"
           >
             <PitchDeckInput placeholder="Full Name" type="text" />
 
@@ -50,11 +151,17 @@ const PitchDeckSection = () => {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-[3rem] bg-[#EAD9FB] p-[3rem] pr-[4rem] lg:max-w-[48.7rem] lg:items-end lg:gap-[4.3rem] lg:p-[0rem] lg:pr-[6rem]">
-          <h5 className="overflow-hidden text-[1.8rem] font-semibold text-[#FF37B3]">
-            <div className="">Trusted by:</div>
+          <h5
+            ref={headingRef2}
+            className="text-[1.8rem] font-semibold text-[#FF37B3] opacity-0"
+          >
+            Trusted by:
           </h5>
 
-          <div className="flex flex-wrap items-end justify-center gap-[6rem] md:flex-row lg:flex-col">
+          <div
+            ref={logoRef}
+            className="flex flex-wrap items-end justify-center gap-[6rem] md:flex-row lg:flex-col"
+          >
             {pitchDeckLogoData.map((item, idx) => (
               <div key={idx} className="">
                 <Link href={item.link}>
@@ -71,7 +178,10 @@ const PitchDeckSection = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute right-[18rem] bottom-[-0.2rem] hidden size-[45rem] select-none lg:block xl:right-[24.3rem] xl:size-[58rem]">
+      <div
+        ref={phoneImgRef}
+        className="pointer-events-none absolute right-[18rem] bottom-[-0.2rem] hidden size-[45rem] opacity-0 select-none lg:block xl:right-[24.3rem] xl:size-[58rem]"
+      >
         <Image
           src="/images/pitch-deck-phone-element.png"
           alt="Pitch Deck Phone Element"

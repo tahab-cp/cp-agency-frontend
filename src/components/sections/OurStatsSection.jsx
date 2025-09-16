@@ -2,8 +2,43 @@
 import LineStroke08 from "@/assets/decorative-elements/line-stroke-08.svg";
 import SectionLabel2 from "../common/SectionLabel2";
 import OurStatsSlider from "../common/OurStatsSlider";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const OurStatsSection = () => {
+  const labelRef = useRef();
+  const cardRef = useRef();
+
+  useEffect(() => {
+    // Wobble/shake animation
+    gsap.to(labelRef.current, {
+      rotation: "+=3", // Rotate 3 degrees back and forth
+      duration: 0.15, // Very short duration for quick wobble
+      yoyo: true, // Go back and forth
+      repeat: -1, // Infinite repeat
+      ease: "sine.inOut", // Best ease for wobble effects
+      repeatDelay: 0.5, // Small pause between wobbles
+    });
+
+    gsap.fromTo(
+      gsap.utils.toArray(cardRef.current.children),
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1, // 👈 Faster stagger
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+  }, []);
+
   return (
     <section className="relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[8.5rem] xl:pb-[9.732rem]">
       <div className="absolute inset-0 z-[0]">
@@ -11,13 +46,11 @@ const OurStatsSection = () => {
       </div>
 
       <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center gap-[4.4rem] 2xl:max-w-[130rem]">
-        <div className="rotate-[2deg]">
-          <div className="">
-            <SectionLabel2 text="Our Stats" bgColor="bg-[#FF8630]" />
-          </div>
+        <div ref={labelRef} className="rotate-[2deg]">
+          <SectionLabel2 text="Our Stats" bgColor="bg-[#FF8630]" />
         </div>
 
-        <div className="hidden grid-cols-4 gap-[2rem] lg:grid">
+        <div ref={cardRef} className="hidden grid-cols-4 gap-[2rem] lg:grid">
           <div className="our-stats-card">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
               200+

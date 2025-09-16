@@ -5,8 +5,130 @@ import LineStroke01 from "@/assets/decorative-elements/line-stroke-01.svg";
 import CommonBtn2 from "../common/CommonBtn2";
 import ClientLogoSlider from "../common/ClientLogoSlider";
 import { logoPopupsData } from "@/constants/globals";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 const HeroSection = () => {
+  const badgeRef = useRef();
+  const headingRef = useRef();
+  const descRef = useRef();
+  const ctaBtnRef = useRef();
+  const headingRef2 = useRef();
+  const logoRef = useRef();
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    const splitHeading = new SplitText(headingRef.current, {
+      type: "lines",
+      linesClass: "line",
+    });
+    const splitDesc = new SplitText(descRef.current, {
+      type: "lines",
+      linesClass: "line",
+    });
+
+    // Header animation
+    tl.to(badgeRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      delay: 0.1,
+    })
+
+      // FASTER SEQUENCE STARTS HERE - Use position parameters to reduce delays
+      .to(
+        headingRef.current,
+        {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        ">0.1",
+      ) // 👈 Only 0.1s delay after previous
+
+      .fromTo(
+        splitHeading.lines,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          stagger: 0.1, // 👈 Faster stagger
+          ease: "power2.out",
+        },
+        "<0.2", // 👈 Start 0.2s BEFORE the previous animation ends
+      )
+
+      .to(
+        descRef.current,
+        {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        ">0.1",
+      ) // 👈 Short delay
+
+      .fromTo(
+        splitDesc.lines,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          stagger: 0.1, // 👈 Faster stagger
+          ease: "power2.out",
+        },
+        "<0.2", // 👈 Overlap with previous animation
+      )
+
+      .to(
+        ctaBtnRef.current,
+        {
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        ">0.1",
+      ) // 👈 Short delay
+
+      .to(
+        headingRef2.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        ">0.1",
+      ) // 👈 Short delay
+
+      .to(
+        logoRef.current,
+        {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        ">0.1",
+      ) // 👈 Short delay
+
+      .fromTo(
+        gsap.utils.toArray(logoRef.current.children),
+        { opacity: 0, y: -20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1, // 👈 Faster stagger
+          ease: "power2.out",
+          clearProps: "all",
+        },
+        "<0.1",
+      );
+  }, []);
+
   return (
     <section className="hero-sec relative h-[70rem] w-full overflow-hidden rounded-br-[5rem] rounded-bl-[5rem] lg:h-[79rem]">
       {/* Decorative stroke line */}
@@ -17,47 +139,49 @@ const HeroSection = () => {
       <div className="relative z-[10] flex h-full w-full flex-col items-center justify-end gap-[4rem] pt-[15rem] pb-[4rem] xl:gap-[6rem]">
         {/* Main content */}
         <div className="flex max-w-[106.5rem] flex-col items-center gap-[2rem] px-[2rem] text-center md:gap-[2.7rem] xl:px-[0rem]">
-          <div className="overflow-hidden">
-            <div className="">
-              <BookBadge />
-            </div>
+          <div ref={badgeRef} className="opacity-0">
+            <BookBadge />
           </div>
 
-          <h1 className="overflow-hidden text-[2.8rem] leading-[3.7rem] font-semibold tracking-[-0.03em] text-white md:text-[4.5rem] md:leading-[5.5rem] md:font-bold lg:text-[6rem] lg:leading-[7rem] xl:text-[7rem] xl:leading-[8.4rem]">
-            <div className="">
-              Grow your digital presence today with real{" "}
-              <span className="bg-gradient-01 bg-clip-text text-transparent">
-                human-led
-              </span>{" "}
-              strategy.
-            </div>
+          <h1
+            ref={headingRef}
+            className="overflow-hidden text-[2.8rem] leading-[3.7rem] font-semibold tracking-[-0.03em] text-white opacity-0 md:text-[4.5rem] md:leading-[5.5rem] md:font-bold lg:text-[6rem] lg:leading-[7rem] xl:text-[7rem] xl:leading-[8.4rem]"
+          >
+            Grow your digital presence today with real{" "}
+            <span className="bg-gradient-01 bg-clip-text text-transparent">
+              human-led
+            </span>{" "}
+            strategy.
           </h1>
 
-          <h5 className="max-w-[70rem] overflow-hidden text-[1.4rem] leading-[2.4rem] font-normal text-white md:text-[2.2rem] md:leading-[3.2rem] md:font-medium">
-            <div className="">
-              Based in Manchester, we craft bespoke websites and branding that
-              are as smart as they are stunning.
-            </div>
+          <h5
+            ref={descRef}
+            className="max-w-[70rem] overflow-hidden text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[2.2rem] md:leading-[3.2rem] md:font-medium"
+          >
+            Based in Manchester, we craft bespoke websites and branding that are
+            as smart as they are stunning.
           </h5>
 
-          <div className="overflow-hidden p-[.5rem]">
-            <div className="">
-              <CommonBtn2 />
-            </div>
+          <div ref={ctaBtnRef} className="opacity-0">
+            <CommonBtn2 />
           </div>
         </div>
 
         {/* Logos */}
         <div className="flex max-w-[120.3rem] flex-col items-center gap-[2rem] px-[2rem] text-center xl:px-[0rem]">
-          <div className="overflow-hidden">
-            <h6 className="text-[1.4rem] leading-[2.4rem] font-normal text-white md:text-[1.8rem] md:leading-[2.6rem]">
-              Trusted by enterprises all over the world:
-            </h6>
-          </div>
+          <h6
+            ref={headingRef2}
+            className="translate-y-5 transform text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[1.8rem] md:leading-[2.6rem]"
+          >
+            Trusted by enterprises all over the world:
+          </h6>
 
-          <ul className="hidden grid-cols-1 items-center gap-[4rem] md:grid-cols-4 lg:grid-cols-7 xl:grid">
+          <ul
+            ref={logoRef}
+            className="hidden grid-cols-1 items-center gap-[4rem] opacity-0 md:grid-cols-4 lg:grid-cols-7 xl:grid"
+          >
             {logoPopupsData.map((item, idx) => (
-              <li className="" key={idx}>
+              <li key={idx}>
                 <LogoPopup
                   logo={item.logo}
                   popupImage={item.popupImage}

@@ -3,14 +3,20 @@ import Image from "next/image";
 import LineStroke02 from "@/assets/decorative-elements/line-stroke-02.svg";
 import CommonBtn3 from "../common/CommonBtn3";
 import CLetter from "@/assets/decorative-elements/c-letter.svg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeOff } from "lucide-react";
 import { aboutCardData } from "@/constants/homePage";
+import { SplitText } from "gsap/all";
+import gsap from "gsap";
 
 const AboutSection = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const descRef = useRef();
+  const btnRef = useRef();
+  const gridCardRef1 = useRef();
+  const gridCardRef2 = useRef();
 
   const handleTogglePlay = () => {
     if (!videoRef.current) return;
@@ -31,6 +37,70 @@ const AboutSection = () => {
     setIsMuted(!isMuted);
   };
 
+  useEffect(() => {
+    const splitDesc = new SplitText(descRef.current, {
+      type: "lines",
+    });
+
+    gsap.fromTo(
+      splitDesc.lines,
+      { opacity: 0, y: -30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: descRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+
+    gsap.to(btnRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: btnRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(gridCardRef1.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: gridCardRef1.current,
+        start: "top 60%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.fromTo(
+      gsap.utils.toArray(gridCardRef2.current.children),
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        clearProps: "all",
+        scrollTrigger: {
+          trigger: gridCardRef2.current,
+          start: "top 60%",
+          toggleActions: "play none none none",
+        },
+      },
+    );
+  }, []);
+
   return (
     <section className="relative py-[5rem] xl:py-[10rem]">
       {/* Bg Element */}
@@ -44,28 +114,30 @@ const AboutSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
-        <h5 className="mb-[2rem] max-w-[99rem] overflow-hidden text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left">
-          <div className="">
-            <span className="text-[#EE8D00]">Creative Pixels</span> is an
-            independent web design and development agency based in{" "}
-            <span className="text-[#FF37B3]">Manchester</span> — crafting
-            digital experiences since 2014. We care deeply about our clients,
-            build long-term partnerships, bring over a decade of industry
-            expertise, and take pride in{" "}
-            <span className="text-[#3078FF]">award-winning</span>, pixel-perfect
-            work.
-          </div>
-
+        <h5
+          ref={descRef}
+          className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left"
+        >
+          <span className="text-[#EE8D00]">Creative Pixels</span> is an
+          independent web design and development agency based in{" "}
+          <span className="text-[#FF37B3]">Manchester</span> — crafting digital
+          experiences since 2014. We care deeply about our clients, build
+          long-term partnerships, bring over a decade of industry expertise, and
+          take pride in <span className="text-[#3078FF]">award-winning</span>,
+          pixel-perfect work.
           <div className="mt-[2rem]">We work with clients in 🇬🇧 🇦🇺 🇺🇸</div>
         </h5>
 
-        <div className="">
+        <div ref={btnRef} className="opacity-0">
           <CommonBtn3 href="/about" label="About CreativePixels" />
         </div>
       </div>
 
       <div className="relative z-10 mx-auto mt-[5rem] flex max-w-[120rem] flex-col gap-[1.8rem] px-[3rem] lg:mt-[10rem] xl:flex-row xl:px-[0rem] 2xl:max-w-[135rem]">
-        <div className="about-card-gradient relative overflow-hidden px-[2rem] py-[3rem] xl:w-[55%] 2xl:w-[60%]">
+        <div
+          ref={gridCardRef1}
+          className="about-card-gradient relative -translate-y-8 transform overflow-hidden px-[2rem] py-[3rem] opacity-0 xl:w-[55%] 2xl:w-[60%]"
+        >
           <div className="absolute top-[-11.9rem] left-[-10.5rem] z-[0] size-[30rem] bg-[#1534B699] blur-[100px]" />
           <div className="absolute right-0 bottom-[-26.656rem] z-[0] size-[30rem] bg-[#DFDFDF99] blur-[100px]" />
 
@@ -116,7 +188,10 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 xl:w-[45%] 2xl:w-[40%]">
+        <div
+          ref={gridCardRef2}
+          className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 xl:w-[45%] 2xl:w-[40%]"
+        >
           {aboutCardData.map((item, idx) => (
             <div
               key={idx}

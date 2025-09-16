@@ -51,15 +51,6 @@ const StickyHeader = () => {
           </nav>
 
           <div className="hidden items-center gap-[1rem] overflow-hidden xl:flex">
-            {/* <i className="header-cta-btn-animate relative inline-flex size-[4.6rem] items-center justify-center rounded-full bg-[#32284A]">
-              <Image
-                src="/images/icons/phone-fill.svg"
-                alt="Phone Fill Icon"
-                width={16}
-                height={16}
-              />
-              <div className="outline-text-primary absolute top-[.2rem] right-[.2rem] size-[.8rem] rounded-full bg-[#7EE972] outline-[3.5px]" />
-            </i> */}
             <ContactPopoverBtn />
 
             {/* CTA Button */}
@@ -67,18 +58,6 @@ const StickyHeader = () => {
           </div>
 
           {/* Contact Cta for Responsive */}
-          {/* <Link href="/contact" className="xl:hidden">
-            <i className="relative inline-flex size-[4.6rem] items-center justify-center rounded-full bg-[#32284A]">
-              <Image
-                src="/images/icons/phone-fill.svg"
-                alt="Phone Fill Icon"
-                width={16}
-                height={16}
-              />
-
-              <div className="outline-text-primary absolute top-[.2rem] right-[.2rem] size-[.8rem] animate-pulse rounded-full bg-[#7EE972] outline-[3.5px]" />
-            </i>
-          </Link> */}
           <div className="xl:hidden">
             <ContactPopoverBtn />
           </div>

@@ -16,8 +16,95 @@ import {
 import ClickArrowPinkIcon from "@/assets/icons/click-arrow-pink.svg";
 import ClickArrowYellowIcon from "@/assets/icons/click-arrow-yellow.svg";
 import ClickArrowGreenIcon from "@/assets/icons/click-arrow-green.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 const OurServicesSection = () => {
+  const labelRef = useRef();
+  const headingRef = useRef();
+  const cardRef = useRef();
+  const gridCardRef1 = useRef();
+  const gridCardRef2 = useRef();
+  const gridCardRef3 = useRef();
+  const gridCardRef4 = useRef();
+  const gridCardRef5 = useRef();
+  const gridCardRef6 = useRef();
+
+  useEffect(() => {
+    const splitHeading = new SplitText(headingRef.current, {
+      type: "lines",
+      linesClass: "line",
+    });
+    const gridCardRefs = [
+      gridCardRef1,
+      gridCardRef2,
+      gridCardRef3,
+      gridCardRef4,
+      gridCardRef5,
+      gridCardRef6,
+    ];
+
+    // Wobble/shake animation
+    gsap.to(labelRef.current, {
+      rotation: "+=3", // Rotate 3 degrees back and forth
+      duration: 0.15, // Very short duration for quick wobble
+      yoyo: true, // Go back and forth
+      repeat: -1, // Infinite repeat
+      ease: "sine.inOut", // Best ease for wobble effects
+      repeatDelay: 0.5, // Small pause between wobbles
+    });
+
+    const tl = gsap.timeline();
+
+    tl.to(headingRef.current, {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.out",
+    })
+
+      .fromTo(
+        splitHeading.lines,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          stagger: 0.1, // 👈 Faster stagger
+          ease: "power2.out",
+        },
+      )
+
+      .to(cardRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+
+    gridCardRefs.forEach((ref, index) => {
+      if (ref.current) {
+        gsap.fromTo(
+          gsap.utils.toArray(ref.current.children),
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: index * 0.1, // Stagger the start of each grid animation
+            clearProps: "all",
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      }
+    });
+  }, []);
+
   return (
     <section className="relative overflow-hidden pt-[20.6rem]">
       {/* Bg Element */}
@@ -31,24 +118,28 @@ const OurServicesSection = () => {
       </div>
 
       <div className="relative z-[1] mx-auto flex max-w-[120rem] flex-col items-center gap-[2rem] px-[3rem] text-center xl:items-start xl:px-[0rem] xl:text-left">
-        <div className="rotate-[-2deg]">
-          <div className="">
-            <SectionLabel2
-              text="Our Services"
-              bgColor="bg-[#EE8D00]"
-              textColor="text-white"
-            />
-          </div>
+        <div ref={labelRef} className="rotate-[-2deg]">
+          <SectionLabel2
+            text="Our Services"
+            bgColor="bg-[#EE8D00]"
+            textColor="text-white"
+          />
         </div>
 
-        <h2 className="text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.03em] md:text-[7rem] md:leading-[8.4rem] md:font-bold">
+        <h2
+          ref={headingRef}
+          className="text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.03em] opacity-0 md:text-[7rem] md:leading-[8.4rem] md:font-bold"
+        >
           Our <span className="text-[#EE8D00]">design</span>,{" "}
           <span className="text-[#FF37B3]">web</span> and{" "}
           <span className="text-[#3078FF]">support services.</span>
         </h2>
       </div>
 
-      <div className="mt-[4.3rem] mb-[5rem] xl:mb-[8rem]">
+      <div
+        ref={cardRef}
+        className="mt-[4.3rem] mb-[5rem] opacity-0 xl:mb-[8rem]"
+      >
         <OurServiesMarquee />
       </div>
 
@@ -58,7 +149,10 @@ const OurServicesSection = () => {
         </div>
 
         <div className="relative z-[1] mx-auto flex max-w-[120rem] flex-col gap-[4.9rem] 2xl:max-w-[121.6rem]">
-          <div className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left">
+          <div
+            ref={gridCardRef1}
+            className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left"
+          >
             <h3 className="relative max-w-[66.4rem] text-[4rem] leading-[5rem] font-semibold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.4rem] md:font-bold">
               Design and Branding{" "}
               <div className="absolute top-[-1.2rem] right-[1rem] inline-flex size-[4rem] items-center justify-center md:right-[-3.3rem]">
@@ -74,7 +168,10 @@ const OurServicesSection = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[2rem] xl:flex-row xl:gap-[4.8rem]">
+          <div
+            ref={gridCardRef2}
+            className="flex flex-col gap-[2rem] xl:flex-row xl:gap-[4.8rem]"
+          >
             <div className="relative w-full overflow-hidden rounded-[2rem] xl:h-[45rem] xl:w-[57.4rem]">
               <Image
                 src="/images/design-branding-img.png"
@@ -142,7 +239,10 @@ const OurServicesSection = () => {
 
       <div className="relative px-[3rem] pt-[10rem] pb-[5rem] xl:px-[0rem] xl:pt-[18.8rem] xl:pb-[8rem]">
         <div className="mx-auto max-w-[120.6rem]">
-          <div className="flex flex-col items-center gap-[2rem] text-center xl:items-end xl:text-right">
+          <div
+            ref={gridCardRef3}
+            className="flex flex-col items-center gap-[2rem] text-center xl:items-end xl:text-right"
+          >
             <h3 className="relative max-w-[70.2rem] text-[4rem] leading-[5rem] font-semibold tracking-[-0.03em] md:text-[7rem] md:leading-[8.4rem] md:font-bold">
               Website Development
               <div className="absolute bottom-full left-1/2 inline-flex size-[4rem] -translate-x-1/2 items-center justify-center">
@@ -158,7 +258,10 @@ const OurServicesSection = () => {
             </p>
           </div>
 
-          <div className="mt-[4rem] flex flex-col items-center gap-[2rem] md:gap-[4.7rem] xl:mt-[1rem] xl:flex-row xl:items-start">
+          <div
+            ref={gridCardRef4}
+            className="mt-[4rem] flex flex-col items-center gap-[2rem] md:gap-[4.7rem] xl:mt-[1rem] xl:flex-row xl:items-start"
+          >
             <div className="relative w-full md:h-[60rem] lg:h-[80rem] xl:h-[51.7rem] xl:w-[59.5rem]">
               <Image
                 src="/images/website-development-img.png"
@@ -220,7 +323,10 @@ const OurServicesSection = () => {
         </div>
 
         <div className="relative z-[1] mx-auto max-w-[120.3rem]">
-          <div className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left">
+          <div
+            ref={gridCardRef5}
+            className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left"
+          >
             <h3 className="relative max-w-[80.7rem] text-[4rem] leading-[5rem] font-semibold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.4rem] md:font-bold">
               Maintenance and Growth
               <div className="absolute top-[-2rem] right-[-2.6rem] inline-flex size-[4rem] items-center justify-center">
@@ -236,7 +342,10 @@ const OurServicesSection = () => {
             </p>
           </div>
 
-          <div className="mt-[3.6rem] flex flex-col gap-[2rem] md:gap-[4.6rem] xl:flex-row">
+          <div
+            ref={gridCardRef6}
+            className="mt-[3.6rem] flex flex-col gap-[2rem] md:gap-[4.6rem] xl:flex-row"
+          >
             <div className="relative xl:h-[48.318rem] xl:w-[45.4rem]">
               <Image
                 src="/images/maintainance-growth-img.png"

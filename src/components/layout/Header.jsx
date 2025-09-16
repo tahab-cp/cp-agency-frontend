@@ -6,20 +6,59 @@ import NavigationDropdown from "../common/NavigationDropdown";
 import HamburgerMenu from "./HamburgerMenu";
 import { usePathname } from "next/navigation";
 import CommonBtn1 from "../common/CommonBtn1";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu } from "lucide-react";
 import ContactPopoverBtn from "../common/ContactPopoverBtn";
+import gsap from "gsap";
 
 const Header = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef();
+  const logoRef = useRef();
+  const navRef = useRef();
+  const contactRef = useRef();
+
+  useEffect(() => {
+    gsap.to(headerRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    gsap.to(logoRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    gsap.fromTo(
+      gsap.utils.toArray(navRef.current.children),
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        clearProps: "all",
+      },
+    );
+
+    gsap.to(contactRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+  }, []);
 
   return (
     <header
-      className={`absolute top-0 left-0 z-[100] flex w-full items-center rounded-br-[2rem] rounded-bl-[2rem] px-[2rem] py-[3rem] md:px-[4rem] xl:px-[0rem] ${pathname === "/" ? "" : "header-gradient-bg"}`}
+      ref={headerRef}
+      className={`absolute top-0 left-0 z-[100] flex w-full items-center rounded-br-[2rem] rounded-bl-[2rem] px-[2rem] py-[3rem] opacity-0 md:px-[4rem] xl:px-[0rem] ${pathname === "/" ? "" : "header-gradient-bg"}`}
     >
       <div className="relative mx-auto flex w-full max-w-[120.329rem] items-center justify-between">
-        <div className="overflow-hidden">
+        <div ref={logoRef} className="opacity-0">
           <Link href="/" className="relative flex">
             <Image
               src="/images/logo.svg"
@@ -33,38 +72,32 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-end gap-[2rem] xl:gap-[9.2rem]">
-          <nav className="hidden items-center justify-center gap-[1rem] xl:flex">
-            <div className="overflow-hidden">
-              <div className="">
-                <NavigationLink href="/">Home</NavigationLink>
-              </div>
+          <nav
+            ref={navRef}
+            className="hidden items-center justify-center gap-[1rem] xl:flex"
+          >
+            {/* Each child div will be staggered */}
+            <div>
+              <NavigationLink href="/">Home</NavigationLink>
             </div>
-
-            <div className="overflow-hidden">
-              <div className="">
-                <NavigationLink href="/about">About CP</NavigationLink>
-              </div>
+            <div>
+              <NavigationLink href="/about">About CP</NavigationLink>
             </div>
-
-            <div className="overflow-hidden">
-              <div className="">
-                <NavigationDropdown />
-              </div>
+            <div>
+              <NavigationDropdown />
             </div>
-
-            <div className="overflow-hidden">
-              <div className="">
-                <NavigationLink href="/case-studies">
-                  Case Studies
-                </NavigationLink>
-              </div>
+            <div>
+              <NavigationLink href="/case-studies">Case Studies</NavigationLink>
             </div>
           </nav>
 
-          <div className="hidden items-center gap-[1rem] overflow-hidden xl:flex">
+          <div
+            ref={contactRef}
+            className="hidden items-center gap-[1rem] opacity-0 xl:flex"
+          >
             <ContactPopoverBtn />
 
-            <div className="">
+            <div>
               <CommonBtn1 />
             </div>
           </div>

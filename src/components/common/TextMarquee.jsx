@@ -1,11 +1,28 @@
 "use client";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import Marquee from "react-fast-marquee";
 
 const texts = Array(15).fill("Let’s work together.");
 
 const TextMarquee = () => {
+  const containerRef = useRef();
+
+  useEffect(() => {
+    gsap.to(containerRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
-    <>
+    <div ref={containerRef} className="opacity-0">
       <Marquee
         gradient={false}
         speed={100}
@@ -33,7 +50,7 @@ const TextMarquee = () => {
           </span>
         ))}
       </Marquee>
-    </>
+    </div>
   );
 };
 

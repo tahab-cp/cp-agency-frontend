@@ -1,13 +1,34 @@
+"use client";
 import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 import Link from "next/link";
 import CommonBtn3 from "./CommonBtn3";
 import WaveHand from "./WaveHand";
 import FlashIcon from "@/assets/icons/3d-flash-icon.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const CtaSection1 = () => {
+  const containerRef = useRef();
+
+  useEffect(() => {
+    gsap.to(containerRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 60%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
-    <div className="cta-card relative w-full overflow-hidden rounded-[5rem] px-[3rem] py-[4rem] backdrop-blur-[10px] md:px-[6rem]">
+    <div
+      ref={containerRef}
+      className="cta-card relative w-full overflow-hidden rounded-[5rem] px-[3rem] py-[4rem] opacity-0 backdrop-blur-[10px] md:px-[6rem]"
+    >
       <div className="relative z-[1] flex flex-col items-center justify-between gap-[5.3rem] lg:flex-row">
         <div className="flex w-full flex-col items-center text-center lg:w-auto lg:items-start lg:text-left">
           <SectionLabel text="Contact us Today" />

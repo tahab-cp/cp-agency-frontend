@@ -11,16 +11,42 @@ import {
 import ContactFormInput from "./ContactFormInput";
 import WaveHand from "./WaveHand";
 import CommonBtn3 from "./CommonBtn3";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const ContactForm = () => {
+  const formContainerRef = useRef();
+  const formRef = useRef();
+
+  useEffect(() => {
+    // Set initial state
+    gsap.set(formContainerRef.current, {
+      height: 0,
+      autoAlpha: 0,
+    });
+
+    // Expand animation on scroll
+    gsap.to(formContainerRef.current, {
+      height: "auto",
+      autoAlpha: 1,
+      duration: 1.2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: formContainerRef.current,
+        start: "top 70%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
     <div className="contact-form-bg w-full">
       <h4 className="inline-flex items-center gap-[.5rem] text-[4.8rem] font-semibold tracking-[-0.02em]">
         Hello <WaveHand />
       </h4>
 
-      <div className="overflow-hidden">
-        <form action="" className="flex flex-col gap-[1.8rem]">
+      <div ref={formContainerRef} className="overflow-hidden">
+        <form ref={formRef} action="" className="flex flex-col gap-[1.8rem]">
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="name" className="md:min-w-[25rem]">
               My name is

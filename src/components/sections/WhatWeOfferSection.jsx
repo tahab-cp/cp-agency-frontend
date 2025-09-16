@@ -12,8 +12,63 @@ import {
 import ClickArrowYellowIcon from "@/assets/icons/click-arrow-yellow.svg";
 import ClickArrowPinkIcon from "@/assets/icons/click-arrow-pink.svg";
 import ClickArrowGreenIcon from "@/assets/icons/click-arrow-green.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const WhatWeOfferSection = () => {
+  const labelRef = useRef();
+  const gridCardRef1 = useRef();
+  const gridCardRef2 = useRef();
+  const gridCardRef3 = useRef();
+  const gridCardRef4 = useRef();
+  const gridCardRef5 = useRef();
+  const gridCardRef6 = useRef();
+  const gridCardRef7 = useRef();
+
+  useEffect(() => {
+    const gridCardRefs = [
+      gridCardRef1,
+      gridCardRef2,
+      gridCardRef3,
+      gridCardRef4,
+      gridCardRef5,
+      gridCardRef6,
+      gridCardRef7,
+    ];
+
+    // Wobble/shake animation
+    gsap.to(labelRef.current, {
+      rotation: "+=3", // Rotate 3 degrees back and forth
+      duration: 0.15, // Very short duration for quick wobble
+      yoyo: true, // Go back and forth
+      repeat: -1, // Infinite repeat
+      ease: "sine.inOut", // Best ease for wobble effects
+      repeatDelay: 0.5, // Small pause between wobbles
+    });
+
+    gridCardRefs.forEach((ref, index) => {
+      if (ref.current) {
+        gsap.fromTo(
+          gsap.utils.toArray(ref.current.children),
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: index * 0.1, // Stagger the start of each grid animation
+            clearProps: "all",
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      }
+    });
+  }, []);
+
   return (
     <section className="offer-sec relative py-[5rem] xl:py-[8rem]">
       {/* Decorative stroke line */}
@@ -22,18 +77,19 @@ const WhatWeOfferSection = () => {
       </div>
 
       <div className="relative z-[3] flex flex-col items-center gap-[4rem] px-[3rem] pb-[6rem] md:gap-[7.6rem] xl:px-[0rem] xl:pb-[0rem]">
-        <div className="rotate-[2deg]">
-          <div className="">
-            <SectionLabel2
-              text="What We Offer"
-              bgColor="bg-[#FFC300]"
-              textColor="text-[#070707]"
-            />
-          </div>
+        <div ref={labelRef} className="rotate-[2deg]">
+          <SectionLabel2
+            text="What We Offer"
+            bgColor="bg-[#FFC300]"
+            textColor="text-[#070707]"
+          />
         </div>
 
         <div className="mx-auto flex w-full max-w-[120rem] flex-col gap-[2rem] lg:flex-row lg:gap-[0rem] 2xl:max-w-[130rem]">
-          <div className="flex flex-col items-center gap-[3.3rem] lg:items-start">
+          <div
+            ref={gridCardRef1}
+            className="flex flex-col items-center gap-[3.3rem] lg:items-start"
+          >
             <h3 className="relative max-w-[33.3rem] text-center text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem] lg:text-left">
               <span>Website Development</span>
 
@@ -53,7 +109,10 @@ const WhatWeOfferSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[4.5rem] xl:ml-[-10rem]">
+          <div
+            ref={gridCardRef2}
+            className="flex flex-col gap-[4.5rem] xl:ml-[-10rem]"
+          >
             <div className="flex flex-col justify-between gap-[5rem] md:flex-row lg:flex-col lg:justify-start xl:flex-row xl:gap-[10rem]">
               {offerServicesWebData.columns.map((col, idx) => (
                 <div key={idx} className={`flex flex-col gap-[3.1rem]`}>
@@ -120,7 +179,10 @@ const WhatWeOfferSection = () => {
 
       <div className="relative z-[2] bg-white px-[3rem] py-[5rem] xl:mt-[-6rem] xl:h-[58.3rem] xl:px-[0rem] xl:py-[0rem]">
         <div className="relative mx-auto flex w-full max-w-[120rem] flex-col-reverse gap-[5rem] lg:flex-row lg:gap-[12.9rem] 2xl:max-w-[130rem]">
-          <div className="flex flex-col gap-[4.5rem] xl:pt-[10rem]">
+          <div
+            ref={gridCardRef3}
+            className="flex flex-col gap-[4.5rem] xl:pt-[10rem]"
+          >
             <div className="flex flex-col justify-between gap-[5rem] md:flex-row lg:flex-col lg:justify-start xl:flex-row xl:gap-[10rem]">
               {offerServicesDesignData.columns.map((col, idx) => (
                 <div
@@ -165,7 +227,10 @@ const WhatWeOfferSection = () => {
             </div>
           </div>
 
-          <div className="relative flex flex-col items-center gap-[4rem] lg:items-start lg:gap-[0rem] xl:top-[10.8rem]">
+          <div
+            ref={gridCardRef4}
+            className="relative flex flex-col items-center gap-[4rem] lg:items-start lg:gap-[0rem] xl:top-[10.8rem]"
+          >
             <h3 className="text-text-primary relative max-w-[30.8rem] text-center text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.02em] md:text-[4.8rem] md:leading-[6rem] lg:text-left">
               <span>Design and Branding</span>
 
@@ -197,7 +262,10 @@ const WhatWeOfferSection = () => {
       </div>
 
       <div className="relative z-[2] mx-auto flex w-full max-w-[120rem] flex-col px-[3rem] pt-[5rem] lg:flex-row xl:px-[0rem] xl:pt-[10rem] 2xl:max-w-[133rem]">
-        <div className="flex flex-col items-center lg:items-start">
+        <div
+          ref={gridCardRef5}
+          className="flex flex-col items-center lg:items-start"
+        >
           <h3 className="relative max-w-[30.8rem] text-center text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem] lg:text-left">
             <span>Maintenance and Growth</span>
 
@@ -217,7 +285,7 @@ const WhatWeOfferSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[4.5rem]">
+        <div ref={gridCardRef6} className="flex flex-col gap-[4.5rem]">
           <div className="flex flex-col justify-between gap-[5rem] md:flex-row lg:flex-col lg:justify-start xl:flex-row xl:gap-[10rem]">
             {offerServicesMaintenanceData.columns.map((col, idx) => (
               <div
@@ -284,7 +352,7 @@ const WhatWeOfferSection = () => {
         </div>
       </div>
 
-      <div className="px-[3rem] xl:px-[0rem]">
+      <div ref={gridCardRef7} className="px-[3rem] xl:px-[0rem]">
         <div className="offer-cta-card mx-auto mt-[4rem] flex max-w-[120rem] rounded-[2rem] xl:mt-[-9rem]">
           <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
             <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">

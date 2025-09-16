@@ -1,12 +1,34 @@
+"use client";
+
 import Image from "next/image";
 import SectionLabel from "./SectionLabel";
 import CommonBtn3 from "./CommonBtn3";
 import FlashIcon from "@/assets/icons/3d-flash-icon.svg";
 import ContactArrowIcon from "@/assets/icons/contact-arrow.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const CtaSection2 = () => {
+  const containerRef = useRef();
+
+  useEffect(() => {
+    gsap.to(containerRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 60%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
-    <div className="cta-card relative w-full rounded-[5rem] px-[3rem] py-[4rem] backdrop-blur-[10px] md:px-[6rem] lg:py-[8rem]">
+    <div
+      ref={containerRef}
+      className="cta-card relative w-full rounded-[5rem] px-[3rem] py-[4rem] opacity-0 backdrop-blur-[10px] md:px-[6rem] lg:py-[8rem]"
+    >
       <i className="absolute top-[-4.3rem] right-0 inline-flex items-center justify-center">
         <ContactArrowIcon />
       </i>

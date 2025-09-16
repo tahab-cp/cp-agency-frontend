@@ -11,11 +11,81 @@ import OurWorkCardSlider from "../common/OurWorkCardSlider";
 import CaseStudiesSlider from "../common/CaseStudiesSlider";
 import DownArrowIcon from "@/assets/icons/down-arrow.svg";
 import SubtractDarkIcon from "@/assets/icons/subtract-dark.svg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
 
 const OurWorkSection = ({ caseStudies }) => {
+  const labelRef = useRef();
+  const headingRef = useRef();
+  const descRef = useRef();
+  const cardRef = useRef();
+  const titleRef = useRef();
+  const gridRef = useRef();
+
+  useEffect(() => {
+    // Wobble/shake animation
+    gsap.to(labelRef.current, {
+      rotation: "+=3", // Rotate 3 degrees back and forth
+      duration: 0.15, // Very short duration for quick wobble
+      yoyo: true, // Go back and forth
+      repeat: -1, // Infinite repeat
+      ease: "sine.inOut", // Best ease for wobble effects
+      repeatDelay: 0.5, // Small pause between wobbles
+    });
+
+    const tl = gsap.timeline();
+
+    tl.to(headingRef.current, {
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.out",
+      delay: 0.2,
+    })
+
+      .to(descRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        ease: "power2.out",
+      })
+
+      .fromTo(
+        gsap.utils.toArray(cardRef.current.children),
+        { opacity: 0, y: -20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1, // 👈 Faster stagger
+          ease: "power2.out",
+        },
+      );
+
+    gsap.to(titleRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.to(gridRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: gridRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   // 👇 Show 3 case studies at first
   const [visibleCount, setVisibleCount] = useState(4);
 
@@ -40,25 +110,34 @@ const OurWorkSection = ({ caseStudies }) => {
 
       <div className="relative z-[1] mx-auto max-w-[120.3rem] px-[3rem] xl:px-[0rem]">
         <div className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left">
-          <div className="rotate-[2deg]">
+          <div ref={labelRef} className="rotate-[2deg]">
             <SectionLabel2 text="Our Work" />
           </div>
 
           <div className="flex flex-col items-center justify-between gap-[2rem] xl:flex-row xl:gap-[0rem]">
-            <div className="max-w-[65rem] xl:max-w-[72.1rem]">
+            <div
+              ref={headingRef}
+              className="max-w-[65rem] opacity-0 xl:max-w-[72.1rem]"
+            >
               <SectionTitle label="We design and build to make an impact." />
             </div>
 
-            <div className="max-w-[70rem] xl:max-w-[37.9rem]">
+            <div
+              ref={descRef}
+              className="max-w-[70rem] opacity-0 xl:max-w-[37.9rem]"
+            >
               <SectionDescription label="We help the world's leading brands create standout ads and campaigns at speed—from concept to execution to results." />
             </div>
           </div>
         </div>
 
-        <div className="relative mt-[6.8rem] hidden grid-cols-3 gap-[3.3rem] xl:grid">
+        <div
+          ref={cardRef}
+          className="relative mt-[6.8rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
+        >
           <Link
             href="/contact"
-            className="animation-duration-[20s] hover:paused absolute bottom-[-14.5rem] left-[-8.7rem] inline-flex animate-spin items-center justify-center"
+            className="animation-duration-[20s] hover:paused absolute bottom-[-14.5rem] left-[-8.7rem] z-[100] inline-flex animate-spin items-center justify-center"
           >
             <Image
               src="/images/talk-expert-btn-img.png"
@@ -111,11 +190,17 @@ const OurWorkSection = ({ caseStudies }) => {
       </div>
 
       <div className="relative z-[1] mx-auto mt-[5rem] max-w-[120.3rem] px-[3rem] xl:mt-[10rem] xl:px-[0rem]">
-        <div className="mx-auto max-w-[82.6rem] text-center">
+        <div
+          ref={titleRef}
+          className="mx-auto max-w-[82.6rem] text-center opacity-0"
+        >
           <SectionTitle label="Trusted by business across the UK, US and Australia." />
         </div>
 
-        <div className="mt-[4rem] hidden flex-col gap-[5rem] xl:flex">
+        <div
+          ref={gridRef}
+          className="mt-[4rem] hidden flex-col gap-[5rem] opacity-0 xl:flex"
+        >
           {caseStudies.slice(0, visibleCount).map((cs, idx) => (
             <CaseStudiesGrid
               key={cs.id}

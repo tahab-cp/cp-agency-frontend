@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import BackToTopBtn from "@/components/common/BackToTopBtn";
 import StickyHeader from "@/components/layout/StickyHeader";
 
+// Register the plugin globally
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 <Script src="https://app.cal.com/embed/embed.js" strategy="afterInteractive" />;
