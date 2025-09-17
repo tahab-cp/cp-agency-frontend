@@ -535,6 +535,11 @@ body {
   z-index: -1;
 }
 
+.testimonials-marquee .rfm-marquee,
+.testimonials-marquee .rfm-initial-child-container {
+  align-items: stretch !important;
+}
+
 /* Contact Section  */
 
 .contact-details-bg {

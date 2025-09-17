@@ -94,8 +94,34 @@ const WhatWeOfferSection = () => {
   return (
     <section className="offer-sec relative py-[5rem] xl:py-[8rem]">
       {/* Decorative stroke line */}
-      <div ref={lineRef} className="absolute inset-0 z-[1]">
+      <div
+        ref={lineRef}
+        className="pointer-events-none absolute inset-0 z-[1] select-none"
+      >
         <LineStroke03 className="absolute top-[345rem] left-1/2 w-full -translate-x-1/2 md:top-[320rem] lg:top-[235rem] xl:top-[180.6rem]" />
+      </div>
+
+      <div className="sticky top-[10rem] z-[100] flex justify-end pr-[10rem]">
+        <Link
+          href="/case-study"
+          className="group absolute z-[10] inline-flex size-[16.3rem] items-center justify-center"
+        >
+          <Image
+            src="/images/case-study-btn-img-2(a).png"
+            width={163}
+            height={163}
+            alt="Button  Images"
+            className="animation-duration-[20s] group-hover:paused absolute inset-0 animate-spin"
+          />
+
+          <Image
+            src="/images/case-study-btn-img-2(b).png"
+            width={135}
+            height={135}
+            alt="Button  Images"
+            className="absolute top-1/2 left-1/2 -translate-1/2"
+          />
+        </Link>
       </div>
 
       <div className="relative z-[3] flex flex-col items-center gap-[4rem] px-[3rem] pb-[6rem] md:gap-[7.6rem] xl:px-[0rem] xl:pb-[0rem]">
@@ -173,27 +199,6 @@ const WhatWeOfferSection = () => {
                   bgColor="#3078FF"
                 />
               </div>
-
-              <Link
-                href="/case-study"
-                className="group relative z-[10] inline-flex size-[16.3rem] items-center justify-center xl:absolute xl:right-[10rem] xl:bottom-[10rem]"
-              >
-                <Image
-                  src="/images/case-study-btn-img-2(a).png"
-                  width={163}
-                  height={163}
-                  alt="Button  Images"
-                  className="animation-duration-[20s] group-hover:paused absolute inset-0 animate-spin"
-                />
-
-                <Image
-                  src="/images/case-study-btn-img-2(b).png"
-                  width={135}
-                  height={135}
-                  alt="Button  Images"
-                  className="absolute top-1/2 left-1/2 -translate-1/2"
-                />
-              </Link>
             </div>
           </div>
         </div>
@@ -350,7 +355,7 @@ const WhatWeOfferSection = () => {
               />
             </div>
 
-            <Link
+            {/* <Link
               href="/case-study"
               className="group relative z-[10] inline-flex size-[16.3rem] items-center justify-center xl:absolute xl:right-[10rem] xl:bottom-[25rem]"
             >
@@ -369,7 +374,7 @@ const WhatWeOfferSection = () => {
                 alt="Button  Images"
                 className="absolute top-1/2 left-1/2 -translate-1/2"
               />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

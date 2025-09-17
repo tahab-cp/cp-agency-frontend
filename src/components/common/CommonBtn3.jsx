@@ -9,11 +9,7 @@ const CommonBtn3 = ({
   textColor = "#ffffff",
 }) => {
   return (
-    <Link
-      href={href}
-      target="_blank"
-      className="group inline-flex cursor-pointer items-center"
-    >
+    <Link href={href} className="group inline-flex cursor-pointer items-center">
       {/* Text */}
       <div
         className="relative z-[2] h-[4rem] overflow-hidden rounded-[6rem] px-[2rem] text-[1.6rem] font-semibold md:h-[5rem] md:px-[3rem] md:text-[2rem]"

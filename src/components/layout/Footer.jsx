@@ -34,10 +34,9 @@ const Footer = () => {
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: lineRef.current,
-            start: "top 50%", // when line enters viewport
-            end: "bottom 20%", // when line leaves viewport
+            start: "top 90%", // when line enters viewport
+            end: "bottom 80%", // when line leaves viewport
             scrub: true, // tie progress to scroll
-            markers: false, // set to true for debugging
           },
         },
       );

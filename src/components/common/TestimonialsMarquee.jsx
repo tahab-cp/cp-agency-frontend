@@ -1,8 +1,8 @@
 "use client";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
-import { aboutTestimonialsCardData } from "@/constants/aboutPage";
 import RatingStar from "@/assets/icons/rating-star.svg";
+import { testimonialsCardData } from "@/constants/globals";
 
 const TestimonialsMarquee = () => {
   return (
@@ -12,19 +12,24 @@ const TestimonialsMarquee = () => {
         speed={50}
         pauseOnHover={true}
         direction="right"
-        className="overflow-hidden"
+        className="testimonials-marquee overflow-hidden"
       >
-        {aboutTestimonialsCardData.map((item, idx) => (
-          <div key={idx} className="testimonials-card mx-[1.65rem] w-[27.6rem]">
-            {/* Rating Stars */}
-            <div className="relative h-[2.042rem] w-[11.379rem]">
-              <RatingStar />
-            </div>
+        {testimonialsCardData.map((item, idx) => (
+          <div
+            key={idx}
+            className="testimonials-card mx-[1.65rem] flex h-full w-[30rem] flex-col justify-between md:w-[60rem]"
+          >
+            <div>
+              {/* Rating Stars */}
+              <div className="relative h-[2.042rem] w-[11.379rem]">
+                <RatingStar />
+              </div>
 
-            {/* Review Text */}
-            <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-white/50">
-              {item.review}
-            </p>
+              {/* Review Text */}
+              <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-white/50">
+                {item.review}
+              </p>
+            </div>
 
             {/* Author Info */}
             <div className="flex flex-col gap-[1.2rem]">
@@ -34,6 +39,7 @@ const TestimonialsMarquee = () => {
                   alt={item.authorName}
                   width={56}
                   height={56}
+                  className="size-full object-contain object-center"
                 />
               </div>
 

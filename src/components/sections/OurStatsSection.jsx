@@ -72,42 +72,42 @@ const OurStatsSection = () => {
         </div>
 
         <div ref={cardRef} className="hidden grid-cols-4 gap-[2rem] lg:grid">
-          <div className="our-stats-card">
+          <div className="our-stats-card group transition-all duration-300 hover:!bg-[#FFC300]">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
               200+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FFC300]">
+            <h6 className="text-[2rem] font-medium text-[#FFC300] transition-all duration-300 group-hover:text-white">
               Web Projects
             </h6>
           </div>
 
-          <div className="our-stats-card top-[8rem]">
+          <div className="our-stats-card group top-[8rem] transition-all duration-300 hover:!bg-[#FF37B3]">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
               15+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FF37B3]">
+            <h6 className="text-[2rem] font-medium text-[#FF37B3] transition-all duration-300 group-hover:text-white">
               Years of Experience
             </h6>
           </div>
 
-          <div className="our-stats-card">
+          <div className="our-stats-card group transition-all duration-300 hover:!bg-[#FF8630]">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
               150+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FF8630]">
+            <h6 className="text-[2rem] font-medium text-[#FF8630] transition-all duration-300 group-hover:text-white">
               Trusted Clients
             </h6>
           </div>
 
-          <div className="our-stats-card top-[8rem]">
+          <div className="our-stats-card group top-[8rem] transition-all duration-300 hover:!bg-[#F14A58]">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
               20+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#F14A58]">
+            <h6 className="text-[2rem] font-medium text-[#F14A58] transition-all duration-300 group-hover:text-white">
               Skillful Team Members
             </h6>
           </div>
