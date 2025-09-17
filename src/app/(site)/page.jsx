@@ -8,6 +8,8 @@ import TestimonialSection from "@/components/sections/TestimonialSection";
 import WhatWeOfferSection from "@/components/sections/WhatWeOfferSection";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic"; // 👈 Add this at the top
+
 export const metadata = {
   title: "Home",
   description:

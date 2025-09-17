@@ -2,6 +2,8 @@ import ContactSection from "@/components/sections/ContactSection";
 import OurWorkSection from "@/components/sections/OurWorkSection";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic"; // 👈 Add this at the top
+
 const CaseStudiesPage = async () => {
   const response = await fetchAPI("/api/case-studies", {
     populate: {

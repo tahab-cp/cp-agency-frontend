@@ -4,6 +4,8 @@ import OurServicesSection from "@/components/sections/OurServicesSection";
 import LineStroke13 from "@/assets/decorative-elements/line-stroke-13.svg";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
+export const dynamic = "force-dynamic"; // 👈 Add this at the top
+
 const ServicesPage = async () => {
   const response = await fetchAPI("/api/case-studies", {
     populate: {
