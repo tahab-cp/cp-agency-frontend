@@ -16,6 +16,7 @@ const WhoWeAreSection = () => {
   const descRef2 = useRef();
   const gridCardRef = useRef();
   const btnRef = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const splitHeading = new SplitText(headingRef.current, {
@@ -25,6 +26,20 @@ const WhoWeAreSection = () => {
     const splitDesc2 = new SplitText(descRef2.current, {
       type: "lines",
     });
+
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" }, // start hidden
+        {
+          drawSVG: "100%", // fully drawn
+          duration: 5,
+          ease: "power2.inOut",
+        },
+      );
+    }
 
     // Wobble/shake animation
     gsap.to(labelRef.current, {
@@ -108,7 +123,7 @@ const WhoWeAreSection = () => {
   return (
     <section className="relative px-[3rem] pt-[20rem] pb-[5rem] xl:px-[0rem] xl:pb-[9rem]">
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef} className="absolute inset-0 z-[0]">
         <LineStroke07 className="absolute top-[14.8rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 

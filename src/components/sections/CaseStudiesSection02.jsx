@@ -5,7 +5,6 @@ import SectionDescription from "../common/SectionDescription";
 import SectionLabel2 from "../common/SectionLabel2";
 import SectionTitle from "../common/SectionTitle";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 const CaseStudiesSection02 = ({ caseStudies }) => {
   const labelRef = useRef();

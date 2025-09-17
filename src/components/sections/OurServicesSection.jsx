@@ -19,6 +19,7 @@ import ClickArrowGreenIcon from "@/assets/icons/click-arrow-green.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import CLetter2 from "@/assets/decorative-elements/c-letter-2";
 
 const OurServicesSection = () => {
   const labelRef = useRef();
@@ -30,6 +31,7 @@ const OurServicesSection = () => {
   const gridCardRef4 = useRef();
   const gridCardRef5 = useRef();
   const gridCardRef6 = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const splitHeading = new SplitText(headingRef.current, {
@@ -44,6 +46,20 @@ const OurServicesSection = () => {
       gridCardRef5,
       gridCardRef6,
     ];
+
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" }, // start hidden
+        {
+          drawSVG: "100%", // fully drawn
+          duration: 5,
+          ease: "power2.inOut",
+        },
+      );
+    }
 
     // Wobble/shake animation
     gsap.to(labelRef.current, {
@@ -109,11 +125,12 @@ const OurServicesSection = () => {
     <section className="relative overflow-hidden pt-[20.6rem]">
       {/* Bg Element */}
       <div className="absolute inset-0 z-[0] overflow-hidden">
-        <CLetter className="absolute top-[16rem] right-[-1rem] hidden w-[20rem] rotate-[-80deg] lg:block" />
+        {/* <CLetter className="absolute top-[16rem] right-[-1rem] hidden w-[20rem] rotate-[-80deg] lg:block" /> */}
+        <CLetter2 className="absolute top-[16rem] right-[-1rem] hidden w-[20rem] rotate-[-80deg] lg:block" />
       </div>
 
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef} className="absolute inset-0 z-[0]">
         <LineStroke10 className="absolute top-[15.4rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 

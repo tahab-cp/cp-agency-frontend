@@ -16,9 +16,9 @@ const HeroSection = () => {
   const ctaBtnRef = useRef();
   const headingRef2 = useRef();
   const logoRef = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline();
     const splitHeading = new SplitText(headingRef.current, {
       type: "lines",
       linesClass: "line",
@@ -27,6 +27,22 @@ const HeroSection = () => {
       type: "lines",
       linesClass: "line",
     });
+
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" }, // start hidden
+        {
+          drawSVG: "100%", // fully drawn
+          duration: 5,
+          ease: "power2.inOut",
+        },
+      );
+    }
+
+    const tl = gsap.timeline();
 
     // Header animation
     tl.to(badgeRef.current, {
@@ -132,7 +148,7 @@ const HeroSection = () => {
   return (
     <section className="hero-sec relative h-[70rem] w-full overflow-hidden rounded-br-[5rem] rounded-bl-[5rem] lg:h-[79rem]">
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[1]">
+      <div ref={lineRef} className="absolute inset-0 z-[1]">
         <LineStroke01 className="absolute bottom-[2.058rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 

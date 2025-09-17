@@ -24,6 +24,7 @@ const WhatWeOfferSection = () => {
   const gridCardRef5 = useRef();
   const gridCardRef6 = useRef();
   const gridCardRef7 = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const gridCardRefs = [
@@ -35,6 +36,27 @@ const WhatWeOfferSection = () => {
       gridCardRef6,
       gridCardRef7,
     ];
+
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+            markers: false, // set to true for debugging
+          },
+        },
+      );
+    }
 
     // Wobble/shake animation
     gsap.to(labelRef.current, {
@@ -72,7 +94,7 @@ const WhatWeOfferSection = () => {
   return (
     <section className="offer-sec relative py-[5rem] xl:py-[8rem]">
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[1]">
+      <div ref={lineRef} className="absolute inset-0 z-[1]">
         <LineStroke03 className="absolute top-[345rem] left-1/2 w-full -translate-x-1/2 md:top-[320rem] lg:top-[235rem] xl:top-[180.6rem]" />
       </div>
 

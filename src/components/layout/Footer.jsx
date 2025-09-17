@@ -1,3 +1,4 @@
+"use clinet";
 import Image from "next/image";
 import Link from "next/link";
 import FooterLinkCard from "../common/FooterLinkCard";
@@ -12,21 +13,55 @@ import {
   logoPopupsData,
   socialLinks,
 } from "@/constants/globals";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import CLetter2 from "@/assets/decorative-elements/c-letter-2";
+import PLetter2 from "@/assets/decorative-elements/p-letter-2";
 
 const Footer = () => {
+  const lineRef = useRef(null);
+
+  useEffect(() => {
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+            markers: false, // set to true for debugging
+          },
+        },
+      );
+    }
+  }, []);
+
   return (
     <footer className="footer relative w-full px-[2rem] pt-[5rem] pb-[2.764rem] xl:px-[0rem] xl:pt-[6.2rem]">
       {/* Decorative stroke line */}
-      <div className="pointer-events-none absolute inset-0 z-[1] select-none">
+      <div
+        ref={lineRef}
+        className="pointer-events-none absolute inset-0 z-[1] select-none"
+      >
         <LineStroke06 className="absolute top-[-19.3rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-[0] overflow-hidden select-none">
-        <CLetter className="absolute bottom-[3rem] left-[-3rem] w-[8.4rem]" />
+        {/* <CLetter className="absolute bottom-[3rem] left-[-3rem] w-[8.4rem]" /> */}
+        <CLetter2 className="absolute bottom-[3rem] left-[-3rem] w-[8.4rem]" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-[0] hidden overflow-hidden select-none xl:block">
-        <PLetter className="absolute top-[43.5rem] right-[-3rem]" />
+        {/* <PLetter className="absolute top-[43.5rem] right-[-3rem]" /> */}
+        <PLetter2 className="absolute top-[43.5rem] right-[-3rem]" />
       </div>
 
       <div className="overflow-hidden">

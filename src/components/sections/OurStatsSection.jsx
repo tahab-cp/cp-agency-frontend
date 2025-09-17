@@ -4,13 +4,34 @@ import SectionLabel2 from "../common/SectionLabel2";
 import OurStatsSlider from "../common/OurStatsSlider";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 const OurStatsSection = () => {
   const labelRef = useRef();
   const cardRef = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+            markers: false, // set to true for debugging
+          },
+        },
+      );
+    }
+
     // Wobble/shake animation
     gsap.to(labelRef.current, {
       rotation: "+=3", // Rotate 3 degrees back and forth
@@ -41,7 +62,7 @@ const OurStatsSection = () => {
 
   return (
     <section className="relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[8.5rem] xl:pb-[9.732rem]">
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef} className="absolute inset-0 z-[0]">
         <LineStroke08 className="absolute top-[14.2rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 

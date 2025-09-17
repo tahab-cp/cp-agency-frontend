@@ -23,8 +23,65 @@ const OurWorkSection = ({ caseStudies }) => {
   const cardRef = useRef();
   const titleRef = useRef();
   const gridRef = useRef();
+  const lineRef1 = useRef(null);
+  const lineRef2 = useRef(null);
+  const lineRef3 = useRef(null);
 
   useEffect(() => {
+    const line1 = lineRef1.current.querySelector("path");
+
+    if (line1) {
+      gsap.fromTo(
+        line1,
+        { drawSVG: "0%" }, // start hidden
+        {
+          drawSVG: "100%", // fully drawn
+          duration: 5,
+          ease: "power2.inOut",
+        },
+      );
+    }
+
+    const line2 = lineRef2.current.querySelector("path");
+
+    if (line2) {
+      gsap.fromTo(
+        line2,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef2.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+          },
+        },
+      );
+    }
+
+    const line3 = lineRef3.current.querySelector("path");
+
+    if (line3) {
+      gsap.fromTo(
+        line2,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef3.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+          },
+        },
+      );
+    }
+
     // Wobble/shake animation
     gsap.to(labelRef.current, {
       rotation: "+=3", // Rotate 3 degrees back and forth
@@ -96,15 +153,15 @@ const OurWorkSection = ({ caseStudies }) => {
   return (
     <section className="pt-[18rem] md:pt-[20.6rem]">
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef1} className="absolute inset-0 z-[0]">
         <LineStroke15 className="absolute top-[15.4rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef2} className="absolute inset-0 z-[0]">
         <LineStroke16 className="absolute top-[92.9rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef3} className="absolute inset-0 z-[0]">
         <LineStroke17 className="absolute top-[281.6rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 

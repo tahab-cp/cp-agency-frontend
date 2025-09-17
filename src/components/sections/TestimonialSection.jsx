@@ -16,9 +16,31 @@ const TestimonialSection = () => {
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
   const gridCardRef3 = useRef();
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const gridCardRefs = [gridCardRef1, gridCardRef2, gridCardRef3];
+
+    const line = lineRef.current.querySelector("path");
+
+    if (line) {
+      gsap.fromTo(
+        line,
+        { drawSVG: "0%" },
+        {
+          drawSVG: "100%",
+          duration: 2,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: lineRef.current,
+            start: "top 50%", // when line enters viewport
+            end: "bottom 20%", // when line leaves viewport
+            scrub: true, // tie progress to scroll
+            markers: false, // set to true for debugging
+          },
+        },
+      );
+    }
 
     // Wobble/shake animation
     gsap.to(labelRef.current, {
@@ -78,7 +100,7 @@ const TestimonialSection = () => {
   return (
     <section className="testimonials-sec relative z-[1] py-[5rem] xl:py-[8rem]">
       {/* Decorative stroke line */}
-      <div className="absolute inset-0 z-[0]">
+      <div ref={lineRef} className="absolute inset-0 z-[0]">
         <LineStroke05 className="absolute top-[118.4rem] left-1/2 w-full -translate-x-1/2 opacity-90" />
       </div>
 
