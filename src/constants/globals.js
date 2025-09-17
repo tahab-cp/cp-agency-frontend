@@ -477,9 +477,8 @@ export const footerLinksCardData = [
   {
     title: "Legal",
     links: [
-      { label: "Partnership", href: "#" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms & Conditions", href: "/terms-condition" },
+      { label: "Cookies Policy", href: "/cookies-policy" },
     ],
   },
 ];
