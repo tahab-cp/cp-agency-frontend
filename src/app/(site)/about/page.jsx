@@ -9,8 +9,6 @@ import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import LineStroke09 from "@/assets/decorative-elements/line-stroke-09.svg";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
-export const dynamic = "force-dynamic"; // 👈 Add this at the top
-
 const AboutPage = async () => {
   const response = await fetchAPI("/api/case-studies", {
     populate: {

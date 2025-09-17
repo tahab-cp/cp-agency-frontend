@@ -2,8 +2,6 @@ import CaseStudyDetailSection from "@/components/sections/CaseStudyDetailSection
 import ContactSection from "@/components/sections/ContactSection";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
-export const dynamic = "force-dynamic"; // 👈 Add this at the top
-
 const CaseStudyDetailPage = async ({ params }) => {
   const { slug } = await params; // Add await here
 
