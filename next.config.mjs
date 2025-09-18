@@ -30,8 +30,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "https://efficient-trust-793545cafa.strapiapp.com",
+        protocol: "https",
+        hostname: "efficient-trust-793545cafa.strapiapp.com",
         port: "1337",
         pathname: "/uploads/**",
       },
