@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import PhoneFillIcon from "@/assets/icons/phone-fill.svg";
 import MeetIcon from "@/assets/icons/meet-icon.svg";
@@ -8,9 +10,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ContactPopoverBtn = () => {
+  const [open, setOpen] = useState(false);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "15min" });
@@ -27,15 +31,22 @@ const ContactPopoverBtn = () => {
   }, []);
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger>
-        <i className="header-cta-btn relative inline-flex size-[4.6rem] cursor-pointer items-center justify-center rounded-full bg-[#32284A]">
+        <i
+          className="header-cta-btn relative inline-flex size-[4.6rem] cursor-pointer items-center justify-center rounded-full bg-[#32284A]"
+          onMouseEnter={() => setOpen(true)}
+        >
           <PhoneFillIcon />
 
           <div className="outline-text-primary absolute top-[.2rem] right-[.2rem] size-[.8rem] animate-pulse rounded-full bg-[#7EE972] outline-[3.5px]" />
         </i>
       </PopoverTrigger>
-      <PopoverContent className="w-[20rem] pt-[1rem]">
+      <PopoverContent
+        className="w-[20rem] pt-[1rem]"
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
+      >
         <div className="relative rounded-[2rem] bg-gradient-to-r from-[#ffe400] to-[#ff37b3] p-[2px]">
           <div className="flex flex-col overflow-hidden rounded-[2rem] bg-[#070707]">
             <Link

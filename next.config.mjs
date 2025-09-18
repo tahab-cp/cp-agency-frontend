@@ -30,6 +30,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        // protocol: "http",
+        // hostname: "localhost",
+        // port: "1337",
+        // pathname: "/uploads/**",
+        // Setting For Deployment
         protocol: "https",
         hostname: "efficient-trust-793545cafa.media.strapiapp.com",
         pathname: "/**", // allow all paths
