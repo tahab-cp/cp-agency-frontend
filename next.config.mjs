@@ -31,7 +31,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "https://efficient-trust-793545cafa.strapiapp.com",
         port: "1337",
         pathname: "/uploads/**",
       },
