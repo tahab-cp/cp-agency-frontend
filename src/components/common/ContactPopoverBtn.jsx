@@ -32,7 +32,7 @@ const ContactPopoverBtn = () => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger>
+      <PopoverTrigger className="!border-0 !outline-0">
         <i
           className="header-cta-btn relative inline-flex size-[4.6rem] cursor-pointer items-center justify-center rounded-full bg-[#32284A]"
           onMouseEnter={() => setOpen(true)}
