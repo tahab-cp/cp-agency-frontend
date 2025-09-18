@@ -32,6 +32,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "efficient-trust-793545cafa.media.strapiapp.com",
+        port: "1337",
         pathname: "/uploads/**",
       },
     ],
