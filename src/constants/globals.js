@@ -350,49 +350,49 @@ export const testimonialsCardData = [
   {
     review:
       "Thank you, CreativePixels, for supporting the 2018 Halloween Ball. Your expertise on the programme and menu/pledge card was invaluable. Together, we raised over £478,000 to protect children in danger.",
-    authorImage: "/images/unicef-logo.png",
+    authorImage: "/images/testimonials-avatar-1.png",
     authorName: "Unicef UK",
     authorRole: "Special Events Coordinator, Unicef UK",
   },
   {
     review:
       "CreativePixels delivered a poster and ticket design under intense time pressure. They were responsive, creative, precise with complex logos, providing multiple concepts quickly, and excellent finished artwork within 48 hours.",
-    authorImage: "/images/herbert-logo.png",
+    authorImage: "/images/testimonials-avatar-2.png",
     authorName: "Herbert Smith Freehills LLP",
     authorRole: "Clare Huddlestone, Herbert Smith Freehills LLP",
   },
   {
     review:
       "CreativePixels perfectly merged English and Urdu logos, delivering an outstanding website.",
-    authorImage: "/images/manzar-logo.png",
+    authorImage: "/images/testimonials-avatar-3.png",
     authorName: "Manzar",
     authorRole: "Faisal Ahmed, Manzar",
   },
   {
     review:
       "CreativePixels did an outstanding job! I’m really glad I chose to work with them. They created our website quickly, accurately, and have continued to provide excellent updates and management. Every email and call I sent was handled with speed and professionalism, making the entire process smooth and stress-free. My new site is significantly faster and much easier to navigate compared to my old sluggish site. Additionally, it’s hosted on Creative Hosting, which has further improved performance and reliability. Overall, CreativePixels exceeded all expectations.",
-    authorImage: "/images/precise-logo.png",
+    authorImage: "/images/testimonials-avatar-4.png",
     authorName: "Precise Print",
     authorRole: "Simon Hobbs, Precise Print",
   },
   {
     review:
       "We were blown away by CreativePixels’ work and service. They exceeded expectations, attended our training events, guided us on design, and their new logo and website have made a significant, positive impact on Drive UK.",
-    authorImage: "/images/drive-logo.png",
+    authorImage: "/images/testimonials-avatar-5.png",
     authorName: "Drive UK",
     authorRole: "Mumtaz Khan, Drive UK",
   },
   {
     review:
       "CreativePixels designed the perfect logo for our new business, helping us promote ourselves across Birmingham and the West Midlands. It allowed us to start working immediately. Huge thanks to the CreativePixels team for their outstanding support.",
-    authorImage: "/images/excellence-logo.png",
+    authorImage: "/images/testimonials-avatar-6.png",
     authorName: "Excellence Car Specialists",
     authorRole: "Management, Excellence Car Specialists",
   },
   {
     review:
       "CreativePixels produced marketing materials and a complete website refresh for us under a very tight deadline and at short notice. They went above and beyond to deliver a fully functional, fit-for-purpose, and engaging website along with high-quality design materials that exceeded all our expectations. Their professionalism, creativity, and attention to detail made the entire process seamless and stress-free. We were impressed by their speed, responsiveness, and dedication. Without hesitation, we would be more than happy to work with the CreativePixels team again on future projects.",
-    authorImage: "/images/unltd-logo.png",
+    authorImage: "/images/testimonials-avatar-7.png",
     authorName: "Unltd Communications Team",
     authorRole: "Unltd Communications Team",
   },
