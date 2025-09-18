@@ -42,7 +42,7 @@ const ContactForm = () => {
   return (
     <div className="contact-form-bg w-full">
       <h4 className="inline-flex items-center gap-[.5rem] text-[4.8rem] font-semibold tracking-[-0.02em]">
-        Hello <WaveHand />
+        Hello, how can we help? <WaveHand />
       </h4>
 
       <div ref={formContainerRef} className="overflow-hidden">
@@ -65,9 +65,15 @@ const ContactForm = () => {
                 <SelectValue placeholder="Select desired service" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="light">Light</SelectItem>
-                <SelectItem value="dark">Dark</SelectItem>
-                <SelectItem value="system">System</SelectItem>
+                <SelectItem value="design&branding">
+                  Design & Branding
+                </SelectItem>
+                <SelectItem value="websitedevelopment">
+                  Website Development
+                </SelectItem>
+                <SelectItem value="maintenance&growth">
+                  Maintenance & Growth
+                </SelectItem>
               </SelectContent>
             </Select>
           </fieldset>

@@ -88,8 +88,18 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             </div>
 
             <div className="border-b border-white px-[2rem] pb-[2rem] md:px-[4rem]">
-              <HamburgerAccordion setIsOpen={setIsOpen} />
+              <Link
+                href="/services"
+                onClick={() => setIsOpen(false)}
+                className="text-[3rem] leading-[4rem] font-semibold uppercase md:text-[4rem] md:leading-[5rem]"
+              >
+                Services
+              </Link>
             </div>
+
+            {/* <div className="border-b border-white px-[2rem] pb-[2rem] md:px-[4rem]">
+              <HamburgerAccordion setIsOpen={setIsOpen} />
+            </div> */}
 
             <div className="border-b border-white px-[2rem] pb-[2rem] md:px-[4rem]">
               <Link

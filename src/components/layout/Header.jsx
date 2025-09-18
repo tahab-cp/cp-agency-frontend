@@ -83,8 +83,11 @@ const Header = () => {
             <div>
               <NavigationLink href="/about">About CP</NavigationLink>
             </div>
-            <div>
+            {/* <div>
               <NavigationDropdown />
+            </div> */}
+            <div>
+              <NavigationLink href="/services">Services</NavigationLink>
             </div>
             <div>
               <NavigationLink href="/case-studies">Case Studies</NavigationLink>

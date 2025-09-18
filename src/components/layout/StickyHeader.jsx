@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavigationLink from "../common/NavigationLink";
@@ -12,23 +12,41 @@ import ContactPopoverBtn from "../common/ContactPopoverBtn";
 const StickyHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
-        setIsVisible(true);
-      } else {
+      const currentScrollY = window.scrollY;
+
+      // Always hide header when at top of page (scrollY <= 100)
+      if (currentScrollY <= 100) {
         setIsVisible(false);
+        prevScrollY.current = currentScrollY;
+        return;
       }
+
+      // Only show/hide behavior when scrolled beyond 100px
+      if (currentScrollY > prevScrollY.current) {
+        // Scrolling down - hide header
+        setIsVisible(false);
+      } else {
+        // Scrolling up - show header
+        setIsVisible(true);
+      }
+
+      // Update previous scroll position
+      prevScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed left-0 z-[999] w-full p-[1rem] transition-all duration-300 md:p-[2rem] ${isVisible ? "top-[0%]" : "top-[-100%]"}`}
+      className={`fixed left-0 z-[999] w-full p-[1rem] transition-transform duration-300 md:p-[2rem] ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
     >
       <div className="shadow-01 relative mx-auto flex w-full max-w-[120.329rem] items-center justify-between rounded-full bg-black/30 px-[2rem] py-[1rem] backdrop-blur-[10px]">
         <Link href="/" className="relative">
@@ -46,7 +64,8 @@ const StickyHeader = () => {
           <nav className="hidden items-center justify-center gap-[1rem] xl:flex">
             <NavigationLink href="/">Home</NavigationLink>
             <NavigationLink href="/about">About CP</NavigationLink>
-            <NavigationDropdown />
+            <NavigationLink href="/services">Services</NavigationLink>
+            {/* <NavigationDropdown /> */}
             <NavigationLink href="/case-studies">Case Studies</NavigationLink>
           </nav>
 

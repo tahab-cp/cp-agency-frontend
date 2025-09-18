@@ -18,7 +18,7 @@ const AboutSection = () => {
   const btnRef = useRef();
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
-  const lineRef = useRef(null);
+  // const lineRef = useRef(null);
 
   const handleTogglePlay = () => {
     if (!videoRef.current) return;
@@ -44,26 +44,26 @@ const AboutSection = () => {
       type: "lines",
     });
 
-    const line = lineRef.current.querySelector("path");
+    // const line = lineRef.current.querySelector("path");
 
-    if (line) {
-      gsap.fromTo(
-        line,
-        { drawSVG: "0%" },
-        {
-          drawSVG: "100%",
-          duration: 2,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: lineRef.current,
-            start: "top 50%", // when line enters viewport
-            end: "bottom 20%", // when line leaves viewport
-            scrub: true, // tie progress to scroll
-            markers: false, // set to true for debugging
-          },
-        },
-      );
-    }
+    // if (line) {
+    //   gsap.fromTo(
+    //     line,
+    //     { drawSVG: "0%" },
+    //     {
+    //       drawSVG: "100%",
+    //       duration: 2,
+    //       ease: "power2.inOut",
+    //       scrollTrigger: {
+    //         trigger: lineRef.current,
+    //         start: "top 50%", // when line enters viewport
+    //         end: "bottom 20%", // when line leaves viewport
+    //         scrub: true, // tie progress to scroll
+    //         markers: false, // set to true for debugging
+    //       },
+    //     },
+    //   );
+    // }
 
     gsap.fromTo(
       splitDesc.lines,
@@ -133,9 +133,9 @@ const AboutSection = () => {
       </div>
 
       {/* Decorative stroke line */}
-      <div ref={lineRef} className="absolute inset-0 z-[1]">
+      {/* <div ref={lineRef} className="absolute inset-0 z-[1]">
         <LineStroke02 className="absolute top-[90rem] left-1/2 w-full -translate-x-1/2" />
-      </div>
+      </div> */}
 
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
         <h5

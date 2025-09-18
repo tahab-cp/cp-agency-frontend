@@ -9,7 +9,7 @@ const TestimonialsCard = ({ review, authorImage, authorName, authorRole }) => {
       </div>
 
       {/* Review Text */}
-      <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-white/50">
+      <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
         {review}
       </p>
 
@@ -29,7 +29,7 @@ const TestimonialsCard = ({ review, authorImage, authorName, authorRole }) => {
           <h5 className="text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
             {authorName}
           </h5>
-          <h6 className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]/50">
+          <h6 className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]">
             {authorRole}
           </h6>
         </div>
