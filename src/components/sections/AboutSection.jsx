@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-import LineStroke02 from "@/assets/decorative-elements/line-stroke-02.svg";
 import CommonBtn3 from "../common/CommonBtn3";
-import CLetter from "@/assets/decorative-elements/c-letter.svg";
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeOff } from "lucide-react";
 import { aboutCardData } from "@/constants/homePage";
@@ -18,52 +16,22 @@ const AboutSection = () => {
   const btnRef = useRef();
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
-  // const lineRef = useRef(null);
 
-  const handleTogglePlay = () => {
-    if (!videoRef.current) return;
-
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleToggleMute = () => {
-    if (!videoRef.current) return;
-
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
+  // State for flag ticker
+  const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
+  const flags = ["🇬🇧", "🇦🇺", "🇺🇸"];
 
   useEffect(() => {
+    // Flag ticker animation
+    const flagInterval = setInterval(() => {
+      setCurrentFlagIndex((prevIndex) =>
+        prevIndex === flags.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 1500); // Change flag every 1.5 seconds
+
     const splitDesc = new SplitText(descRef.current, {
       type: "lines",
     });
-
-    // const line = lineRef.current.querySelector("path");
-
-    // if (line) {
-    //   gsap.fromTo(
-    //     line,
-    //     { drawSVG: "0%" },
-    //     {
-    //       drawSVG: "100%",
-    //       duration: 2,
-    //       ease: "power2.inOut",
-    //       scrollTrigger: {
-    //         trigger: lineRef.current,
-    //         start: "top 50%", // when line enters viewport
-    //         end: "bottom 20%", // when line leaves viewport
-    //         scrub: true, // tie progress to scroll
-    //         markers: false, // set to true for debugging
-    //       },
-    //     },
-    //   );
-    // }
 
     gsap.fromTo(
       splitDesc.lines,
@@ -122,20 +90,35 @@ const AboutSection = () => {
         },
       },
     );
+
+    return () => clearInterval(flagInterval);
   }, []);
+
+  const handleTogglePlay = () => {
+    if (!videoRef.current) return;
+
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleToggleMute = () => {
+    if (!videoRef.current) return;
+
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
 
   return (
     <section className="relative py-[5rem] xl:py-[10rem]">
       {/* Bg Element */}
       <div className="absolute inset-0 z-[0] hidden overflow-hidden xl:block">
-        {/* <CLetter className="absolute top-[3.1rem] right-[-18.341rem] h-[60.3rem] w-[56rem]" /> */}
         <CLetter2 className="absolute top-[3.1rem] right-[-18.341rem] h-[60.3rem] w-[56rem]" />
       </div>
-
-      {/* Decorative stroke line */}
-      {/* <div ref={lineRef} className="absolute inset-0 z-[1]">
-        <LineStroke02 className="absolute top-[90rem] left-1/2 w-full -translate-x-1/2" />
-      </div> */}
 
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
         <h5
@@ -149,7 +132,10 @@ const AboutSection = () => {
           long-term partnerships, bring over a decade of industry expertise, and
           take pride in <span className="text-[#3078FF]">award-winning</span>,
           pixel-perfect work.
-          <div className="mt-[2rem]">We work with clients in 🇬🇧 🇦🇺 🇺🇸</div>
+          <div className="mt-[2rem] flex items-center justify-center gap-[1rem] xl:justify-start">
+            We work with clients in{" "}
+            <span className="flag-ticker">{flags[currentFlagIndex]}</span>
+          </div>
         </h5>
 
         <div ref={btnRef} className="opacity-0">
