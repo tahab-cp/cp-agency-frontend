@@ -458,6 +458,34 @@ body {
   background-position: center;
 }
 
+.offer-grid-card {
+  position: relative;
+  border: 0.85px solid #ffffff;
+  border-radius: 2rem;
+  background: linear-gradient(
+    301.83deg,
+    rgba(255, 255, 255, 0.05) 1.23%,
+    rgba(29, 29, 29, 0.05) 95.04%
+  );
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .offer-grid-card {
+    position: relative;
+    border: 0.85px solid #ffffff;
+    border-radius: 2rem;
+    background: linear-gradient(
+      301.83deg,
+      rgba(255, 255, 255, 0.05) 1.23%,
+      rgba(29, 29, 29, 0.05) 95.04%
+    );
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
+}
+
 .offer-cta-card {
   position: relative;
   border: 0.85px solid #ffffff;

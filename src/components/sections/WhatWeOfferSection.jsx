@@ -17,25 +17,25 @@ import gsap from "gsap";
 
 const WhatWeOfferSection = () => {
   const labelRef = useRef();
-  const gridCardRef1 = useRef();
-  const gridCardRef2 = useRef();
-  const gridCardRef3 = useRef();
-  const gridCardRef4 = useRef();
-  const gridCardRef5 = useRef();
-  const gridCardRef6 = useRef();
-  const gridCardRef7 = useRef();
+  // const gridCardRef1 = useRef();
+  // const gridCardRef2 = useRef();
+  // const gridCardRef3 = useRef();
+  // const gridCardRef4 = useRef();
+  // const gridCardRef5 = useRef();
+  // const gridCardRef6 = useRef();
+  // const gridCardRef7 = useRef();
   const lineRef = useRef(null);
 
   useEffect(() => {
-    const gridCardRefs = [
-      gridCardRef1,
-      gridCardRef2,
-      gridCardRef3,
-      gridCardRef4,
-      gridCardRef5,
-      gridCardRef6,
-      gridCardRef7,
-    ];
+    // const gridCardRefs = [
+    //   gridCardRef1,
+    //   gridCardRef2,
+    //   gridCardRef3,
+    //   gridCardRef4,
+    //   gridCardRef5,
+    //   gridCardRef6,
+    //   gridCardRef7,
+    // ];
 
     const line = lineRef.current.querySelector("path");
 
@@ -68,37 +68,37 @@ const WhatWeOfferSection = () => {
       repeatDelay: 0.5, // Small pause between wobbles
     });
 
-    gridCardRefs.forEach((ref, index) => {
-      if (ref.current) {
-        gsap.fromTo(
-          gsap.utils.toArray(ref.current.children),
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power2.out",
-            delay: index * 0.1, // Stagger the start of each grid animation
-            clearProps: "all",
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-          },
-        );
-      }
-    });
+    // gridCardRefs.forEach((ref, index) => {
+    //   if (ref.current) {
+    //     gsap.fromTo(
+    //       gsap.utils.toArray(ref.current.children),
+    //       { opacity: 0 },
+    //       {
+    //         opacity: 1,
+    //         duration: 0.6,
+    //         stagger: 0.1,
+    //         ease: "power2.out",
+    //         delay: index * 0.1, // Stagger the start of each grid animation
+    //         clearProps: "all",
+    //         scrollTrigger: {
+    //           trigger: ref.current,
+    //           start: "top 80%",
+    //           toggleActions: "play none none none",
+    //         },
+    //       },
+    //     );
+    //   }
+    // });
   }, []);
 
   return (
-    <section className="offer-sec relative py-[5rem] xl:py-[8rem]">
+    <section className="offer-sec relative pt-[5rem] pb-[23.5rem] xl:pt-[8rem]">
       {/* Decorative stroke line */}
       <div
         ref={lineRef}
         className="pointer-events-none absolute inset-0 z-[1] select-none"
       >
-        <LineStroke03 className="absolute top-[345rem] left-1/2 w-full -translate-x-1/2 md:top-[320rem] lg:top-[235rem] xl:top-[180.6rem]" />
+        <LineStroke03 className="absolute bottom-[6.3rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 
       {/* <div className="sticky top-[10rem] z-[100] flex justify-end pr-[10rem]">
@@ -133,7 +133,94 @@ const WhatWeOfferSection = () => {
           />
         </div>
 
-        <div className="mx-auto flex w-full max-w-[120rem] flex-col gap-[2rem] lg:flex-row lg:gap-[0rem] 2xl:max-w-[130rem]">
+        <div className="mx-auto grid w-full max-w-[132rem] grid-cols-3 gap-[7.7rem]">
+          <div className="offer-grid-card h-[36.4rem] w-full">
+            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
+              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+                <span>Website Development</span>
+
+                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
+                  <ClickArrowYellowIcon />
+                </div>
+              </h3>
+
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
+                libero eget volutpat porta
+              </p>
+            </div>
+
+            <div className="relative left-[6.3rem] mt-[1.2rem]">
+              <Image
+                src="/images/offer-web-img.png"
+                alt="offer web image"
+                width={367}
+                height={251}
+                priority
+              />
+            </div>
+          </div>
+
+          <div className="offer-grid-card h-[36.4rem] w-full">
+            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
+              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+                <span>
+                  Design and <br /> Branding
+                </span>
+
+                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
+                  <ClickArrowGreenIcon />
+                </div>
+              </h3>
+
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
+                libero eget volutpat porta
+              </p>
+            </div>
+
+            <div className="relative left-[9.8rem] mt-[1.2rem]">
+              <Image
+                src="/images/offer-design-img.png"
+                alt="offer web image"
+                width={222}
+                height={227}
+                priority
+              />
+            </div>
+          </div>
+
+          <div className="offer-grid-card h-[36.4rem] w-full">
+            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
+              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+                <span>
+                  Maintenance <br /> and Growth
+                </span>
+
+                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
+                  <ClickArrowPinkIcon />
+                </div>
+              </h3>
+
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
+                libero eget volutpat porta
+              </p>
+            </div>
+
+            <div className="relative left-[6.3rem]">
+              <Image
+                src="/images/offer-maintenance-img.png"
+                alt="offer web image"
+                width={292}
+                height={256}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="mx-auto flex w-full max-w-[120rem] flex-col gap-[2rem] lg:flex-row lg:gap-[0rem] 2xl:max-w-[130rem]">
           <div
             ref={gridCardRef1}
             className="flex flex-col items-center gap-[3.3rem] lg:items-start"
@@ -201,10 +288,10 @@ const WhatWeOfferSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
-      <div className="relative z-[2] bg-white px-[3rem] py-[5rem] xl:mt-[-6rem] xl:h-[58.3rem] xl:px-[0rem] xl:py-[0rem]">
+      {/* <div className="relative z-[2] bg-white px-[3rem] py-[5rem] xl:mt-[-6rem] xl:h-[58.3rem] xl:px-[0rem] xl:py-[0rem]">
         <div className="relative mx-auto flex w-full max-w-[120rem] flex-col-reverse gap-[5rem] lg:flex-row lg:gap-[12.9rem] 2xl:max-w-[130rem]">
           <div
             ref={gridCardRef3}
@@ -286,9 +373,9 @@ const WhatWeOfferSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="relative z-[2] mx-auto flex w-full max-w-[120rem] flex-col px-[3rem] pt-[5rem] lg:flex-row xl:px-[0rem] xl:pt-[10rem] 2xl:max-w-[133rem]">
+      {/* <div className="relative z-[2] mx-auto flex w-full max-w-[120rem] flex-col px-[3rem] pt-[5rem] lg:flex-row xl:px-[0rem] xl:pt-[10rem] 2xl:max-w-[133rem]">
         <div
           ref={gridCardRef5}
           className="flex flex-col items-center lg:items-start"
@@ -354,33 +441,12 @@ const WhatWeOfferSection = () => {
                 bgColor="#EE8D00"
               />
             </div>
-
-            {/* <Link
-              href="/case-study"
-              className="group relative z-[10] inline-flex size-[16.3rem] items-center justify-center xl:absolute xl:right-[10rem] xl:bottom-[25rem]"
-            >
-              <Image
-                src="/images/case-study-btn-img-2(a).png"
-                width={163}
-                height={163}
-                alt="Button  Images"
-                className="animation-duration-[20s] group-hover:paused absolute inset-0 animate-spin"
-              />
-
-              <Image
-                src="/images/case-study-btn-dark-img-2(b).png"
-                width={135}
-                height={135}
-                alt="Button  Images"
-                className="absolute top-1/2 left-1/2 -translate-1/2"
-              />
-            </Link> */}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div ref={gridCardRef7} className="px-[3rem] xl:px-[0rem]">
-        <div className="offer-cta-card mx-auto mt-[4rem] flex max-w-[120rem] rounded-[2rem] xl:mt-[-9rem]">
+      <div className="mt-[22.8rem] px-[3rem] xl:px-[0rem]">
+        <div className="offer-cta-card mx-auto flex max-w-[120rem] rounded-[2rem]">
           <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
             <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
               Need bold design or reliable code or both? You’re in the right
