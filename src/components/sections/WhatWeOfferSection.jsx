@@ -92,13 +92,13 @@ const WhatWeOfferSection = () => {
   }, []);
 
   return (
-    <section className="offer-sec relative pt-[5rem] pb-[23.5rem] xl:pt-[8rem]">
+    <section className="offer-sec relative pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
       {/* Decorative stroke line */}
       <div
         ref={lineRef}
         className="pointer-events-none absolute inset-0 z-[1] select-none"
       >
-        <LineStroke03 className="absolute bottom-[6.3rem] left-1/2 w-full -translate-x-1/2" />
+        <LineStroke03 className="absolute bottom-[2rem] left-1/2 w-full -translate-x-1/2 xl:bottom-[6.3rem]" />
       </div>
 
       {/* <div className="sticky top-[10rem] z-[100] flex justify-end pr-[10rem]">
@@ -124,7 +124,7 @@ const WhatWeOfferSection = () => {
         </Link>
       </div> */}
 
-      <div className="relative z-[3] flex flex-col items-center gap-[4rem] px-[3rem] pb-[6rem] md:gap-[7.6rem] xl:px-[0rem] xl:pb-[0rem]">
+      <div className="relative z-[3] flex flex-col items-center gap-[4rem] px-[3rem] md:gap-[7.6rem] xl:px-[0rem]">
         <div ref={labelRef} className="rotate-[2deg]">
           <SectionLabel2
             text="What We Offer"
@@ -133,13 +133,13 @@ const WhatWeOfferSection = () => {
           />
         </div>
 
-        <div className="mx-auto grid w-full max-w-[132rem] grid-cols-3 gap-[7.7rem]">
-          <div className="offer-grid-card h-[36.4rem] w-full">
-            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
-              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+        <div className="mx-auto grid w-full max-w-[132rem] grid-cols-1 gap-[4rem] md:gap-[7.7rem] lg:grid-cols-2 xl:grid-cols-3">
+          <div className="flex w-full flex-col items-center overflow-hidden lg:items-stretch">
+            <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.4rem] px-[3rem] pt-[3.8rem] text-center xl:items-start xl:px-0 xl:pl-[5.2rem] xl:text-left">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
                 <span>Website Development</span>
 
-                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
+                <div className="absolute right-[1rem] bottom-[5rem] inline-flex size-[4rem] items-center justify-center md:bottom-[2.1rem] xl:right-[3.4rem]">
                   <ClickArrowYellowIcon />
                 </div>
               </h3>
@@ -150,7 +150,7 @@ const WhatWeOfferSection = () => {
               </p>
             </div>
 
-            <div className="relative left-[6.3rem] mt-[1.2rem]">
+            <div className="relative left-[6rem] z-[10] mt-[-10rem] md:left-[9rem] md:mt-[-12.5rem] xl:left-[6.3rem]">
               <Image
                 src="/images/offer-web-img.png"
                 alt="offer web image"
@@ -161,7 +161,65 @@ const WhatWeOfferSection = () => {
             </div>
           </div>
 
-          <div className="offer-grid-card h-[36.4rem] w-full">
+          <div className="flex w-full flex-col items-center overflow-hidden lg:items-stretch">
+            <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.4rem] px-[3rem] pt-[3.8rem] text-center xl:items-start xl:px-0 xl:pl-[5.2rem] xl:text-left">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+                <span>
+                  Design and <br /> Branding
+                </span>
+
+                <div className="absolute right-[1rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center xl:right-[3.4rem]">
+                  <ClickArrowGreenIcon />
+                </div>
+              </h3>
+
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
+                libero eget volutpat porta
+              </p>
+            </div>
+
+            <div className="relative left-[2rem] z-[10] mt-[-10.1rem] lg:left-[12rem] xl:left-[9.8rem]">
+              <Image
+                src="/images/offer-design-img.png"
+                alt="offer web image"
+                width={222}
+                height={227}
+                priority
+              />
+            </div>
+          </div>
+
+          <div className="flex w-full flex-col items-center overflow-hidden text-center lg:col-span-2 xl:col-span-1 xl:items-start xl:text-left">
+            <div className="offer-grid-card flex h-[36.4rem] flex-col gap-[1.4rem] px-[3rem] pt-[3.8rem] xl:px-0 xl:pl-[5.2rem]">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
+                <span>
+                  Maintenance <br /> and Growth
+                </span>
+
+                <div className="absolute right-[0rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center md:right-[1rem] xl:right-[3.4rem]">
+                  <ClickArrowPinkIcon />
+                </div>
+              </h3>
+
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
+                libero eget volutpat porta
+              </p>
+            </div>
+
+            <div className="relative left-[4rem] z-[10] mt-[-14rem] xl:left-[9.8rem]">
+              <Image
+                src="/images/offer-maintenance-img.png"
+                alt="offer web image"
+                width={292}
+                height={256}
+                priority
+              />
+            </div>
+          </div>
+
+          {/* <div className="offer-grid-card h-[36.4rem] w-full">
             <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
               <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
                 <span>
@@ -217,7 +275,7 @@ const WhatWeOfferSection = () => {
                 priority
               />
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* <div className="mx-auto flex w-full max-w-[120rem] flex-col gap-[2rem] lg:flex-row lg:gap-[0rem] 2xl:max-w-[130rem]">
@@ -445,7 +503,7 @@ const WhatWeOfferSection = () => {
         </div>
       </div> */}
 
-      <div className="mt-[22.8rem] px-[3rem] xl:px-[0rem]">
+      <div className="mt-[6rem] px-[3rem] md:mt-[13rem] xl:px-[0rem]">
         <div className="offer-cta-card mx-auto flex max-w-[120rem] rounded-[2rem]">
           <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
             <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
