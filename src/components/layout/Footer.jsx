@@ -138,13 +138,44 @@ const Footer = () => {
               ))}
           </div>
 
-          <div className="flex flex-col gap-[8.7rem]">
+          <div className="flex flex-col gap-[2rem]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-white">
               Ready to Start
             </h5>
 
-            <ul className="flex list-inside list-disc flex-col gap-[1.5rem]">
-              <li>Give Us Call 0161 820 2667l</li>
+            <ul className="flex flex-col gap-[1.5rem]">
+              <li className="flex flex-col">
+                <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#FFC300]">
+                  Give Us Call
+                </span>{" "}
+                <a
+                  href="tel:016182026671"
+                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70"
+                >
+                  0161 820 26671
+                </a>
+              </li>
+
+              <li className="flex flex-col">
+                <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#FF37B3]">
+                  Email Us
+                </span>{" "}
+                <a
+                  href="mailto:hello@cp.agency"
+                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70"
+                >
+                  hello@cp.agency
+                </a>
+              </li>
+
+              <li className="flex flex-col">
+                <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#3078FF]">
+                  Address
+                </span>{" "}
+                <span className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70">
+                  Manchester, M12 6PN
+                </span>
+              </li>
             </ul>
           </div>
         </div>
