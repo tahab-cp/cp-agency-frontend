@@ -133,15 +133,11 @@ const WhatWeOfferSection = () => {
           />
         </div>
 
-        <div className="mx-auto grid w-full max-w-[132rem] grid-cols-1 gap-[4rem] md:gap-[7.7rem] lg:grid-cols-2 xl:grid-cols-3">
-          <div className="flex w-full flex-col items-center overflow-hidden lg:items-stretch">
-            <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.4rem] px-[3rem] pt-[3.8rem] text-center xl:items-start xl:px-0 xl:pl-[5.2rem] xl:text-left">
+        <div className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[7.7rem] gap-y-[20rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal">
+          <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left">
+            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
                 <span>Website Development</span>
-
-                <div className="absolute right-[1rem] bottom-[5rem] inline-flex size-[4rem] items-center justify-center md:bottom-[2.1rem] xl:right-[3.4rem]">
-                  <ClickArrowYellowIcon />
-                </div>
               </h3>
 
               <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
@@ -150,27 +146,23 @@ const WhatWeOfferSection = () => {
               </p>
             </div>
 
-            <div className="relative left-[6rem] z-[10] mt-[-10rem] md:left-[9rem] md:mt-[-12.5rem] xl:left-[6.3rem]">
+            <div className="pointer-events-none relative z-[10]">
               <Image
                 src="/images/offer-web-img.png"
                 alt="offer web image"
-                width={367}
-                height={251}
+                width={363}
+                height={316}
                 priority
               />
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center overflow-hidden lg:items-stretch">
-            <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.4rem] px-[3rem] pt-[3.8rem] text-center xl:items-start xl:px-0 xl:pl-[5.2rem] xl:text-left">
+          <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left">
+            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
                 <span>
                   Design and <br /> Branding
                 </span>
-
-                <div className="absolute right-[1rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center xl:right-[3.4rem]">
-                  <ClickArrowGreenIcon />
-                </div>
               </h3>
 
               <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
@@ -179,27 +171,23 @@ const WhatWeOfferSection = () => {
               </p>
             </div>
 
-            <div className="relative left-[2rem] z-[10] mt-[-10.1rem] lg:left-[12rem] xl:left-[9.8rem]">
+            <div className="pointer-events-none relative z-[10]">
               <Image
                 src="/images/offer-design-img.png"
                 alt="offer web image"
-                width={222}
-                height={227}
+                width={258}
+                height={290}
                 priority
               />
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center overflow-hidden text-center lg:col-span-2 xl:col-span-1 xl:items-start xl:text-left">
-            <div className="offer-grid-card flex h-[36.4rem] flex-col gap-[1.4rem] px-[3rem] pt-[3.8rem] xl:px-0 xl:pl-[5.2rem]">
+          <div className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center lg:col-span-2 xl:col-span-1 xl:text-left">
+            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
                 <span>
                   Maintenance <br /> and Growth
                 </span>
-
-                <div className="absolute right-[0rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center md:right-[1rem] xl:right-[3.4rem]">
-                  <ClickArrowPinkIcon />
-                </div>
               </h3>
 
               <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
@@ -208,74 +196,16 @@ const WhatWeOfferSection = () => {
               </p>
             </div>
 
-            <div className="relative left-[4rem] z-[10] mt-[-14rem] xl:left-[9.8rem]">
+            <div className="pointer-events-none relative z-[10]">
               <Image
                 src="/images/offer-maintenance-img.png"
                 alt="offer web image"
-                width={292}
-                height={256}
+                width={209}
+                height={241}
                 priority
               />
             </div>
           </div>
-
-          {/* <div className="offer-grid-card h-[36.4rem] w-full">
-            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
-              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
-                <span>
-                  Design and <br /> Branding
-                </span>
-
-                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
-                  <ClickArrowGreenIcon />
-                </div>
-              </h3>
-
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
-                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
-                libero eget volutpat porta
-              </p>
-            </div>
-
-            <div className="relative left-[9.8rem] mt-[1.2rem]">
-              <Image
-                src="/images/offer-design-img.png"
-                alt="offer web image"
-                width={222}
-                height={227}
-                priority
-              />
-            </div>
-          </div>
-
-          <div className="offer-grid-card h-[36.4rem] w-full">
-            <div className="mt-[3.8rem] flex flex-col gap-[1.4rem] pl-[5.2rem]">
-              <h3 className="relative max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] tracking-[-0.02em] text-white">
-                <span>
-                  Maintenance <br /> and Growth
-                </span>
-
-                <div className="absolute right-[3.4rem] bottom-[2.1rem] inline-flex size-[4rem] items-center justify-center">
-                  <ClickArrowPinkIcon />
-                </div>
-              </h3>
-
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
-                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
-                libero eget volutpat porta
-              </p>
-            </div>
-
-            <div className="relative left-[6.3rem]">
-              <Image
-                src="/images/offer-maintenance-img.png"
-                alt="offer web image"
-                width={292}
-                height={256}
-                priority
-              />
-            </div>
-          </div> */}
         </div>
 
         {/* <div className="mx-auto flex w-full max-w-[120rem] flex-col gap-[2rem] lg:flex-row lg:gap-[0rem] 2xl:max-w-[130rem]">
@@ -503,7 +433,7 @@ const WhatWeOfferSection = () => {
         </div>
       </div> */}
 
-      <div className="mt-[6rem] px-[3rem] md:mt-[13rem] xl:px-[0rem]">
+      <div className="mt-[15rem] px-[3rem] md:mt-[22.8rem] xl:px-[0rem]">
         <div className="offer-cta-card mx-auto flex max-w-[120rem] rounded-[2rem]">
           <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
             <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
