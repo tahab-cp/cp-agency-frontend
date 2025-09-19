@@ -194,7 +194,7 @@ const HeroSection = () => {
 
           <ul
             ref={logoRef}
-            className="hidden grid-cols-1 items-center gap-[4rem] opacity-0 md:grid-cols-4 lg:grid-cols-7 xl:grid"
+            className="hidden grid-cols-1 items-center gap-[4rem] opacity-0 md:grid-cols-4 lg:grid-cols-6 xl:grid"
           >
             {logoPopupsData.map((item, idx) => (
               <li key={idx}>

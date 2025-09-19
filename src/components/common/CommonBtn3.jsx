@@ -12,7 +12,7 @@ const CommonBtn3 = ({
     <Link href={href} className="group inline-flex cursor-pointer items-center">
       {/* Text */}
       <div
-        className="relative z-[2] h-[4rem] overflow-hidden rounded-[6rem] px-[2rem] text-[1.6rem] font-semibold md:h-[5rem] md:px-[3rem] md:text-[2rem]"
+        className="relative z-[2] h-[4rem] min-w-max overflow-hidden rounded-[6rem] px-[2rem] text-[1.6rem] font-semibold md:h-[5rem] md:px-[3rem] md:text-[2rem]"
         style={{ background: bgColor, color: textColor }}
       >
         <span className="flex size-full items-center justify-center transition-all duration-200 group-hover:-translate-y-full">

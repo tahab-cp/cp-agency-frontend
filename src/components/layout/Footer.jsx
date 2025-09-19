@@ -17,6 +17,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import CLetter2 from "@/assets/decorative-elements/c-letter-2";
 import PLetter2 from "@/assets/decorative-elements/p-letter-2";
+import CommonBtn3 from "../common/CommonBtn3";
 
 const Footer = () => {
   const lineRef = useRef(null);
@@ -103,9 +104,7 @@ const Footer = () => {
         <div className="relative z-[3] mx-auto mt-[5.7rem] hidden max-w-[118.4rem] justify-between xl:flex">
           <div className="flex flex-col gap-[8.7rem]">
             {footerLinksCardData
-              .filter(
-                (item) => item.title === "Design" || item.title === "Links",
-              )
+              .filter((item) => item.title === "Quick Links")
               .map((item, idx) => (
                 <FooterLinkCard
                   key={idx}
@@ -117,9 +116,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-[8.7rem]">
             {footerLinksCardData
-              .filter(
-                (item) => item.title === "Branding" || item.title === "Others",
-              )
+              .filter((item) => item.title === "Services")
               .map((item, idx) => (
                 <FooterLinkCard
                   key={idx}
@@ -131,7 +128,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-[8.7rem]">
             {footerLinksCardData
-              .filter((item) => item.title === "Website Development")
+              .filter((item) => item.title === "Legal")
               .map((item, idx) => (
                 <FooterLinkCard
                   key={idx}
@@ -142,19 +139,13 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-[8.7rem]">
-            {footerLinksCardData
-              .filter(
-                (item) =>
-                  item.title === "Maintenance & Growth" ||
-                  item.title === "Legal",
-              )
-              .map((item, idx) => (
-                <FooterLinkCard
-                  key={idx}
-                  title={item.title}
-                  links={item.links}
-                />
-              ))}
+            <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-white">
+              Ready to Start
+            </h5>
+
+            <ul className="flex list-inside list-disc flex-col gap-[1.5rem]">
+              <li>Give Us Call 0161 820 2667l</li>
+            </ul>
           </div>
         </div>
 
@@ -170,20 +161,24 @@ const Footer = () => {
           ))}
         </div>
 
-        <ul className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] grid-cols-1 items-center justify-items-center gap-[4rem] rounded-[1.6rem] bg-white/15 px-[2.4rem] py-[2rem] md:grid-cols-3 xl:grid xl:grid-cols-7">
-          {logoPopupsData.map((item, idx) => (
-            <li key={idx}>
-              <LogoPopup
-                logo={item.logo}
-                popupImage={item.popupImage}
-                title={item.title}
-                href={item.href}
-                logoWidth={item.logoWidth}
-                logoHeight={item.logoHeight}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] xl:flex">
+          <div className="grid w-full grid-cols-6 items-center justify-items-center gap-[2rem]">
+            {logoPopupsData.map((item, idx) => (
+              <div key={idx}>
+                <LogoPopup
+                  logo={item.logo}
+                  popupImage={item.popupImage}
+                  title={item.title}
+                  href={item.href}
+                  logoWidth={item.logoWidth}
+                  logoHeight={item.logoHeight}
+                />
+              </div>
+            ))}
+          </div>
+
+          <CommonBtn3 label="Book a Call" href="/contact" bgColor="#3078FF" />
+        </div>
 
         {/* Mobile Logos */}
         <div className="relative z-[3] my-[4rem] block w-full xl:hidden">
