@@ -137,7 +137,7 @@ const CaseStudiesGrid = ({
               height={440}
               width={555}
               priority
-              className="size-full object-cover"
+              className="size-full object-contain"
             />
           </div>
 

@@ -530,7 +530,7 @@ body {
 .case-studies-grid {
   position: relative;
   border-radius: 2rem;
-  padding: 3rem;
+  padding: 1rem 2rem;
   background-color: white;
   z-index: 0;
   transition: all 0.3s ease;

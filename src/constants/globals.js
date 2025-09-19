@@ -417,6 +417,7 @@ export const footerLinksCardData = [
       { label: "Partnership", href: "/services" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Cookies Policy", href: "/cookies-policy" },
+      { label: "FAQs", href: "/faq" },
     ],
   },
 ];

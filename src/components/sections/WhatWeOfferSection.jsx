@@ -196,7 +196,7 @@ const WhatWeOfferSection = () => {
 
         <div
           ref={gridCardRef1}
-          className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[7.7rem] gap-y-[20rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal"
+          className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[6rem] gap-y-[20rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal"
         >
           {/* Card 1 with yellow cursor */}
           <Link
@@ -251,8 +251,8 @@ const WhatWeOfferSection = () => {
               <Image
                 src="/images/offer-design-img.png"
                 alt="offer web image"
-                width={258}
-                height={290}
+                width={324}
+                height={337}
                 priority
               />
             </div>
