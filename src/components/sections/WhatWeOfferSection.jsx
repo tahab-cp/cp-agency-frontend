@@ -4,7 +4,7 @@ import LineStroke03 from "@/assets/decorative-elements/line-stroke-03.svg";
 import CommonBtn3 from "../common/CommonBtn3";
 import SectionLabel2 from "../common/SectionLabel2";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 
@@ -13,6 +13,11 @@ const WhatWeOfferSection = () => {
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
   const lineRef = useRef(null);
+  const cursorRef = useRef(null);
+
+  // State to track which card is being hovered and cursor color
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [cursorColor, setCursorColor] = useState("#FFC300"); // Default color
 
   useEffect(() => {
     const gridCardRefs = [gridCardRef1, gridCardRef2];
@@ -29,10 +34,10 @@ const WhatWeOfferSection = () => {
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: lineRef.current,
-            start: "top 50%", // when line enters viewport
-            end: "bottom 20%", // when line leaves viewport
-            scrub: true, // tie progress to scroll
-            markers: false, // set to true for debugging
+            start: "top 50%",
+            end: "bottom 20%",
+            scrub: true,
+            markers: false,
           },
         },
       );
@@ -40,12 +45,12 @@ const WhatWeOfferSection = () => {
 
     // Wobble/shake animation
     gsap.to(labelRef.current, {
-      rotation: "+=3", // Rotate 3 degrees back and forth
-      duration: 0.15, // Very short duration for quick wobble
-      yoyo: true, // Go back and forth
-      repeat: -1, // Infinite repeat
-      ease: "sine.inOut", // Best ease for wobble effects
-      repeatDelay: 0.5, // Small pause between wobbles
+      rotation: "+=3",
+      duration: 0.15,
+      yoyo: true,
+      repeat: -1,
+      ease: "sine.inOut",
+      repeatDelay: 0.5,
     });
 
     gridCardRefs.forEach((ref, index) => {
@@ -58,7 +63,7 @@ const WhatWeOfferSection = () => {
             duration: 0.6,
             stagger: 0.1,
             ease: "power2.out",
-            delay: index * 0.1, // Stagger the start of each grid animation
+            delay: index * 0.1,
             clearProps: "all",
             scrollTrigger: {
               trigger: ref.current,
@@ -69,10 +74,109 @@ const WhatWeOfferSection = () => {
         );
       }
     });
+
+    const cursor = cursorRef.current;
+
+    // Initial cursor position
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+
+    // Move the custom cursor
+    const moveCursor = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    // Animate cursor position with GSAP
+    const updateCursor = () => {
+      // Calculate new position with a slight delay for smoothness
+      cursorX = gsap.utils.interpolate(cursorX, mouseX, 0.1);
+      cursorY = gsap.utils.interpolate(cursorY, mouseY, 0.1);
+
+      // Apply the new position
+      gsap.set(cursor, {
+        x: cursorX - cursor.offsetWidth / 2,
+        y: cursorY - cursor.offsetHeight / 2,
+      });
+
+      requestAnimationFrame(updateCursor);
+    };
+
+    // Set up event listeners
+    window.addEventListener("mousemove", moveCursor);
+
+    // Start the animation loop
+    updateCursor();
+
+    // Clean up
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
   }, []);
 
+  // Handle mouse enter for custom cursor
+  const handleMouseEnter = (cardIndex, color) => {
+    setHoveredCard(cardIndex);
+    setCursorColor(color);
+
+    gsap.to(cursorRef.current, {
+      scale: 1,
+      opacity: 1,
+      width: "100px",
+      height: "100px",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
+    gsap.to(".cursor-text", {
+      opacity: 1,
+      delay: 0.1,
+      duration: 0.2,
+      ease: "power2.out",
+    });
+  };
+
+  // Handle mouse leave for custom cursor
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+
+    gsap.to(cursorRef.current, {
+      scale: 0,
+      opacity: 0,
+      width: "20px",
+      height: "20px",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
+    gsap.to(".cursor-text", {
+      opacity: 0,
+      duration: 0.1,
+      ease: "power2.out",
+    });
+  };
+
   return (
-    <section className="offer-sec relative pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
+    <section className="offer-sec relative cursor-none pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
+      {/* Custom Cursor with dynamic background color */}
+      <div
+        ref={cursorRef}
+        className="pointer-events-none fixed top-0 left-0 z-50 hidden items-center justify-center rounded-full opacity-0 xl:flex"
+        style={{
+          width: "20px",
+          height: "20px",
+          backgroundColor: cursorColor,
+        }}
+      >
+        <span className="cursor-text text-center text-[1.2rem] leading-tight font-medium text-black opacity-0">
+          View Case
+          <br />
+          Study
+        </span>
+      </div>
+
       {/* Decorative stroke line */}
       <div
         ref={lineRef}
@@ -94,9 +198,12 @@ const WhatWeOfferSection = () => {
           ref={gridCardRef1}
           className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[7.7rem] gap-y-[20rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal"
         >
+          {/* Card 1 with yellow cursor */}
           <Link
             href="/case-studies"
             className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left"
+            onMouseEnter={() => handleMouseEnter(0, "#FFC300")}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
@@ -120,9 +227,12 @@ const WhatWeOfferSection = () => {
             </div>
           </Link>
 
+          {/* Card 2 with blue cursor */}
           <Link
             href="/case-studies"
             className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left"
+            onMouseEnter={() => handleMouseEnter(1, "#44B276")}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
@@ -148,9 +258,12 @@ const WhatWeOfferSection = () => {
             </div>
           </Link>
 
+          {/* Card 3 with red cursor */}
           <Link
             href="/case-studies"
             className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center lg:col-span-2 xl:col-span-1 xl:text-left"
+            onMouseEnter={() => handleMouseEnter(2, "#FF37B3")}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
               <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
@@ -185,7 +298,7 @@ const WhatWeOfferSection = () => {
         <div className="offer-cta-card mx-auto flex max-w-[120rem] rounded-[2rem]">
           <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
             <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
-              Need bold design or reliable code or both? You’re in the right
+              Need bold design or reliable code or both? You're in the right
               place.
             </p>
 
