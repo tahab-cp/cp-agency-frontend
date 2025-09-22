@@ -186,61 +186,32 @@ const AboutSection = () => {
       <div className="relative z-10 mx-auto mt-[5rem] flex max-w-[120rem] flex-col gap-[1.8rem] px-[3rem] lg:mt-[10rem] xl:flex-row xl:px-[0rem] 2xl:max-w-[135rem]">
         <div
           ref={gridCardRef1}
-          className="about-card-gradient relative -translate-y-8 transform overflow-hidden px-[2rem] py-[3rem] opacity-0 xl:w-[55%] 2xl:w-[60%]"
+          className="about-card-gradient relative -translate-y-8 transform overflow-hidden py-[3rem] opacity-0 xl:w-[55%]"
         >
           <div className="absolute top-[-11.9rem] left-[-10.5rem] z-[0] size-[30rem] bg-[#1534B699] blur-[100px]" />
           <div className="absolute right-0 bottom-[-26.656rem] z-[0] size-[30rem] bg-[#DFDFDF99] blur-[100px]" />
 
-          <div className="relative z-[1] flex flex-col items-center gap-[2rem] xl:items-start">
-            <button
-              onClick={handleTogglePlay}
-              className="inline-flex h-[4.4rem] cursor-pointer items-center justify-center gap-[1.2rem] rounded-[.8rem] border-[0.5px] border-dashed border-white px-[2rem] py-[.6rem] text-[1.6rem] leading-[2.4rem] font-medium text-white"
-            >
+          <div className="relative z-[1] h-[25rem] md:h-[45rem]">
+            <h3 className="px-[4rem] text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[5.6rem] md:leading-[6.4rem] xl:text-left">
+              We create <br />
+              <span className="text-[#FF37B3]">exceptional websites</span>
+            </h3>
+
+            <div className="relative flex w-full items-center justify-center md:bottom-[3rem]">
               <Image
-                src="/images/about-play-btn-img.svg"
-                alt="Avatar"
-                width={58}
-                height={32}
-              />
-
-              <span>Hear From Founder</span>
-            </button>
-
-            <div className="relative h-[20rem] w-full overflow-hidden rounded-[2rem] md:h-[50rem] xl:h-[40rem]">
-              <button
-                onClick={handleToggleMute}
-                className="absolute top-[1rem] right-[1rem] z-[10] flex size-[3rem] items-center justify-center rounded-[1rem] bg-black/80 text-white"
-              >
-                <span>
-                  {isMuted ? (
-                    <VolumeOff className="size-[1.6rem]" />
-                  ) : (
-                    <Volume2 className="size-[1.6rem]" />
-                  )}
-                </span>
-              </button>
-
-              <video
-                onClick={() => {
-                  handleToggleMute();
-                }}
-                ref={videoRef}
-                muted
-                autoPlay
-                loop
-                playsInline
+                src="/images/about-main-img.png"
+                alt="About Main Image"
+                height={355}
+                width={629}
                 className="size-full object-cover"
-              >
-                <source src="/videos/about-video.mp4" type="video/mp4" />
-                Your browser does not support the video.
-              </video>
+              />
             </div>
           </div>
         </div>
 
         <div
           ref={gridCardRef2}
-          className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 xl:w-[45%] 2xl:w-[40%]"
+          className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 xl:w-[45%]"
         >
           {aboutCardData.map((item, idx) => (
             <div

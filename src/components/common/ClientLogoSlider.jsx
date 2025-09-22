@@ -42,7 +42,7 @@ const ClientLogoSlider = () => {
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 10,
           },
         }}
@@ -57,17 +57,12 @@ const ClientLogoSlider = () => {
               {/* Logo button */}
               <button
                 onClick={() => handleLogoClick(idx)}
-                className={`cursor-pointer transition-all duration-300 ${
-                  activePopup === idx
-                    ? "opacity-100 grayscale-0"
-                    : "opacity-70 grayscale-100"
-                }`}
+                className={`flex cursor-pointer items-center justify-center transition-all duration-300`}
               >
-                <Image
+                <img
                   src={item.logo}
                   alt={`${item.title} Logo`}
-                  width={item.logoWidth}
-                  height={item.logoHeight}
+                  className="h-[4rem]"
                 />
               </button>
 

@@ -9,7 +9,7 @@ const FooterLinkCard = ({ title, links }) => {
 
       <ul className="flex list-inside list-disc flex-col gap-[1.5rem]">
         {links.map((link, index) => (
-          <li key={index} className="text-white/70 hover:text-white">
+          <li key={index} className="text-white">
             <Link
               href={link.href}
               className="text-[1.6rem] leading-[2.4rem] font-medium capitalize"

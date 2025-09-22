@@ -67,16 +67,9 @@ const LogoPopup = ({
       {/* Logo button */}
       <button
         onClick={() => setActivePopup(!activePopup)}
-        className={`cursor-pointer transition-all duration-300 ${
-          activePopup ? "opacity-100 grayscale-0" : "opacity-70 grayscale-100"
-        }`}
+        className={`cursor-pointer transition-all duration-300`}
       >
-        <Image
-          src={logo}
-          alt={`${title} Logo`}
-          width={logoWidth}
-          height={logoHeight}
-        />
+        <img src={logo} alt={`${title} Logo`} className="size-auto" />
       </button>
 
       {/* Popup */}
