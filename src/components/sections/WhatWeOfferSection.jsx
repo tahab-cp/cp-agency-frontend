@@ -201,16 +201,16 @@ const WhatWeOfferSection = () => {
           {/* Card 1 with yellow cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
             onMouseEnter={() => handleMouseEnter(0, "#FFC300")}
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
                 <span>Website Development</span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
                 Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
                 libero eget volutpat porta
               </p>
@@ -230,18 +230,18 @@ const WhatWeOfferSection = () => {
           {/* Card 2 with blue cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
             onMouseEnter={() => handleMouseEnter(1, "#44B276")}
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
                 <span>
                   Design and <br /> Branding
                 </span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
                 Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
                 libero eget volutpat porta
               </p>
@@ -261,18 +261,18 @@ const WhatWeOfferSection = () => {
           {/* Card 3 with red cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center lg:col-span-2 xl:col-span-1 xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#FF37B3] hover:!bg-[#FF37B3] lg:col-span-2 xl:col-span-1 xl:text-left"
             onMouseEnter={() => handleMouseEnter(2, "#FF37B3")}
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white">
+              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
                 <span>
                   Maintenance <br /> and Growth
                 </span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
                 Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
                 libero eget volutpat porta
               </p>

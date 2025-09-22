@@ -61,6 +61,21 @@ const ContactUsSection = () => {
       );
   }, []);
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <section className="relative overflow-hidden px-[3rem] pt-[18rem] pb-[5rem] md:pt-[20.6rem] xl:px-[0rem] xl:pb-[10rem]">
       {/* Decorative stroke line */}
@@ -181,9 +196,11 @@ const ContactUsSection = () => {
         </div>
 
         <div className="relative">
-          <Link
-            href="/contact"
-            className="group absolute top-[-14.7rem] right-[-12.8rem] z-[10] hidden size-[21rem] items-center justify-center xl:inline-flex"
+          <button
+            data-cal-namespace="15min"
+            data-cal-link="hassan-iqbal-mznzu9/15min"
+            data-cal-config='{"layout":"month_view","theme":"dark"}'
+            className="group absolute top-[-14.7rem] right-[-5rem] z-[10] hidden size-[21rem] cursor-pointer items-center justify-center xl:inline-flex 2xl:right-[-12.8rem]"
           >
             <Image
               src="/images/talk-expert-btn-img-2(a).svg"
@@ -200,7 +217,7 @@ const ContactUsSection = () => {
               alt="Button  Images"
               className="animation-duration-[20s] group-hover:paused absolute inset-0 animate-spin"
             />
-          </Link>
+          </button>
 
           <ContactForm />
         </div>

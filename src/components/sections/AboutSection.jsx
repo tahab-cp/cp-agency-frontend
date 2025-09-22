@@ -186,24 +186,24 @@ const AboutSection = () => {
       <div className="relative z-10 mx-auto mt-[5rem] flex max-w-[120rem] flex-col gap-[1.8rem] px-[3rem] lg:mt-[10rem] xl:flex-row xl:px-[0rem] 2xl:max-w-[135rem]">
         <div
           ref={gridCardRef1}
-          className="about-card-gradient relative -translate-y-8 transform overflow-hidden py-[3rem] opacity-0 xl:w-[55%]"
+          className="about-card-gradient relative -translate-y-8 transform overflow-hidden pt-[3rem] opacity-0 xl:w-[55%]"
         >
           <div className="absolute top-[-11.9rem] left-[-10.5rem] z-[0] size-[30rem] bg-[#1534B699] blur-[100px]" />
           <div className="absolute right-0 bottom-[-26.656rem] z-[0] size-[30rem] bg-[#DFDFDF99] blur-[100px]" />
 
-          <div className="relative z-[1] h-[25rem] md:h-[45rem]">
+          <div className="relative z-[1] flex h-full flex-col justify-between gap-[2rem]">
             <h3 className="px-[4rem] text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[5.6rem] md:leading-[6.4rem] xl:text-left">
               We create <br />
               <span className="text-[#FF37B3]">exceptional websites</span>
             </h3>
 
-            <div className="relative flex w-full items-center justify-center md:bottom-[3rem]">
+            <div className="relative flex items-center justify-center">
               <Image
                 src="/images/about-main-img.png"
                 alt="About Main Image"
-                height={355}
-                width={629}
-                className="size-full object-cover"
+                height={1151}
+                width={532}
+                className="size-full max-w-[53.2rem] object-contain"
               />
             </div>
           </div>

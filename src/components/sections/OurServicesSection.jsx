@@ -2,7 +2,6 @@
 import Image from "next/image";
 import OurServiesMarquee from "../common/OurServicesMarquee";
 import Link from "next/link";
-import CLetter from "@/assets/decorative-elements/c-letter.svg";
 import SectionLabel2 from "../common/SectionLabel2";
 import LineStroke10 from "@/assets/decorative-elements/line-stroke-10.svg";
 import LineStroke11 from "@/assets/decorative-elements/line-stroke-11.svg";
@@ -16,7 +15,7 @@ import {
 import ClickArrowPinkIcon from "@/assets/icons/click-arrow-pink.svg";
 import ClickArrowYellowIcon from "@/assets/icons/click-arrow-yellow.svg";
 import ClickArrowGreenIcon from "@/assets/icons/click-arrow-green.svg";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import CLetter2 from "@/assets/decorative-elements/c-letter-2";
@@ -32,6 +31,7 @@ const OurServicesSection = () => {
   const gridCardRef5 = useRef();
   const gridCardRef6 = useRef();
   const lineRef = useRef(null);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const splitHeading = new SplitText(headingRef.current, {
@@ -119,6 +119,33 @@ const OurServicesSection = () => {
         );
       }
     });
+
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (y > 800 && y < 3500) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
   }, []);
 
   return (
@@ -133,6 +160,23 @@ const OurServicesSection = () => {
       <div ref={lineRef} className="absolute inset-0 z-[0]">
         <LineStroke10 className="absolute top-[15.4rem] left-1/2 w-full -translate-x-1/2" />
       </div>
+
+      {showButton && (
+        <button
+          data-cal-namespace="15min"
+          data-cal-link="hassan-iqbal-mznzu9/15min"
+          data-cal-config='{"layout":"month_view","theme":"dark"}'
+          className="animation-duration-[20s] hover:paused fixed top-[15rem] right-[3rem] z-[100] hidden size-[16rem] animate-spin cursor-pointer items-center justify-center transition-opacity duration-300 md:inline-flex"
+        >
+          <Image
+            src="/images/talk-expert-btn-img.png"
+            width={190}
+            height={190}
+            alt="Button Images"
+            className="size-full object-cover"
+          />
+        </button>
+      )}
 
       <div className="relative z-[1] mx-auto flex max-w-[120rem] flex-col items-center gap-[2rem] px-[3rem] text-center xl:items-start xl:px-[0rem] xl:text-left">
         <div ref={labelRef} className="rotate-[-2deg]">
@@ -240,18 +284,6 @@ const OurServicesSection = () => {
             </div>
           </div>
         </div>
-
-        <Link
-          href="/contact"
-          className="animation-duration-[20s] hover:paused relative left-1/2 inline-flex -translate-x-1/2 animate-spin items-center justify-center xl:absolute xl:right-[4.5rem] xl:bottom-0 xl:left-auto xl:-translate-x-0"
-        >
-          <Image
-            src="/images/talk-expert-btn-img.png"
-            width={190}
-            height={190}
-            alt="Button  Images"
-          />
-        </Link>
       </div>
 
       <div className="relative px-[3rem] pt-[10rem] pb-[5rem] xl:px-[0rem] xl:pt-[18.8rem] xl:pb-[8rem]">

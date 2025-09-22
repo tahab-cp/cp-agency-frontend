@@ -12,7 +12,6 @@ import CaseStudiesSlider from "../common/CaseStudiesSlider";
 import DownArrowIcon from "@/assets/icons/down-arrow.svg";
 import SubtractDarkIcon from "@/assets/icons/subtract-dark.svg";
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -26,6 +25,7 @@ const OurWorkSection = ({ caseStudies }) => {
   const lineRef1 = useRef(null);
   const lineRef2 = useRef(null);
   const lineRef3 = useRef(null);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const line1 = lineRef1.current.querySelector("path");
@@ -141,6 +141,18 @@ const OurWorkSection = ({ caseStudies }) => {
         toggleActions: "play none none none",
       },
     });
+
+    const handleScroll = () => {
+      const y = window.scrollY;
+      if (y > 800 && y < 3500) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // 👇 Show 3 case studies at first
@@ -149,6 +161,21 @@ const OurWorkSection = ({ caseStudies }) => {
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 4); // show +3 each click
   };
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#292929" },
+          dark: { "cal-brand": "#FF37B3" },
+        },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
 
   return (
     <section className="pt-[18rem] md:pt-[20.6rem]">
@@ -164,6 +191,23 @@ const OurWorkSection = ({ caseStudies }) => {
       <div ref={lineRef3} className="absolute inset-0 z-[0]">
         <LineStroke17 className="absolute top-[281.6rem] left-1/2 w-full -translate-x-1/2" />
       </div>
+
+      {showButton && (
+        <button
+          data-cal-namespace="15min"
+          data-cal-link="hassan-iqbal-mznzu9/15min"
+          data-cal-config='{"layout":"month_view","theme":"dark"}'
+          className="animation-duration-[20s] hover:paused fixed top-[5rem] right-[3rem] z-[100] hidden size-[16rem] animate-spin cursor-pointer items-center justify-center transition-opacity duration-300 md:inline-flex"
+        >
+          <Image
+            src="/images/talk-expert-btn-img.png"
+            width={190}
+            height={190}
+            alt="Button Images"
+            className="size-full object-cover"
+          />
+        </button>
+      )}
 
       <div className="relative z-[1] mx-auto max-w-[120.3rem] px-[3rem] xl:px-[0rem]">
         <div className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left">
@@ -192,7 +236,7 @@ const OurWorkSection = ({ caseStudies }) => {
           ref={cardRef}
           className="relative mt-[6.8rem] hidden grid-cols-3 gap-[3.3rem] xl:grid"
         >
-          <Link
+          {/* <Link
             href="/contact"
             className="animation-duration-[20s] hover:paused absolute bottom-[-14.5rem] left-[-8.7rem] z-[100] inline-flex animate-spin items-center justify-center"
           >
@@ -202,7 +246,7 @@ const OurWorkSection = ({ caseStudies }) => {
               height={190}
               alt="Button  Images"
             />
-          </Link>
+          </Link> */}
 
           <div className="rounded-[3rem] bg-[#FFC300]">
             <h3 className="inline-flex items-start pt-[3.4rem] pb-[.7rem] pl-[5rem] text-[11rem] leading-[13rem] font-bold tracking-[-0.02em]">
