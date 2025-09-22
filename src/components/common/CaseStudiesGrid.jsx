@@ -142,7 +142,7 @@ const CaseStudiesGrid = ({
           </div>
 
           {/* Right Content */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="flex flex-col items-center px-[2rem] text-center lg:items-start lg:text-left">
             {/* Tags */}
             <ul className="flex flex-wrap gap-[1rem]">
               {tags.map((tag) => (

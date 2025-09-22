@@ -106,7 +106,7 @@ const AboutSection = () => {
       tl.to(flagRefs.current[current], {
         y: -20,
         opacity: 0,
-        duration: 1,
+        duration: 1.3,
         ease: "power2.inOut",
         onComplete: () =>
           gsap.set(flagRefs.current[current], { display: "none" }),
@@ -115,7 +115,7 @@ const AboutSection = () => {
         .fromTo(
           flagRefs.current[next],
           { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" },
+          { y: 0, opacity: 1, duration: 1.3, ease: "power2.inOut" },
           "<0.2",
         );
     };
