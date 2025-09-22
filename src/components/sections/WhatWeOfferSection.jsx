@@ -201,7 +201,7 @@ const WhatWeOfferSection = () => {
           {/* Card 1 with yellow cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
             onMouseEnter={() => handleMouseEnter(0, "#FFC300")}
             onMouseLeave={handleMouseLeave}
           >
@@ -230,7 +230,7 @@ const WhatWeOfferSection = () => {
           {/* Card 2 with blue cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
             onMouseEnter={() => handleMouseEnter(1, "#44B276")}
             onMouseLeave={handleMouseLeave}
           >
@@ -261,7 +261,7 @@ const WhatWeOfferSection = () => {
           {/* Card 3 with red cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center transition-all duration-300 hover:!border-[#FF37B3] hover:!bg-[#FF37B3] lg:col-span-2 xl:col-span-1 xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#FF37B3] hover:!bg-[#FF37B3] lg:col-span-2 xl:col-span-1 xl:text-left"
             onMouseEnter={() => handleMouseEnter(2, "#FF37B3")}
             onMouseLeave={handleMouseLeave}
           >
