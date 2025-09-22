@@ -150,7 +150,7 @@ const Footer = () => {
                 </span>{" "}
                 <a
                   href="tel:016182026671"
-                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70"
+                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white"
                 >
                   0161 820 26671
                 </a>
@@ -162,7 +162,7 @@ const Footer = () => {
                 </span>{" "}
                 <a
                   href="mailto:hello@cp.agency"
-                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70"
+                  className="text-[1.8rem] leading-[2.6rem] font-normal text-white"
                 >
                   hello@cp.agency
                 </a>
@@ -172,7 +172,7 @@ const Footer = () => {
                 <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#3078FF]">
                   Address
                 </span>{" "}
-                <span className="text-[1.8rem] leading-[2.6rem] font-normal text-white/70">
+                <span className="text-[1.8rem] leading-[2.6rem] font-normal text-white">
                   Manchester, M12 6PN
                 </span>
               </li>
@@ -217,7 +217,7 @@ const Footer = () => {
         </div>
 
         <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[2rem] text-center lg:flex-row lg:gap-[0rem] lg:text-left">
-          <p className="max-w-[32rem] text-[1.8rem] leading-[2.6rem] font-normal text-white/70 md:max-w-fit">
+          <p className="max-w-[32rem] text-[1.8rem] leading-[2.6rem] font-normal text-white md:max-w-fit">
             Copyright © 2025 Creativepixels Inc. All rights reserved.
           </p>
 
