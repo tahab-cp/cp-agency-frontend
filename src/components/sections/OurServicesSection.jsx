@@ -406,7 +406,7 @@ const OurServicesSection = () => {
               </div>
 
               <CommonBtn3
-                label="See how we helped Fliplet"
+                label="See how we helped Ndifo"
                 href=""
                 bgColor="#81F2B4"
                 textColor="#070707"

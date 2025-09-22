@@ -33,7 +33,7 @@ const CaseStudiesSlider = ({ caseStudies }) => {
         <SwiperSlide key={idx}>
           <Link
             href={`/case-studies/${cs.slug}`}
-            className="case-studies-card flex flex-col items-center p-[2rem] text-center"
+            className="case-studies-card flex flex-col items-center text-center"
           >
             <div className="relative h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[40rem] lg:h-[30rem] xl:h-[40rem]">
               <Image
@@ -47,17 +47,17 @@ const CaseStudiesSlider = ({ caseStudies }) => {
             </div>
 
             <div className="flex h-full flex-col justify-between">
-              <h4 className="mt-[2rem] mb-[4rem] line-clamp-2 max-w-[50rem] text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] md:text-[3.4rem] md:leading-[4.8rem]">
+              <h4 className="my-[1rem] line-clamp-2 max-w-[50rem] text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] md:text-[3.4rem] md:leading-[4.8rem]">
                 {cs.title}
               </h4>
 
-              <div className="mb-[2rem] flex w-full flex-col items-center justify-between gap-[2rem] px-[2rem] xl:flex-row">
+              <div className="mb-[2rem] flex w-full flex-col items-center justify-between gap-[2rem] xl:flex-row">
                 <div className="flex flex-col items-center gap-[1.1rem] xl:flex-row">
                   <span className="text-text-primary/60 text-[1.6rem] leading-[2.4rem] font-medium uppercase">
                     TECHNOLOGY USED
                   </span>
 
-                  <ul className="flex flex-wrap items-center gap-[2rem]">
+                  <ul className="flex items-center gap-[2rem]">
                     {cs.technologies.slice(0, 2).map((tech) => (
                       <li key={tech.id}>
                         {tech.logo && (

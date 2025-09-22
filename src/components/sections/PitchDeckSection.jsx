@@ -8,7 +8,6 @@ import { pitchDeckLogoData } from "@/constants/aboutPage";
 import FilledMailIcon from "@/assets/icons/filled-mail-icon.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 const PitchDeckSection = () => {
   const labelRef = useRef();
@@ -143,7 +142,7 @@ const PitchDeckSection = () => {
 
             <button
               type="submit"
-              className="inline-flex h-[5rem] min-w-[6.2rem] cursor-pointer items-center justify-center rounded-[1.6rem] bg-black/15 md:h-[6.2rem]"
+              className="inline-flex h-[5rem] min-w-[6.2rem] cursor-pointer items-center justify-center rounded-[1.6rem] border-[2px] border-transparent bg-transparent [background:linear-gradient(#fff,#fff)padding-box,linear-gradient(90deg,#FFE400_0%,#FF37B3_100%)border-box] md:h-[6.2rem]"
             >
               <FilledMailIcon />
             </button>

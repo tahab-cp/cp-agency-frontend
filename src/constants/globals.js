@@ -389,6 +389,58 @@ export const testimonialsCardData = [
   },
 ];
 
+export const testimonialsCardData2 = [
+  {
+    review:
+      "Thank you, CreativePixels, for supporting the 2018 Halloween Ball. Your expertise on the programme and menu card was invaluable. Together, we raised over £478,000…",
+    authorImage: "/images/testimonials-avatar-1.png",
+    authorName: "Unicef UK",
+    authorRole: "Special Events Coordinator, Unicef UK",
+  },
+  {
+    review:
+      "CreativePixels delivered a poster and ticket design under intense time pressure. They were responsive, creative, precise with complex logos, providing multiple concepts quickly, and excellent finished artwork…",
+    authorImage: "/images/testimonials-avatar-2.png",
+    authorName: "Herbert Smith Freehills LLP",
+    authorRole: "Clare Huddlestone, Herbert Smith Freehills LLP",
+  },
+  {
+    review:
+      "CreativePixels perfectly merged English and Urdu logos, delivering an outstanding website. Their professionalism, speed, and design sense impressed us deeply, and we are excited to continue working with…",
+    authorImage: "/images/testimonials-avatar-3.png",
+    authorName: "Manzar",
+    authorRole: "Faisal Ahmed, Manzar",
+  },
+  {
+    review:
+      "CreativePixels did an outstanding job! I’m really glad I chose to work with them. They created our website quickly, accurately, and have continued to provide excellent updates and management…",
+    authorImage: "/images/testimonials-avatar-4.png",
+    authorName: "Precise Print",
+    authorRole: "Simon Hobbs, Precise Print",
+  },
+  {
+    review:
+      "We were blown away by CreativePixels’ work and service. They exceeded expectations, attended our training events, guided us on design, and their new logo and website…",
+    authorImage: "/images/testimonials-avatar-5.png",
+    authorName: "Drive UK",
+    authorRole: "Mumtaz Khan, Drive UK",
+  },
+  {
+    review:
+      "CreativePixels designed the perfect logo for our new business, helping us promote ourselves across Birmingham and the West Midlands. It allowed us to start working immediately. Huge thanks…",
+    authorImage: "/images/testimonials-avatar-6.png",
+    authorName: "Excellence Car Specialists",
+    authorRole: "Management, Excellence Car Specialists",
+  },
+  {
+    review:
+      "CreativePixels produced marketing materials and a complete website refresh for us under a very tight deadline and at short notice. They went above and beyond to deliver…",
+    authorImage: "/images/testimonials-avatar-7.png",
+    authorName: "Unltd Communications Team",
+    authorRole: "Unltd Communications Team",
+  },
+];
+
 // Footer Links Card Data
 
 export const footerLinksCardData = [

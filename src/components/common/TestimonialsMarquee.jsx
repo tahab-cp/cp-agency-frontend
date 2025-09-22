@@ -2,7 +2,10 @@
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import RatingStar from "@/assets/icons/rating-star.svg";
-import { testimonialsCardData } from "@/constants/globals";
+import {
+  testimonialsCardData,
+  testimonialsCardData2,
+} from "@/constants/globals";
 
 const TestimonialsMarquee = () => {
   return (
@@ -14,10 +17,10 @@ const TestimonialsMarquee = () => {
         direction="right"
         className="testimonials-marquee overflow-hidden"
       >
-        {testimonialsCardData.map((item, idx) => (
+        {testimonialsCardData2.map((item, idx) => (
           <div
             key={idx}
-            className="testimonials-card mx-[1.65rem] flex h-full w-[30rem] flex-col justify-between md:w-[60rem]"
+            className="testimonials-card mx-[1.65rem] flex h-full w-[30rem] flex-col justify-between md:w-[40rem]"
           >
             <div>
               {/* Rating Stars */}

@@ -7,6 +7,10 @@ import { aboutCardData } from "@/constants/homePage";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 import CLetter2 from "@/assets/decorative-elements/c-letter-2";
+import { Flip } from "gsap/Flip";
+
+// Register plugins
+gsap.registerPlugin(Flip);
 
 const AboutSection = () => {
   const videoRef = useRef(null);
@@ -16,19 +20,11 @@ const AboutSection = () => {
   const btnRef = useRef();
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
-
-  // State for flag ticker
-  const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
+  const flagContainerRef = useRef(null);
+  const flagRefs = useRef([]);
   const flags = ["🇬🇧", "🇦🇺", "🇺🇸"];
 
   useEffect(() => {
-    // Flag ticker animation
-    const flagInterval = setInterval(() => {
-      setCurrentFlagIndex((prevIndex) =>
-        prevIndex === flags.length - 1 ? 0 : prevIndex + 1,
-      );
-    }, 1500); // Change flag every 1.5 seconds
-
     const splitDesc = new SplitText(descRef.current, {
       type: "lines",
     });
@@ -91,7 +87,40 @@ const AboutSection = () => {
       },
     );
 
-    return () => clearInterval(flagInterval);
+    // Set initial state
+    gsap.set(flagRefs.current, { y: 20, opacity: 0, display: "none" });
+    gsap.set(flagRefs.current[0], { y: 0, opacity: 1, display: "inline" });
+
+    let current = 0;
+
+    const cycleFlags = () => {
+      const next = (current + 1) % flags.length;
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          current = next;
+          cycleFlags(); // keep cycling
+        },
+      });
+
+      tl.to(flagRefs.current[current], {
+        y: -20,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () =>
+          gsap.set(flagRefs.current[current], { display: "none" }),
+      })
+        .set(flagRefs.current[next], { display: "inline" })
+        .fromTo(
+          flagRefs.current[next],
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" },
+          "<0.2",
+        );
+    };
+
+    cycleFlags();
   }, []);
 
   const handleTogglePlay = () => {
@@ -132,9 +161,20 @@ const AboutSection = () => {
           long-term partnerships, bring over a decade of industry expertise, and
           take pride in <span className="text-[#3078FF]">award-winning</span>,
           pixel-perfect work.
-          <div className="mt-[2rem] flex items-center justify-center gap-[1rem] xl:justify-start">
-            We work with clients in{" "}
-            <span className="flag-ticker">{flags[currentFlagIndex]}</span>
+          <div
+            ref={flagContainerRef}
+            className="mt-[2rem] flex items-center justify-center gap-[1rem] overflow-hidden xl:justify-start"
+          >
+            We work with clients in
+            {flags.map((flag, index) => (
+              <span
+                key={index}
+                ref={(el) => (flagRefs.current[index] = el)}
+                className="inline-block min-w-[2.5rem]"
+              >
+                {flag}
+              </span>
+            ))}
           </div>
         </h5>
 
