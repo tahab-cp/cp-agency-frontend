@@ -33,20 +33,20 @@ const CaseStudiesSlider = ({ caseStudies }) => {
         <SwiperSlide key={idx}>
           <Link
             href={`/case-studies/${cs.slug}`}
-            className="case-studies-card flex flex-col items-center text-center"
+            className="case-studies-card flex flex-col items-center p-[2rem] text-center"
           >
-            <div className="relative h-[22rem] w-full overflow-hidden rounded-[2rem] md:h-[40rem] lg:h-[30rem] xl:h-[40rem]">
+            <div className="shadow-03 relative block w-full overflow-hidden rounded-[1.4rem] xl:h-[38rem]">
               <Image
                 src={cs.image}
                 alt="Case Study Image"
-                height={440}
-                width={555}
+                height={345}
+                width={488}
                 priority
-                className="size-full object-cover"
+                className="size-full"
               />
             </div>
 
-            <div className="flex h-full flex-col justify-between">
+            <div className="mt-[3rem] flex h-full flex-col justify-between">
               <h4 className="my-[1rem] line-clamp-2 max-w-[50rem] text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] md:text-[3.4rem] md:leading-[4.8rem]">
                 {cs.title}
               </h4>

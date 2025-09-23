@@ -127,22 +127,22 @@ const CaseStudiesGrid = ({
       {/* Case Study Grid Item */}
       <Link href={`/case-studies/${slug}`} className="relative" ref={linkRef}>
         <div
-          className={`case-studies-grid grid w-full grid-cols-1 items-center gap-[4.3rem] lg:grid-cols-2 ${className}`}
+          className={`case-studies-grid grid w-full grid-cols-1 items-center gap-[7rem] lg:grid-cols-2 ${className}`}
         >
           {/* Left Image  */}
-          <div className="relative block w-full overflow-hidden md:h-[44rem]">
+          <div className="shadow-03 relative block w-full overflow-hidden rounded-[1.4rem] md:h-[38rem]">
             <Image
               src={image}
               alt="Case Study Image"
-              height={440}
-              width={555}
+              height={345}
+              width={488}
               priority
-              className="size-full object-cover"
+              className="size-full"
             />
           </div>
 
           {/* Right Content */}
-          <div className="flex flex-col items-center px-[2rem] text-center lg:items-start lg:text-left">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             {/* Tags */}
             <ul className="flex flex-wrap gap-[1rem]">
               {tags.map((tag) => (
