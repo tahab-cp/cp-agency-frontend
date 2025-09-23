@@ -232,5 +232,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-
-//hello
