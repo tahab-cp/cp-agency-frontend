@@ -110,7 +110,7 @@ const WhyChooseUsSection = () => {
 
             <div ref={headingRef} className="opacity-0">
               <SectionTitle
-                label="Why Choose Creative Pixels for your Online Presense"
+                label="Why Clients Choose Creative Pixels"
                 textColor="text-white"
               />
             </div>
@@ -118,10 +118,8 @@ const WhyChooseUsSection = () => {
 
           <div className="mt-[3rem] mb-[4rem] overflow-hidden text-[1.8rem] leading-[2.6rem] font-normal text-white">
             <div ref={descRef} className="opacity-0">
-              Creative Pixels stands out as a design-driven agency dedicated to
-              delivering bespoke digital solutions. Our expertise spans across a
-              wide range of services, ensuring that your brand stands out &
-              thrives online
+              We don’t just build websites and brands — we build partnerships.
+              Here’s what sets us apart from the typical agency experience.
             </div>
           </div>
 
@@ -131,42 +129,45 @@ const WhyChooseUsSection = () => {
         </div>
 
         <div className="relative hidden flex-col gap-[2rem] md:flex md:h-[53rem] md:w-[62rem]">
-          <div className="rotated-card top-[2.2rem] left-[120.33px] z-[2] flex size-[26.964rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FFC300] pl-[2.459rem] md:absolute md:rotate-[12.19deg]">
+          <div className="rotated-card top-[2.2rem] left-[120.33px] z-[2] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FFC300] p-[2rem] md:absolute md:rotate-[12.19deg]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">01</h5>
 
             <h3 className="max-w-[20.539rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
-              Design-Driven Approach
+              Strategy-First Design
             </h3>
 
-            <p className="max-w-[20.207rem] text-[1.6rem] leading-[2.4rem] font-medium">
-              Crafting exceptional digital experiences your premier web design
-              and development partner.
+            <p className="text-[1.6rem] leading-[2.4rem] font-medium">
+              Every project starts with a clear plan. From WordPress web design
+              to branding, we design with purpose so your site isn’t just
+              beautiful – it works for your business.
             </p>
           </div>
 
-          <div className="rotated-card bottom-[1.9rem] left-[1.9rem] z-[1] flex size-[26.964rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FF8630] pl-[2.459rem] md:absolute md:rotate-[-9.32deg]">
+          <div className="rotated-card bottom-[1.9rem] left-[1.9rem] z-[1] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FF8630] p-[2rem] pb-[3rem] md:absolute md:rotate-[-9.32deg]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">02</h5>
 
             <h3 className="max-w-[20.539rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
-              Tailored Solutions
+              Tailored to You
             </h3>
 
-            <p className="max-w-[22.389rem] text-[1.6rem] leading-[2.4rem] font-medium">
-              Every business is unique, and so are our solutions. We customize
-              each project to align with your goals.
+            <p className="text-[1.6rem] leading-[2.4rem] font-medium">
+              No templates, no shortcuts. Every brand is unique, and so are our
+              solutions – whether it’s a custom website, visual identity, or
+              growth strategy.
             </p>
           </div>
 
-          <div className="rotated-card right-[1.1rem] bottom-[1.2rem] z-[3] flex size-[26.964rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#F14A58] pl-[2.459rem] md:absolute md:rotate-[5.82deg]">
+          <div className="rotated-card right-[1.1rem] bottom-[1.2rem] z-[3] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#F14A58] p-[2rem] pb-[3rem] md:absolute md:rotate-[5.82deg]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">03</h5>
 
             <h3 className="max-w-[17.776rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
-              Results You Can Trust
+              Support That Lasts
             </h3>
 
-            <p className="max-w-[22.966rem] text-[1.6rem] leading-[2.4rem] font-medium">
-              From boosting brand visibility to driving conversions, we are
-              committed to your success.
+            <p className="text-[1.6rem] leading-[2.4rem] font-medium">
+              Our job doesn’t end at launch. With ongoing support, updates, and
+              maintenance, we’re here to keep your digital presence strong for
+              the long run.
             </p>
           </div>
         </div>

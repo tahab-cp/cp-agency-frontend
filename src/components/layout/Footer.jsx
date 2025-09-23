@@ -75,8 +75,8 @@ const Footer = () => {
             </Link>
 
             <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[45rem] md:text-[2.6rem] md:leading-[3.2rem]">
-              Want a website and brand that actually grows your business? Let’s
-              make it happen.
+              Want a website and brand that actually grows your business? <br />{" "}
+              Let’s make it happen.
             </h5>
           </div>
 
@@ -219,7 +219,7 @@ const Footer = () => {
 
         <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[2rem] text-center lg:flex-row lg:gap-[0rem] lg:text-left">
           <p className="max-w-[32rem] text-[1.8rem] leading-[2.6rem] font-normal text-white md:max-w-fit">
-            Copyright © 2025 Creativepixels Inc. All rights reserved.
+            2025 (C) CP Agency Ltd. Trading as CreativePixels.
           </p>
 
           <ul className="flex items-center justify-end">

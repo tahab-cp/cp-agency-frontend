@@ -29,7 +29,7 @@ const TestimonialsMarquee = () => {
               </div>
 
               {/* Review Text */}
-              <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-white/50">
+              <p className="mt-[1.958rem] mb-[4.042rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
                 {item.review}
               </p>
             </div>

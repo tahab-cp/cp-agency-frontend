@@ -290,8 +290,8 @@ const WhatWeOfferSection = () => {
           <div className="offer-cta-card mx-auto flex max-w-[130rem] rounded-[2rem]">
             <div className="flex flex-col items-center justify-center gap-[2rem] text-center md:flex-row md:text-left">
               <p className="text-[2.4rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
-                Want a website and brand that actually grows your business?
-                Let’s make it happen.
+                Smart websites, standout branding, and ongoing support
+                everything you need to grow with confidence
               </p>
 
               <div className="min-w-max">

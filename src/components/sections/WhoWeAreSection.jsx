@@ -137,11 +137,11 @@ const WhoWeAreSection = () => {
             ref={headingRef}
             className="text-text-primary max-w-[100rem] overflow-hidden text-[3rem] leading-[4rem] font-bold tracking-[-0.03em] opacity-0 md:text-[5rem] md:leading-[6rem] lg:text-[7rem] lg:leading-[8.4rem]"
           >
-            About Creative Pixels Creative Agency based in Manchester
+            About Creative Pixels
           </h1>
 
           <div ref={descRef} className="translate-y-10 transform opacity-0">
-            <SectionDescription label="You end up hearing about agencies which do care, but don't. Let us change that for you today." />
+            <SectionDescription label="We believe great work starts with people. That’s why we build lasting partnerships, not just websites and brands." />
           </div>
         </div>
 
@@ -202,11 +202,11 @@ const WhoWeAreSection = () => {
             ref={descRef2}
             className="max-w-[103.2rem] overflow-hidden text-[2rem] leading-[3.5rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[2.8rem] md:leading-[4rem] lg:text-[3.4rem] lg:leading-[4.8rem]"
           >
-            At Creative Pixels, we don&apos;t just build websites—we create
-            digital experiences that drive growth and make a lasting impact. As
-            a Manchester-based agency, we specialize in WordPress development,
-            e-commerce solutions, and creative branding. We’re here to make your
-            digital journey successful.
+            At CreativePixels, design isn’t just about looks — it’s about
+            impact. We combine strategy, design, and development to create
+            digital experiences that not only stand out but also support the
+            people running them. Our approach is simple: build with clarity,
+            care, and long-term growth in mind.
           </h5>
 
           <div ref={btnRef} className="opacity-0">

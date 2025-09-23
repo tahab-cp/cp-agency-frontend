@@ -66,7 +66,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           </div>
         </div>
 
-        <div className="flex-1 overflow-x-hidden overflow-y-auto">
+        <div className="overflow-x-hidden overflow-y-auto">
           <nav className="flex flex-col gap-[2rem] py-[2rem] text-white md:py-[4rem]">
             <div className="relative border-b border-white/20 pb-[2rem] md:px-[4rem]">
               <Link
@@ -114,7 +114,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           </nav>
         </div>
 
-        <div className="flex flex-col gap-[10rem] py-[4rem]">
+        <div className="flex flex-col gap-[10rem] pt-[4rem] pb-[6rem]">
           <div className="flex items-center justify-center">
             <CommonBtn2 />
           </div>

@@ -7,6 +7,7 @@ import WaveHand from "./WaveHand";
 import FlashIcon from "@/assets/icons/3d-flash-icon.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import CommonBtn2 from "./CommonBtn2";
 
 const CtaSection1 = () => {
   const containerRef = useRef();
@@ -43,14 +44,12 @@ const CtaSection1 = () => {
           </p>
 
           <div className="mt-[4rem] flex flex-col items-center gap-[.531rem] md:flex-row">
-            <Link
+            {/* <Link
               href="/contact"
               className="relative inline-flex h-[6.4rem] items-center gap-[1rem] px-[3rem] py-[1.223rem] text-[1.6rem] font-semibold text-white md:text-[2rem]"
             >
-              {/* Border layer */}
               <div className="contact-btn-gradient absolute inset-0 rounded-[6rem]"></div>
 
-              {/* Text layer */}
               <span className="relative z-10 text-white">Get in Touch</span>
               <Image
                 src="/images/user-avatar.png"
@@ -58,7 +57,8 @@ const CtaSection1 = () => {
                 width={107.69}
                 height={39.54}
               />
-            </Link>
+            </Link> */}
+            <CommonBtn2 />
 
             <i className="relative flex items-center justify-center text-[4rem]">
               <WaveHand />

@@ -119,16 +119,16 @@ const PitchDeckSection = () => {
             ref={headingRef}
             className="mt-[1.1rem] opacity-0 lg:max-w-[54rem]"
           >
-            <SectionTitle label="Send yourself or a colleague our Pitch Deck." />
+            <SectionTitle label="Get our agency pitch deck ready to share with your team." />
           </div>
 
           <div
             ref={descRef}
             className="mt-[2rem] mb-[2.6rem] text-[1.8rem] leading-[2.6rem] font-normal text-[#333333] opacity-0 lg:max-w-[51rem]"
           >
-            Want to learn more about us? Our company deck offers an in-depth
-            look at our agency, the projects we&apos;ve handled, the solutions
-            we provide, and the culture we foster.
+            Our pitch deck gives you the highlights: the projects we’ve
+            delivered, the results we’ve driven, and what it’s like to work with
+            us — all in one shareable PDF.
           </div>
 
           <form

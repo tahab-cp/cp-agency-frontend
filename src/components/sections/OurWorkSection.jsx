@@ -177,6 +177,34 @@ const OurWorkSection = ({ caseStudies }) => {
     })();
   }, []);
 
+  useEffect(() => {
+    const numbers = gsap.utils.toArray(cardRef.current.querySelectorAll("h3"));
+
+    numbers.forEach((number) => {
+      // Store original text and symbol
+      const originalText = number.textContent.trim();
+      let symbol = "";
+      let target = parseInt(originalText.replace(/\D/g, ""), 10);
+
+      if (originalText.includes("+")) symbol = "+";
+      if (originalText.includes("%")) symbol = "%";
+
+      number.textContent = "0" + symbol;
+
+      gsap.to(
+        { val: 0 },
+        {
+          val: target,
+          duration: 2,
+          ease: "power1.out",
+          onUpdate: function () {
+            number.textContent = Math.floor(this.targets()[0].val) + symbol;
+          },
+        },
+      );
+    });
+  }, []);
+
   return (
     <section className="pt-[18rem] md:pt-[20.6rem]">
       {/* Decorative stroke line */}
@@ -215,19 +243,13 @@ const OurWorkSection = ({ caseStudies }) => {
             <SectionLabel2 text="Our Work" />
           </div>
 
-          <div className="flex flex-col items-center justify-between gap-[2rem] xl:flex-row xl:gap-[0rem]">
-            <div
-              ref={headingRef}
-              className="max-w-[65rem] opacity-0 xl:max-w-[72.1rem]"
-            >
-              <SectionTitle label="We design and build to make an impact." />
+          <div className="flex w-full flex-col items-center justify-between gap-[2rem] xl:flex-row xl:gap-[0rem]">
+            <div ref={headingRef} className="max-w-[40rem] opacity-0">
+              <SectionTitle label="Real projects. Real results." />
             </div>
 
-            <div
-              ref={descRef}
-              className="max-w-[70rem] opacity-0 xl:max-w-[37.9rem]"
-            >
-              <SectionDescription label="We help the world's leading brands create standout ads and campaigns at speed—from concept to execution to results." />
+            <div ref={descRef} className="max-w-[50rem] opacity-0">
+              <SectionDescription label="We’ve partnered with clients from startups to global brands, designing websites and brands that drive growth and lasting impact." />
             </div>
           </div>
         </div>
@@ -255,20 +277,20 @@ const OurWorkSection = ({ caseStudies }) => {
 
             <hr className="h-[1px] w-full border-0 bg-black/40" />
 
-            <p className="max-w-[220px] pt-[2rem] pb-[3.1rem] pl-[5rem] text-[2.2rem] leading-[3.2rem] font-medium">
-              Increase in CTR for PointCard
+            <p className="pt-[2rem] pb-[3.1rem] pl-[5rem] text-[2.2rem] leading-[3.2rem] font-medium">
+              Client Satisfaction Rate
             </p>
           </div>
 
           <div className="rounded-[3rem] bg-[#FF37B3]">
             <h3 className="inline-flex items-start pt-[3.4rem] pb-[.7rem] pl-[5rem] text-[11rem] leading-[13rem] font-bold tracking-[-0.02em]">
-              30 <span className="text-[5rem] leading-[8rem]">%</span>
+              200 <span className="text-[5rem] leading-[8rem]">+</span>
             </h3>
 
             <hr className="h-[1px] w-full border-0 bg-black/40" />
 
             <p className="max-w-[27.3rem] pt-[2rem] pb-[3.1rem] pl-[5rem] text-[2.2rem] leading-[3.2rem] font-medium">
-              Reduction in cost for asset for Amazon
+              Projects Delivered
             </p>
           </div>
 
@@ -280,7 +302,7 @@ const OurWorkSection = ({ caseStudies }) => {
             <hr className="h-[1px] w-full border-0 bg-black/40" />
 
             <p className="max-w-[32rem] pt-[2rem] pb-[3.1rem] pl-[5rem] text-[2.2rem] leading-[3.2rem] font-medium">
-              Reduction in turnaround time for Salesforce
+              Faster Launch Times
             </p>
           </div>
         </div>

@@ -51,8 +51,13 @@ const CommonBtn2 = () => {
         </svg>
       </i>
 
-      <i className="relative z-[10]">
-        <CtaBtnAvatarIcon />
+      <i className="relative z-[0]">
+        {/* <CtaBtnAvatarIcon /> */}
+        <img
+          src="/images/cta-btn-avatar-icon.png"
+          alt="Image"
+          className="size-[5rem]"
+        />
       </i>
     </button>
   );

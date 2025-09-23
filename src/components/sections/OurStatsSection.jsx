@@ -60,6 +60,38 @@ const OurStatsSection = () => {
     );
   }, []);
 
+  useEffect(() => {
+    const numbers = gsap.utils.toArray(cardRef.current.querySelectorAll("h4"));
+
+    numbers.forEach((number) => {
+      // Store original text and symbol
+      const originalText = number.textContent.trim();
+      let symbol = "";
+      let target = parseInt(originalText.replace(/\D/g, ""), 10);
+
+      if (originalText.includes("+")) symbol = "+";
+      if (originalText.includes("%")) symbol = "%";
+
+      number.textContent = "0" + symbol;
+
+      gsap.to(
+        { val: 0 },
+        {
+          val: target,
+          duration: 2,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: number,
+            start: "top 80%",
+          },
+          onUpdate: function () {
+            number.textContent = Math.floor(this.targets()[0].val) + symbol;
+          },
+        },
+      );
+    });
+  }, []);
+
   return (
     <section className="relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[8.5rem] xl:pb-[9.732rem]">
       <div ref={lineRef} className="absolute inset-0 z-[0]">
@@ -78,7 +110,7 @@ const OurStatsSection = () => {
             </h4>
 
             <h6 className="text-[2rem] font-medium text-[#FFC300] transition-all duration-300 group-hover:text-white">
-              Web Projects
+              Websites Launched
             </h6>
           </div>
 
@@ -88,7 +120,7 @@ const OurStatsSection = () => {
             </h4>
 
             <h6 className="text-[2rem] font-medium text-[#FF37B3] transition-all duration-300 group-hover:text-white">
-              Years of Experience
+              Years Crafting Digital Solutions
             </h6>
           </div>
 
@@ -98,17 +130,17 @@ const OurStatsSection = () => {
             </h4>
 
             <h6 className="text-[2rem] font-medium text-[#FF8630] transition-all duration-300 group-hover:text-white">
-              Trusted Clients
+              Clients Who Chose Us
             </h6>
           </div>
 
           <div className="our-stats-card group top-[8rem] transition-all duration-300 hover:!bg-[#F14A58]">
             <h4 className="text-[7.6rem] leading-[9rem] font-semibold tracking-[-0.02em] text-white">
-              20+
+              95%
             </h4>
 
             <h6 className="text-[2rem] font-medium text-[#F14A58] transition-all duration-300 group-hover:text-white">
-              Skillful Team Members
+              Repeat & Referral Rate
             </h6>
           </div>
         </div>
