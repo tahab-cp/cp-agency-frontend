@@ -74,8 +74,9 @@ const Footer = () => {
               0161 820 2667
             </Link>
 
-            <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[32.4rem] md:text-[2.6rem] md:leading-[3.2rem]">
-              UseSpace, Paddock Street, Manchester, M12 6PN
+            <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[45rem] md:text-[2.6rem] md:leading-[3.2rem]">
+              Want a website and brand that actually grows your business? Let’s
+              make it happen.
             </h5>
           </div>
 

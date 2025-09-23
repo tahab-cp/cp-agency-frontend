@@ -41,7 +41,7 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-bg w-full">
-      <h4 className="mb-[4rem] inline-flex items-center gap-[.5rem] text-[3.5rem] font-semibold tracking-[-0.02em] md:text-[4.8rem]">
+      <h4 className="mb-[4rem] inline-flex items-center gap-[.5rem] text-[3.5rem] leading-[4rem] font-semibold tracking-[-0.02em] md:text-[4.8rem]">
         Hello, how can we help? <WaveHand />
       </h4>
 
