@@ -7,14 +7,17 @@ const FooterLinkCard = ({ title, links }) => {
         {title}
       </h5>
 
-      <ul className="flex list-inside list-disc flex-col gap-[1.5rem]">
+      <ul className="flex flex-col gap-[1.5rem]">
         {links.map((link, index) => (
           <li key={index} className="text-white">
             <Link
               href={link.href}
-              className="text-[1.6rem] leading-[2.4rem] font-medium capitalize"
+              className="group text-[1.6rem] leading-[2.4rem] font-medium capitalize"
             >
-              {link.label}
+              <span className="relative">
+                {link.label}
+                <span className="absolute bottom-[-2px] left-0 h-[2px] w-0 bg-gradient-to-r from-[#ffe400] to-[#ff37b3] transition-all duration-200 group-hover:w-full" />
+              </span>
             </Link>
           </li>
         ))}
