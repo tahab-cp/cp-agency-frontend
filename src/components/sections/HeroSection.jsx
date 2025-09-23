@@ -184,7 +184,7 @@ const HeroSection = () => {
         </div>
 
         {/* Logos */}
-        <div className="flex max-w-[136rem] flex-col items-center gap-[2rem] px-[2rem] text-center">
+        <div className="flex max-w-[136rem] flex-col items-center gap-[2rem] px-[3rem] text-center 2xl:px-[0rem]">
           <h6
             ref={headingRef2}
             className="translate-y-5 transform text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[1.8rem] md:leading-[2.6rem]"
@@ -194,7 +194,7 @@ const HeroSection = () => {
 
           <ul
             ref={logoRef}
-            className="hidden grid-cols-1 items-center gap-[4.5rem] opacity-0 md:grid-cols-4 lg:grid-cols-8 xl:grid"
+            className="hidden h-[7rem] items-center gap-[4.5rem] opacity-0 xl:flex"
           >
             {logoPopupsData.map((item, idx) => (
               <li key={idx}>

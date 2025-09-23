@@ -64,7 +64,11 @@ const LogoPopup = ({ logo, popupImage, title, href }) => {
           activePopup ? "opacity-100 grayscale-0" : "opacity-70 grayscale-100"
         }`}
       >
-        <img src={logo} alt={`${title} Logo`} className="size-auto" />
+        <img
+          src={logo}
+          alt={`${title} Logo`}
+          className="size-full object-contain"
+        />
       </button>
 
       {/* Popup */}
