@@ -183,35 +183,29 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-[5rem] flex max-w-[120rem] flex-col gap-[1.8rem] px-[3rem] lg:mt-[10rem] xl:flex-row xl:px-[0rem] 2xl:max-w-[135rem]">
+      <div className="relative z-10 mx-auto mt-[5rem] flex max-w-[120rem] flex-col gap-[1.8rem] px-[3rem] lg:mt-[10rem] xl:flex-row xl:px-[0rem] 2xl:max-w-[136rem]">
         <div
           ref={gridCardRef1}
-          className="about-card-gradient relative -translate-y-8 transform overflow-hidden pt-[3rem] opacity-0 xl:w-[55%]"
+          className="relative -translate-y-8 transform overflow-hidden opacity-0 xl:w-[62.9rem]"
         >
-          <div className="absolute top-[-11.9rem] left-[-10.5rem] z-[0] size-[30rem] bg-[#1534B699] blur-[100px]" />
-          <div className="absolute right-0 bottom-[-26.656rem] z-[0] size-[30rem] bg-[#DFDFDF99] blur-[100px]" />
-
-          <div className="relative z-[1] flex h-full flex-col justify-between gap-[2rem]">
-            <h3 className="px-[4rem] text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[5.6rem] md:leading-[6.4rem] xl:text-left">
-              We create <br />
-              <span className="text-[#FF37B3]">exceptional websites</span>
+          <div className="relative z-[1] flex flex-col justify-between gap-[2rem]">
+            <h3 className="absolute top-[2rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[3.4rem] md:leading-[4.8rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
+              We create <br /> exceptional websites
             </h3>
 
-            <div className="relative flex items-center justify-center">
-              <Image
-                src="/images/about-main-img.png"
-                alt="About Main Image"
-                height={1151}
-                width={532}
-                className="size-full max-w-[53.2rem] object-contain"
-              />
-            </div>
+            <Image
+              src="/images/about-main-img.png"
+              width={629}
+              height={611}
+              alt="Image"
+              className="size-full object-cover"
+            />
           </div>
         </div>
 
         <div
           ref={gridCardRef2}
-          className="grid grid-cols-1 gap-[2rem] md:grid-cols-2 xl:w-[45%]"
+          className="grid grid-cols-1 gap-[1.5rem] md:grid-cols-2 xl:w-[70.5rem]"
         >
           {aboutCardData.map((item, idx) => (
             <div
@@ -224,7 +218,7 @@ const AboutSection = () => {
             >
               <item.icon />
 
-              <h4 className="text-center text-[2.8rem] leading-[3.8rem] font-semibold tracking-[-0.02em] md:text-[2.5rem] md:leading-[3.5rem] xl:text-left">
+              <h4 className="max-w-[22rem] text-center text-[2.8rem] leading-[3.8rem] font-semibold tracking-[-0.02em] md:text-[2.5rem] md:leading-[3.5rem] xl:text-left">
                 {item.title}
               </h4>
 
