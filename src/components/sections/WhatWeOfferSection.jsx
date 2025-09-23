@@ -288,8 +288,8 @@ const WhatWeOfferSection = () => {
           className="mt-[18rem] px-[3rem] md:mt-[22.8rem] xl:px-[0rem]"
         >
           <div className="offer-cta-card mx-auto flex max-w-[130rem] rounded-[2rem]">
-            <div className="flex flex-col items-center justify-center gap-[2rem] text-center md:flex-row md:text-left">
-              <p className="text-[2.4rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
+            <div className="flex w-full flex-col items-center justify-center gap-[2rem] text-center md:flex-row md:justify-between md:text-left">
+              <p className="max-w-[86rem] text-[2.4rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
                 Smart websites, standout branding, and ongoing support
                 everything you need to grow with confidence
               </p>
