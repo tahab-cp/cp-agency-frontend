@@ -57,7 +57,11 @@ const ClientLogoSlider = () => {
               {/* Logo button */}
               <button
                 onClick={() => handleLogoClick(idx)}
-                className={`flex cursor-pointer items-center justify-center transition-all duration-300`}
+                className={`cursor-pointer transition-all duration-300 ${
+                  activePopup === idx
+                    ? "opacity-100 grayscale-0"
+                    : "opacity-70 grayscale-100"
+                }`}
               >
                 <img
                   src={item.logo}

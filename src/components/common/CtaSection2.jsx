@@ -34,11 +34,11 @@ const CtaSection2 = () => {
       </i>
 
       <div className="relative z-[1] flex flex-col items-center gap-[8rem] text-center lg:flex-row lg:items-start lg:gap-[3.4rem] lg:text-left">
-        <div className="flex flex-col items-center pt-[3rem] lg:items-start">
+        <div className="flex flex-col items-center lg:items-start">
           <SectionLabel text="Contact us Today" />
 
-          <h3 className="mt-[2rem] max-w-[72.1rem] text-[3.2rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
-            Book a 15-minute call and see how we can help you.
+          <h3 className="mt-[2rem] max-w-[70rem] text-[3.2rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]">
+            Just 15 minutes to find out if we’re the right fit for your project.
           </h3>
         </div>
 

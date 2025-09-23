@@ -6,14 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import RightArrowIcon from "@/assets/icons/right-arrow-icon.svg";
 
-const LogoPopup = ({
-  logo,
-  popupImage,
-  title,
-  href,
-  logoWidth,
-  logoHeight,
-}) => {
+const LogoPopup = ({ logo, popupImage, title, href }) => {
   const [activePopup, setActivePopup] = useState(false);
   const cardRef = useRef(null);
 
@@ -67,7 +60,9 @@ const LogoPopup = ({
       {/* Logo button */}
       <button
         onClick={() => setActivePopup(!activePopup)}
-        className={`cursor-pointer transition-all duration-300`}
+        className={`cursor-pointer transition-all duration-300 ${
+          activePopup ? "opacity-100 grayscale-0" : "opacity-70 grayscale-100"
+        }`}
       >
         <img src={logo} alt={`${title} Logo`} className="size-auto" />
       </button>

@@ -66,11 +66,11 @@ const CaseStudiesSection = ({ caseStudies }) => {
           </div>
 
           <div ref={titleRef} className="opacity-0">
-            <SectionTitle label="Pixel-Perfect Projects by Creative Pixels" />
+            <SectionTitle label="A decade of digital done right" />
           </div>
 
           <div ref={descRef} className="max-w-[76.5rem] opacity-0">
-            <SectionDescription label="Based in Manchester, we craft bespoke websites and branding that are as smart as they are stunning." />
+            <SectionDescription label="We’ve crafted websites and brands that blend design, development, and strategy into measurable success." />
           </div>
         </div>
 

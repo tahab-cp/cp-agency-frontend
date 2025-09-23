@@ -368,7 +368,7 @@ export const testimonialsCardData = [
   },
   {
     review:
-      "CreativePixels produced marketing materials and a complete website refresh for us under a very tight deadline and at short notice. They went above and beyond to deliver a fully functional, fit-for-purpose, and engaging website along with high-quality design materials that exceeded all our expectations. Their professionalism, creativity, and attention to detail made the entire process seamless and stress-free. We were impressed by their speed, responsiveness, and dedication. Without hesitation, we would be more than happy to work with the CreativePixels team again on future projects.",
+      "We believe every website and brand should work harder for the people behind it.Since 2014, Creative Pixels has delivered WordPress web design, creative branding, and ongoing support for businesses in the UK, US, and Australia – building digital experiences that are easy to use, simple to manage, and designed for lasting growth.",
     authorImage: "/images/testimonials-avatar-7.png",
     authorName: "Unltd Communications Team",
     authorRole: "Unltd Communications Team",

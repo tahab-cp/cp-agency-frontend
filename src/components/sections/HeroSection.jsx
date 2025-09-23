@@ -189,7 +189,7 @@ const HeroSection = () => {
             ref={headingRef2}
             className="translate-y-5 transform text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[1.8rem] md:leading-[2.6rem]"
           >
-            Trusted by enterprises all over the world:
+            Trusted by brands in the UK, US & Australia
           </h6>
 
           <ul

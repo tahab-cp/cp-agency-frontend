@@ -227,6 +227,8 @@ const AboutSection = () => {
               <h4 className="text-center text-[2.8rem] leading-[3.8rem] font-semibold tracking-[-0.02em] md:text-[2.5rem] md:leading-[3.5rem] xl:text-left">
                 {item.title}
               </h4>
+
+              <p className="text-center xl:text-left">{item.description}</p>
             </div>
           ))}
         </div>

@@ -41,23 +41,26 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form-bg w-full">
-      <h4 className="inline-flex items-center gap-[.5rem] text-[4.8rem] font-semibold tracking-[-0.02em]">
+      <h4 className="mb-[4rem] inline-flex items-center gap-[.5rem] text-[3.5rem] font-semibold tracking-[-0.02em] md:text-[4.8rem]">
         Hello, how can we help? <WaveHand />
       </h4>
 
       <div ref={formContainerRef} className="overflow-hidden">
-        <form ref={formRef} action="" className="flex flex-col gap-[1.8rem]">
+        <form ref={formRef} action="" className="flex flex-col gap-[3rem]">
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="name" className="md:min-w-[25rem]">
-              My name is
+              Enter your email and phone number here
             </Label>
 
-            <ContactFormInput placeholder="Enter your name" type="text" />
+            <ContactFormInput
+              placeholder="Enter your email and phone number here"
+              type="text"
+            />
           </fieldset>
 
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="service" className="md:min-w-[38.9rem]">
-              I need a help with
+              And I’d like help with
             </Label>
 
             <Select>
@@ -80,7 +83,7 @@ const ContactForm = () => {
 
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="email" className="md:min-w-[35.8rem]">
-              Here is my email
+              You can reach me at
             </Label>
 
             <ContactFormInput
@@ -99,7 +102,7 @@ const ContactForm = () => {
 
           <div className="mt-[1.5rem] mb-[1rem]">
             {/* <CommonBtn4 label="Submit Request" /> */}
-            <CommonBtn3 href="" label="Submit Request" />
+            <CommonBtn3 href="" label="Let’s talk" />
           </div>
         </form>
       </div>

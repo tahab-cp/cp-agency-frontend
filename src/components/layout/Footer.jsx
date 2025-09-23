@@ -92,7 +92,7 @@ const Footer = () => {
                 <Link
                   key={idx}
                   href={item.href}
-                  className="inline-flex size-[4.5rem] items-center justify-center rounded-[1.6rem] bg-white/15 md:size-[5rem]"
+                  className="inline-flex size-[4.5rem] items-center justify-center rounded-[1.6rem] bg-white/15 transition-all duration-200 hover:-translate-y-2 md:size-[5rem]"
                 >
                   <item.icon />
                 </Link>

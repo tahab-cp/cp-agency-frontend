@@ -159,7 +159,7 @@ const WhatWeOfferSection = () => {
   };
 
   return (
-    <section className="offer-sec relative cursor-none pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
+    <section className="offer-sec relative pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
       {/* Custom Cursor with dynamic background color */}
       <div
         ref={cursorRef}
@@ -170,10 +170,8 @@ const WhatWeOfferSection = () => {
           backgroundColor: cursorColor,
         }}
       >
-        <span className="cursor-text text-center text-[1.2rem] leading-tight font-medium text-black opacity-0">
-          View Case
-          <br />
-          Study
+        <span className="cursor-text text-center text-[1.4rem] leading-tight font-medium text-black opacity-0">
+          Learn more
         </span>
       </div>
 
@@ -201,22 +199,25 @@ const WhatWeOfferSection = () => {
           {/* Card 1 with yellow cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center text-center hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
             onMouseEnter={() => handleMouseEnter(0, "#FFC300")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
-                <span>Website Development</span>
+            <div className="flex flex-col gap-[1.4rem] p-[2rem] md:p-[3rem]">
+              <h3 className="relative w-full text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
+                <span>
+                  Website <br /> Development
+                </span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
-                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
-                libero eget volutpat porta
+              <p className="text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
+                We build custom WordPress websites that are fast, SEO-friendly,
+                and designed to convert. From e-commerce to education, our sites
+                are tailored to your business goals.
               </p>
             </div>
 
-            <div className="pointer-events-none relative z-[10]">
+            <div className="pointer-events-none relative top-[-2rem] z-[10] xl:top-[-4rem]">
               <Image
                 src="/images/offer-web-img.png"
                 alt="offer web image"
@@ -230,24 +231,25 @@ const WhatWeOfferSection = () => {
           {/* Card 2 with blue cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center text-center hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
             onMouseEnter={() => handleMouseEnter(1, "#44B276")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
+            <div className="flex flex-col gap-[1.4rem] p-[2rem] md:p-[3rem]">
+              <h3 className="relative w-full text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
                 <span>
                   Design and <br /> Branding
                 </span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
-                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
-                libero eget volutpat porta
+              <p className="text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
+                Your brand deserves more than a logo. We create visual
+                identities, brand guidelines, and digital assets that help you
+                stand out and connect with your audience.
               </p>
             </div>
 
-            <div className="pointer-events-none relative z-[10]">
+            <div className="pointer-events-none relative top-[-4rem] z-[10] xl:top-[-5rem]">
               <Image
                 src="/images/offer-design-img.png"
                 alt="offer web image"
@@ -261,20 +263,21 @@ const WhatWeOfferSection = () => {
           {/* Card 3 with red cursor */}
           <Link
             href="/case-studies"
-            className="offer-grid-card group flex h-[36.4rem] flex-col items-center gap-[1.2rem] text-center hover:!border-[#FF37B3] hover:!bg-[#FF37B3] lg:col-span-2 xl:col-span-1 xl:text-left"
+            className="offer-grid-card group flex h-[36.4rem] flex-col items-center text-center hover:!border-[#FF37B3] hover:!bg-[#FF37B3] lg:col-span-2 xl:col-span-1 xl:text-left"
             onMouseEnter={() => handleMouseEnter(2, "#FF37B3")}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="flex flex-col gap-[1.4rem] px-[2rem] pt-[3.8rem] xl:px-[0rem] xl:pl-[5.2rem]">
-              <h3 className="relative w-full max-w-[33.3rem] text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
+            <div className="flex flex-col gap-[1.4rem] p-[2rem] md:p-[3rem]">
+              <h3 className="relative w-full text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-white transition-all duration-300 group-hover:text-black">
                 <span>
                   Maintenance <br /> and Growth
                 </span>
               </h3>
 
-              <p className="max-w-[33.3rem] text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
-                Lorem ipsum amet, consectetur adipiscing elit. Integer mollis,
-                libero eget volutpat porta
+              <p className="text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
+                Our work doesn’t stop at launch. We provide website maintenance,
+                performance updates, and long-term support to keep your site
+                secure, scalable, and ready for growth.
               </p>
             </div>
 
@@ -293,13 +296,13 @@ const WhatWeOfferSection = () => {
 
       <div
         ref={gridCardRef2}
-        className="mt-[15rem] px-[3rem] md:mt-[22.8rem] xl:px-[0rem]"
+        className="mt-[18rem] px-[3rem] md:mt-[22.8rem] xl:px-[0rem]"
       >
-        <div className="offer-cta-card mx-auto flex max-w-[120rem] rounded-[2rem]">
-          <div className="flex flex-col items-center justify-center gap-[2.2rem] text-center md:flex-row md:text-left">
-            <p className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
-              Need bold design or reliable code or both? You're in the right
-              place.
+        <div className="offer-cta-card mx-auto flex max-w-[130rem] rounded-[2rem]">
+          <div className="flex flex-col items-center justify-center gap-[2rem] text-center md:flex-row md:text-left">
+            <p className="text-[2.4rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
+              Want a website and brand that actually grows your business? Let’s
+              make it happen.
             </p>
 
             <div className="min-w-max">

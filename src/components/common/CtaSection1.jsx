@@ -31,15 +31,15 @@ const CtaSection1 = () => {
     >
       <div className="relative z-[1] flex flex-col items-center justify-between gap-[5.3rem] lg:flex-row">
         <div className="flex w-full flex-col items-center text-center lg:w-auto lg:items-start lg:text-left">
-          <SectionLabel text="Contact us Today" />
+          <SectionLabel text="Book now for September slots" />
 
-          <h3 className="mt-[2rem] mb-[3rem] max-w-[50rem] text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4rem] md:leading-[5rem] xl:max-w-[64.5rem] xl:text-[4.8rem] xl:leading-[6rem]">
-            Ready to see how we can help grow your business?
+          <h3 className="mt-[2rem] mb-[3rem] max-w-[50rem] text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4rem] md:leading-[5rem] xl:max-w-[60rem] xl:text-[4.8rem] xl:leading-[6rem]">
+            Let’s design, build, and grow your next big project.
           </h3>
 
           <p className="max-w-[55.8rem] text-[1.8rem] leading-[2.8rem] font-medium text-white md:text-[2.2rem] md:leading-[3.2rem]">
-            Partner with Creative Pixels for bespoke web design that delivers
-            real results.
+            Book a free 15-minute call – no hard sell, just a chance to see if
+            working together makes sense.
           </p>
 
           <div className="mt-[4rem] flex flex-col items-center gap-[.531rem] md:flex-row">

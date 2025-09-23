@@ -119,7 +119,7 @@ const TestimonialSection = () => {
 
           <div ref={descRef} className="max-w-[95.8rem] opacity-0">
             <SectionDescription
-              label="Here’s what our clients have to say after partnering with Creative Pixels — real experiences, real results, and real stories behind the pixels."
+              label="Here’s what our clients say about working with us – real results from real partnerships."
               textColor="text-white"
             />
           </div>
