@@ -114,12 +114,12 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           </nav>
         </div>
 
-        <div className="flex flex-col gap-[10rem] pt-[4rem] pb-[6rem]">
+        <div className="flex flex-col gap-[2rem] pb-[6rem]">
           <div className="flex items-center justify-center">
             <CommonBtn2 />
           </div>
 
-          <div className="flex flex-col gap-[4rem] px-[2.5rem]">
+          <div className="flex flex-col gap-[2rem] px-[2.5rem] pt-[1rem]">
             <div className="flex flex-col">
               <h5 className="text-[1.6rem] leading-[2.4rem] font-medium text-white">
                 GIVE US A CALL
