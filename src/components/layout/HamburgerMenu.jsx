@@ -115,7 +115,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         </div>
 
         <div className="flex flex-col gap-[2rem] pb-[6rem]">
-          <div className="flex items-center justify-center">
+          <div className="px-[2.5rem]">
             <CommonBtn2 />
           </div>
 
