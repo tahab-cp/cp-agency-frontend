@@ -12,7 +12,7 @@ const FooterLinkCard = ({ title, links }) => {
           <li key={index} className="text-white">
             <Link
               href={link.href}
-              className="text-[1.6rem] leading-[2.4rem] font-medium capitalize hover:underline"
+              className="relative text-[1.6rem] leading-[2.4rem] font-medium capitalize after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[linear-gradient(90deg,#FFE400_0%,#FF37B3_100%)] after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>

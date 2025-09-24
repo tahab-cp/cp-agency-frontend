@@ -194,27 +194,37 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex">
-          <div className="flex w-full items-center justify-items-center gap-[2rem]">
-            {logoPopupsData.map((item, idx) => (
-              <div key={idx}>
-                <LogoPopup
-                  logo={item.logo}
-                  popupImage={item.popupImage}
-                  title={item.title}
-                  href={item.href}
-                  logoWidth={item.logoWidth}
-                  logoHeight={item.logoHeight}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] flex-col items-center justify-center gap-[2rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex">
+          <h5 className="text-[2rem] leading-[2.6rem] font-medium text-white">
+            Trusted By
+          </h5>
 
-          <CommonBtn3 label="Book a Call" href="/contact" bgColor="#3078FF" />
+          <div className="flex items-center gap-[3rem]">
+            <div className="flex w-full items-center justify-items-center gap-[2rem]">
+              {logoPopupsData.map((item, idx) => (
+                <div key={idx}>
+                  <LogoPopup
+                    logo={item.logo}
+                    popupImage={item.popupImage}
+                    title={item.title}
+                    href={item.href}
+                    logoWidth={item.logoWidth}
+                    logoHeight={item.logoHeight}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <CommonBtn3 label="Book a Call" href="/contact" bgColor="#3078FF" />
+          </div>
         </div>
 
         {/* Mobile Logos */}
-        <div className="relative z-[3] my-[4rem] block w-full xl:hidden">
+        <div className="relative z-[3] my-[4rem] flex w-full flex-col gap-[2rem] text-center xl:hidden">
+          <h5 className="text-[2rem] leading-[2.6rem] font-medium text-white">
+            Trusted By
+          </h5>
+
           <ClientLogoSlider />
         </div>
 
@@ -223,38 +233,44 @@ const Footer = () => {
             2025 (C) CP Agency Ltd. Trading as CreativePixels.
           </p>
 
-          <ul className="flex items-center justify-end">
-            <li>
-              <Image
-                src="/images/creative-hosting-logo.png"
-                width={73.11}
-                height={34.03}
-                alt=""
-              />
-            </li>
+          <div className="flex flex-col items-center justify-end gap-[3rem] text-center lg:flex-row lg:text-left">
+            <h5 className="text-[1.8rem] leading-[2.6rem] font-medium text-white">
+              Our Brands
+            </h5>
 
-            <li className="mx-[2rem] h-[3.293rem] w-[0.5px] bg-white" />
+            <ul className="flex items-center justify-end">
+              <li>
+                <Image
+                  src="/images/creative-hosting-logo.png"
+                  width={73.11}
+                  height={34.03}
+                  alt=""
+                />
+              </li>
 
-            <li>
-              <Image
-                src="/images/wp-fixed-logo.png"
-                width={75.48}
-                height={31.7}
-                alt=""
-              />
-            </li>
+              <li className="mx-[2rem] h-[3.293rem] w-[0.5px] bg-white" />
 
-            <li className="mx-[2rem] h-[3.293rem] w-[0.5px] bg-white" />
+              <li>
+                <Image
+                  src="/images/wp-fixed-logo.png"
+                  width={75.48}
+                  height={31.7}
+                  alt=""
+                />
+              </li>
 
-            <li>
-              <Image
-                src="/images/monthly-designs-logo.png"
-                width={137.95}
-                height={23.91}
-                alt=""
-              />
-            </li>
-          </ul>
+              <li className="mx-[2rem] h-[3.293rem] w-[0.5px] bg-white" />
+
+              <li>
+                <Image
+                  src="/images/monthly-designs-logo.png"
+                  width={137.95}
+                  height={23.91}
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
