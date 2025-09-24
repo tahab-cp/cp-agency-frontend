@@ -11,7 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 
-// Register the plugin globally
+// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
 <Script src="https://app.cal.com/embed/embed.js" strategy="afterInteractive" />;
@@ -21,6 +21,7 @@ export default function SiteLayout({ children }) {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
 
+  // Detect mobile breakpoint
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1280); // breakpoint
     checkMobile();
@@ -28,24 +29,32 @@ export default function SiteLayout({ children }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Lenis animation frame loop (Safari-safe)
   useEffect(() => {
     if (!isMobile) {
-      function update(time) {
-        lenisRef.current?.lenis?.raf(time * 1000);
-      }
-      gsap.ticker.add(update);
-      return () => gsap.ticker.remove(update);
+      let frame;
+      const raf = (time) => {
+        lenisRef.current?.lenis?.raf(time);
+        frame = requestAnimationFrame(raf);
+      };
+      frame = requestAnimationFrame(raf);
+
+      return () => cancelAnimationFrame(frame);
     }
   }, [isMobile]);
 
+  // Reset scroll to top on route change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // or "auto"
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   return (
     <html lang="en">
       <body>
-        <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
+        {/* Only enable Lenis on non-mobile */}
+        {!isMobile && (
+          <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
+        )}
         <Header />
         <StickyHeader />
         {children}
