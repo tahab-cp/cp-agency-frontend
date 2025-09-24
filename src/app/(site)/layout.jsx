@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 import BackToTopBtn from "@/components/common/BackToTopBtn";
 import StickyHeader from "@/components/layout/StickyHeader";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 
@@ -19,16 +19,24 @@ gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 export default function SiteLayout({ children }) {
   const lenisRef = useRef();
   const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    function update(time) {
-      lenisRef.current?.lenis?.raf(time * 1000);
-    }
-
-    gsap.ticker.add(update);
-
-    return () => gsap.ticker.remove(update);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024); // breakpoint
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      function update(time) {
+        lenisRef.current?.lenis?.raf(time * 1000);
+      }
+      gsap.ticker.add(update);
+      return () => gsap.ticker.remove(update);
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" }); // or "auto"
