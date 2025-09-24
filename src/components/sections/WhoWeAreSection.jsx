@@ -200,13 +200,18 @@ const WhoWeAreSection = () => {
         <div className="flex flex-col items-center gap-[4rem] text-center">
           <h5
             ref={descRef2}
-            className="max-w-[103.2rem] overflow-hidden text-[2rem] leading-[3.5rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[2.8rem] md:leading-[4rem] lg:text-[3.4rem] lg:leading-[4.8rem]"
+            className="max-w-[125rem] overflow-hidden text-[2rem] leading-[3.5rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[2.8rem] md:leading-[4rem] lg:text-[3.4rem] lg:leading-[4.8rem] xl:[&>*:nth-child(3)]:mb-[2rem] md:[&>*:nth-child(4)]:mb-[2rem] [&>*:nth-child(7)]:mb-[2rem]"
           >
-            At CreativePixels, design isn’t just about looks — it’s about
-            impact. We combine strategy, design, and development to create
-            digital experiences that not only stand out but also support the
-            people running them. Our approach is simple: build with clarity,
-            care, and long-term growth in mind.
+            <div>
+              At CreativePixels, design isn’t just about looks — it’s about
+              impact. We combine strategy, design, and development to create
+              digital experiences that not only stand out but also support the
+              people running them.
+            </div>
+            <div>
+              Our approach is simple: build with clarity, care, and long-term
+              growth in mind.
+            </div>
           </h5>
 
           <div ref={btnRef} className="opacity-0">

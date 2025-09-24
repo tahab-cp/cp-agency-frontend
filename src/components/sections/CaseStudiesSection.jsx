@@ -66,7 +66,7 @@ const CaseStudiesSection = ({ caseStudies }) => {
           </div>
 
           <div ref={titleRef} className="opacity-0">
-            <SectionTitle label="A decade of digital done right" />
+            <SectionTitle label="Digital Done Right" />
           </div>
 
           <div ref={descRef} className="max-w-[76.5rem] opacity-0">

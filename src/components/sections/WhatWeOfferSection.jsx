@@ -188,7 +188,7 @@ const WhatWeOfferSection = () => {
 
           <div
             ref={gridCardRef1}
-            className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[6rem] gap-y-[20rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal"
+            className="mx-auto grid w-full max-w-[132rem] grid-cols-1 justify-items-center gap-x-[6rem] gap-y-[25rem] lg:grid-cols-2 xl:grid-cols-3 xl:justify-items-normal"
           >
             {/* Card 1 with yellow cursor */}
             <Link

@@ -7,20 +7,20 @@ import { Autoplay } from "swiper/modules";
 const cardData = [
   {
     number: "01",
-    title: "Design-Driven Approach",
-    desc: "Crafting exceptional digital experiences your premier web design and development partner.",
+    title: "Strategy-First Design",
+    desc: " Every project starts with a clear plan. From WordPress web design to branding, we design with purpose so your site isn’t just beautiful – it works for your business.",
     bgColor: "bg-[#FFC300]",
   },
   {
     number: "02",
-    title: "Tailored Solutions",
-    desc: "Every business is unique, and so are our solutions. We customize each project to align with your goals.",
+    title: "Tailored to You",
+    desc: "No templates, no shortcuts. Every brand is unique, and so are our solutions – whether it’s a custom website, visual identity, or  growth strategy.",
     bgColor: "bg-[#FF8630]",
   },
   {
     number: "03",
-    title: "Results You Can Trust",
-    desc: "From boosting brand visibility to driving conversions, we are committed to your success.",
+    title: "Support That Lasts",
+    desc: " Our job doesn’t end at launch. With ongoing support, updates, and maintenance, we’re here to keep your digital presence strong for the long run.",
     bgColor: "bg-[#F14A58]",
   },
 ];
@@ -44,7 +44,7 @@ const WhyChooseUsCardSlider = () => {
             className="!flex !h-auto !items-center !justify-center"
           >
             <div
-              className={`mx-[1rem] flex size-[26.964rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] ${item.bgColor} pl-[2.459rem] md:absolute md:rotate-[-9.32deg]`}
+              className={`mx-[1rem] flex size-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] md:size-[26.964rem] ${item.bgColor} pl-[2.459rem] md:absolute md:rotate-[-9.32deg]`}
             >
               <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">
                 {item.number}

@@ -6,18 +6,18 @@ import { Autoplay } from "swiper/modules";
 
 const cardData = [
   {
-    number: "90",
-    title: "Increase in CTR for PointCard",
+    number: "95%",
+    title: "Client Satisfaction Rate",
     bgColor: "bg-[#FFC300]",
   },
   {
-    number: "30",
-    title: "Reduction in cost for asset for Amazon",
+    number: "200+",
+    title: "Projects Delivered",
     bgColor: "bg-[#FF37B3]",
   },
   {
-    number: "65",
-    title: "Reduction in turnaround time for Salesforce",
+    number: "65%",
+    title: "Faster Launch Times",
     bgColor: "bg-[#F14A58]",
   },
 ];
@@ -48,11 +48,10 @@ const OurWorkCardSlider = () => {
             className="!flex !h-auto !items-center !justify-center"
           >
             <div
-              className={`rounded-[3rem] ${item.bgColor} h-full md:w-[40rem]`}
+              className={`rounded-[3rem] ${item.bgColor} h-full w-full md:w-[40rem]`}
             >
               <h6 className="inline-flex items-start p-[2rem] text-[8rem] leading-[10rem] font-bold tracking-[-0.02em] md:pt-[3.4rem] md:pb-[.7rem] md:pl-[5rem] md:text-[11rem] md:leading-[13rem]">
                 {item.number}{" "}
-                <span className="text-[5rem] leading-[8rem]">%</span>
               </h6>
 
               <hr className="h-[1px] w-full border-0 bg-black/40" />

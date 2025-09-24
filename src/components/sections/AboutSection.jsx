@@ -152,7 +152,7 @@ const AboutSection = () => {
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
         <h5
           ref={descRef}
-          className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left [&>*:nth-child(2)]:mb-[2rem]"
+          className="mb-[2rem] max-w-[99rem] text-center text-[1.6rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left [&>*:nth-child(2)]:mb-[2rem]"
         >
           <div>
             We believe every website and brand should work harder for the people
@@ -192,7 +192,7 @@ const AboutSection = () => {
           className="relative -translate-y-8 transform overflow-hidden opacity-0 xl:w-[62.9rem]"
         >
           <div className="relative z-[1] flex flex-col justify-between gap-[2rem]">
-            <h3 className="absolute top-[1rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:top-[5rem] md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
+            <h3 className="absolute top-[1rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.2rem] leading-[2.6rem] font-semibold tracking-[-0.02em] text-white md:top-[5rem] md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
               We create <br /> exceptional websites
             </h3>
 

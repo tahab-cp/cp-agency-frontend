@@ -7,22 +7,22 @@ import { Autoplay } from "swiper/modules";
 const cardData = [
   {
     number: "200+",
-    title: "Web Projects",
+    title: "Websites Launched",
     textColor: "text-[#FFC300]",
   },
   {
     number: "15+",
-    title: "Years of Experience",
+    title: "Years Crafting Digital Solutions",
     textColor: "text-[#FF37B3]",
   },
   {
     number: "150+",
-    title: "Trusted Clients",
+    title: "Clients Who Chose Us",
     textColor: "text-[#FF8630]",
   },
   {
-    number: "20+",
-    title: "Skillful Team Members",
+    number: "95%",
+    title: "Repeat & Referral Rate",
     textColor: "text-[#F14A58]",
   },
 ];
