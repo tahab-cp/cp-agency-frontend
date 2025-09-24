@@ -34,16 +34,16 @@ const ClientLogoSlider = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        slidesPerView={1}
-        spaceBetween={10}
+        slidesPerView={3}
+        spaceBetween={0}
         breakpoints={{
           768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 4,
+            spaceBetween: 0,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 6,
+            spaceBetween: 0,
           },
         }}
         onSwiper={setSwiperInstance} // capture swiper instance
@@ -51,7 +51,7 @@ const ClientLogoSlider = () => {
         {logoPopupsData.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="relative inline-flex"
+              className="relative inline-flex h-[7rem] px-[2rem] md:px-[3rem]"
               onMouseLeave={() => handleLogoClick(idx)}
             >
               {/* Logo button */}
@@ -66,7 +66,7 @@ const ClientLogoSlider = () => {
                 <img
                   src={item.logo}
                   alt={`${item.title} Logo`}
-                  className="h-[4rem]"
+                  className="size-full object-contain"
                 />
               </button>
 

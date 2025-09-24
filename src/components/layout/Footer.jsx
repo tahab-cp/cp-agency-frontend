@@ -45,7 +45,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="footer relative w-full px-[2rem] pt-[5rem] pb-[2.764rem] xl:px-[0rem] xl:pt-[6.2rem]">
+    <footer className="footer relative w-full pt-[5rem] pb-[2.764rem] xl:pt-[6.2rem]">
       {/* Decorative stroke line */}
       <div
         ref={lineRef}
@@ -56,7 +56,7 @@ const Footer = () => {
 
       <div className="pointer-events-none absolute inset-0 z-[0] overflow-hidden select-none">
         {/* <CLetter className="absolute bottom-[3rem] left-[-3rem] w-[8.4rem]" /> */}
-        <CLetter2 className="absolute bottom-[3rem] left-[-3rem] w-[8.4rem]" />
+        <CLetter2 className="absolute bottom-[6rem] left-[-3rem] w-[8.4rem] md:bottom-[3rem]" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-[0] hidden overflow-hidden select-none xl:block">
@@ -65,44 +65,46 @@ const Footer = () => {
       </div>
 
       <div className="overflow-hidden">
-        <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[4rem] rounded-[1.6rem] border-[2px] border-white bg-white/20 px-[4.5rem] pt-[2.3rem] pb-[3rem] backdrop-blur-[30px] lg:flex-row lg:gap-[0rem]">
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <Link
-              href="tel:01618202667"
-              className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
-            >
-              0161 820 2667
-            </Link>
+        <div className="px-[2rem] xl:px-[0rem]">
+          <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[4rem] rounded-[1.6rem] border-[2px] border-white bg-white/20 px-[4.5rem] pt-[2.3rem] pb-[3rem] backdrop-blur-[30px] lg:flex-row lg:gap-[0rem]">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <Link
+                href="tel:01618202667"
+                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+              >
+                0161 820 2667
+              </Link>
 
-            <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[45rem] md:text-[2.6rem] md:leading-[3.2rem]">
-              Want a website and brand that actually grows your business? <br />{" "}
-              Let’s make it happen.
-            </h5>
-          </div>
+              <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[45rem] md:text-[2.6rem] md:leading-[3.2rem]">
+                Want a website and brand that actually grows your business?{" "}
+                <br /> Let’s make it happen.
+              </h5>
+            </div>
 
-          <div className="flex flex-col items-center gap-[.658rem] text-center lg:items-end lg:text-right">
-            <Link
-              href="mailto:hello@cp.agency"
-              className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
-            >
-              hello@cp.agency
-            </Link>
+            <div className="flex flex-col items-center gap-[.658rem] text-center lg:items-end lg:text-right">
+              <Link
+                href="mailto:hello@cp.agency"
+                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+              >
+                hello@cp.agency
+              </Link>
 
-            <div className="flex items-center justify-end gap-[.7rem]">
-              {socialLinks.map((item, idx) => (
-                <Link
-                  key={idx}
-                  href={item.href}
-                  className="inline-flex size-[4.5rem] items-center justify-center rounded-[1.6rem] bg-white/15 transition-all duration-200 hover:-translate-y-2 md:size-[5rem]"
-                >
-                  <item.icon />
-                </Link>
-              ))}
+              <div className="flex items-center justify-end gap-[.7rem]">
+                {socialLinks.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href={item.href}
+                    className="inline-flex size-[4.5rem] items-center justify-center rounded-[1.6rem] bg-white/15 transition-all duration-200 hover:-translate-y-2 md:size-[5rem]"
+                  >
+                    <item.icon />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="relative z-[3] mx-auto mt-[5.7rem] hidden max-w-[118.4rem] justify-between xl:flex">
+        <div className="relative z-[3] mx-auto mt-[5.7rem] hidden max-w-[118.4rem] justify-between px-[2rem] xl:flex xl:px-[0rem]">
           <div className="flex flex-col gap-[8.7rem]">
             {footerLinksCardData
               .filter((item) => item.title === "Quick Links")
@@ -181,7 +183,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="relative z-[3] mx-auto mt-[5.7rem] flex max-w-[118.4rem] flex-col gap-[2rem] xl:hidden">
+        <div className="relative z-[3] mx-auto mt-[5.7rem] flex max-w-[118.4rem] flex-col gap-[2rem] px-[2rem] xl:hidden xl:px-[0rem]">
           {footerLinksCardData.map((item, idx) => (
             <div key={idx} className="border-b border-white pb-[2rem]">
               <FooterAccordion
@@ -193,7 +195,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] xl:flex">
+        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex xl:px-[0rem]">
           <div className="grid w-full grid-cols-8 items-center justify-items-center gap-[2rem]">
             {logoPopupsData.map((item, idx) => (
               <div key={idx}>
@@ -217,7 +219,7 @@ const Footer = () => {
           <ClientLogoSlider />
         </div>
 
-        <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[2rem] text-center lg:flex-row lg:gap-[0rem] lg:text-left">
+        <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[2rem] px-[2rem] text-center lg:flex-row lg:gap-[0rem] lg:text-left xl:px-[0rem]">
           <p className="max-w-[32rem] text-[1.8rem] leading-[2.6rem] font-normal text-white md:max-w-fit">
             2025 (C) CP Agency Ltd. Trading as CreativePixels.
           </p>
