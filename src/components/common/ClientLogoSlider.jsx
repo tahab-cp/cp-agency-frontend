@@ -34,7 +34,7 @@ const ClientLogoSlider = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        slidesPerView={3}
+        slidesPerView={2}
         spaceBetween={0}
         breakpoints={{
           768: {
@@ -51,7 +51,7 @@ const ClientLogoSlider = () => {
         {logoPopupsData.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div
-              className="relative inline-flex h-[7rem] px-[2rem] md:px-[3rem]"
+              className="relative inline-flex h-[5rem] px-[3rem] md:h-[7rem]"
               onMouseLeave={() => handleLogoClick(idx)}
             >
               {/* Logo button */}
