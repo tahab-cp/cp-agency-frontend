@@ -21,7 +21,6 @@ const FooterAccordion = ({ title, links, value }) => {
                   href={link.href}
                   className="flex items-center gap-[1rem] text-[1.4rem] leading-[2rem] text-white md:text-[1.8rem] md:leading-[2.4rem]"
                 >
-                  <div className="size-[.6rem] rounded-full bg-white" />
                   <span>{link.label}</span>
                 </Link>
               </li>

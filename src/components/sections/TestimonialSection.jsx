@@ -119,7 +119,7 @@ const TestimonialSection = () => {
 
           <div ref={descRef} className="max-w-[95.8rem] opacity-0">
             <SectionDescription
-              label="Here’s what our clients say about working with us – real results from real partnerships."
+              label="Here’s what our clients say about working with us real results from real partnerships."
               textColor="text-white"
             />
           </div>
