@@ -205,7 +205,7 @@ const WhatWeOfferSection = () => {
                 <p className="text-[1.8rem] leading-[2.6rem] font-normal text-white transition-all duration-300 group-hover:text-black">
                   We build custom WordPress websites that are fast,
                   SEO-friendly, and designed to convert. From e-commerce to
-                  education, our sites are tailored to your business goals.
+                  brochure, our sites are tailored to your business goals.
                 </p>
               </div>
 
