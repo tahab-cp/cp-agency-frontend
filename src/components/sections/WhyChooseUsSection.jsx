@@ -82,7 +82,7 @@ const WhyChooseUsSection = () => {
         top: index === 0 ? "2.2rem" : index === 1 ? "auto" : "auto",
         left: index === 0 ? "120.33px" : index === 1 ? "1.9rem" : "auto",
         bottom: index === 0 ? "auto" : index === 1 ? "1.9rem" : "1.2rem",
-        right: index === 0 ? "auto" : index === 1 ? "auto" : "1.1rem",
+        right: index === 0 ? "auto" : index === 1 ? "auto" : "-5rem",
         zIndex: index === 0 ? 3 : index === 1 ? 2 : 1, // 🔥 top → bottom
         duration: 1.2,
         delay: index * 0.4,
@@ -157,7 +157,7 @@ const WhyChooseUsSection = () => {
             </p>
           </div>
 
-          <div className="rotated-card right-[1.1rem] bottom-[1.2rem] z-[3] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#F14A58] p-[2rem] pb-[3rem] md:absolute md:rotate-[5.82deg]">
+          <div className="rotated-card right-[-5rem] bottom-[1.2rem] z-[3] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#F14A58] p-[2rem] pb-[3rem] md:absolute md:rotate-[5.82deg]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">03</h5>
 
             <h3 className="max-w-[17.776rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
