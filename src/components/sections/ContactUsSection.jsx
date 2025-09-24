@@ -212,7 +212,10 @@ const ContactUsSection = () => {
           </div>
         </div> */}
 
-        <div className="mt-[4rem] grid w-full grid-cols-1 items-center gap-[2rem] text-center md:grid-cols-2 lg:text-left xl:grid-cols-3">
+        <div
+          ref={gridCardRef}
+          className="mt-[4rem] grid w-full grid-cols-1 items-center gap-[2rem] text-center md:grid-cols-2 lg:text-left xl:grid-cols-3"
+        >
           <div className="contact-us-card flex flex-col">
             <h6 className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
               GIVE US A CALL
