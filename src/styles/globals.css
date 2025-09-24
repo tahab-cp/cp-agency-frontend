@@ -385,6 +385,13 @@ body {
 /* Client Logo Slider */
 .client-logo-slider {
   overflow: visible !important;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .client-logo-slider .swiper-slide {

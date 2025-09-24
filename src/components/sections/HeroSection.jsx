@@ -212,7 +212,7 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile Logos */}
-        <div className="relative z-[200] block w-full 2xl:hidden">
+        <div className="relative z-[200] mx-auto block w-full max-w-[120rem] 2xl:hidden">
           <ClientLogoSlider />
         </div>
       </div>
