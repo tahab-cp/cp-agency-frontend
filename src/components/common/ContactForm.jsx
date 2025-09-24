@@ -49,18 +49,15 @@ const ContactForm = () => {
         <form ref={formRef} action="" className="flex flex-col gap-[3rem]">
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="name" className="md:min-w-[25rem]">
-              Enter your email and phone number here
+              My name is
             </Label>
 
-            <ContactFormInput
-              placeholder="Enter your email and phone number here"
-              type="text"
-            />
+            <ContactFormInput placeholder="Enter your name" type="text" />
           </fieldset>
 
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="service" className="md:min-w-[38.9rem]">
-              And I’d like help with
+              I need a help with
             </Label>
 
             <Select>
@@ -68,13 +65,13 @@ const ContactForm = () => {
                 <SelectValue placeholder="Select desired service" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="design&branding">
+                <SelectItem value="design-branding">
                   Design & Branding
                 </SelectItem>
-                <SelectItem value="websitedevelopment">
+                <SelectItem value="website-development">
                   Website Development
                 </SelectItem>
-                <SelectItem value="maintenance&growth">
+                <SelectItem value="maintenance-growth">
                   Maintenance & Growth
                 </SelectItem>
               </SelectContent>
@@ -83,7 +80,7 @@ const ContactForm = () => {
 
           <fieldset className="flex flex-col items-start gap-[1.6rem] md:flex-row md:items-center">
             <Label htmlFor="email" className="md:min-w-[35.8rem]">
-              You can reach me at
+              Here is my email
             </Label>
 
             <ContactFormInput
@@ -102,7 +99,7 @@ const ContactForm = () => {
 
           <div className="mt-[1.5rem] mb-[1rem]">
             {/* <CommonBtn4 label="Submit Request" /> */}
-            <CommonBtn3 href="" label="Let’s talk" />
+            <CommonBtn3 href="" label="Submit Request" />
           </div>
         </form>
       </div>

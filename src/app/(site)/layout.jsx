@@ -10,6 +10,7 @@ import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 // Register the plugin globally
 gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
@@ -18,7 +19,6 @@ gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
 export default function SiteLayout({ children }) {
   const lenisRef = useRef();
-  const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -38,13 +38,10 @@ export default function SiteLayout({ children }) {
     }
   }, [isMobile]);
 
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" }); // or "auto"
-  // }, [pathname]);
-
   return (
     <html lang="en">
       <body>
+        <ScrollToTop />
         <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
         <Header />
         <StickyHeader />
