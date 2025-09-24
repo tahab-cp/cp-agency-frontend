@@ -44,6 +44,22 @@ export default function RootLayout({ children }) {
             })(document, 'script', '//mockupview.com/?p=6573&ph_apikey=bdaaa910644e45726568672971208bef', 'ph_access_token');
           `}
         </Script>
+
+        <Script
+          id="userback-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.Userback = window.Userback || {};
+            Userback.access_token = "A-ObLRceecBcxwDVHslQjewa6mV";
+          `,
+          }}
+        />
+        <Script
+          id="userback-script"
+          strategy="afterInteractive"
+          src="https://static.userback.io/widget/v1.js"
+        />
       </body>
     </html>
   );
