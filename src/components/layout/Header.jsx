@@ -71,7 +71,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="flex items-center justify-end gap-[2rem] xl:gap-[9.2rem]">
+        <div className="flex items-center justify-end gap-[2rem] xl:gap-[6rem]">
           <nav
             ref={navRef}
             className="hidden items-center justify-center gap-[1rem] xl:flex"
@@ -91,6 +91,9 @@ const Header = () => {
             </div>
             <div>
               <NavigationLink href="/case-studies">Case Studies</NavigationLink>
+            </div>
+            <div>
+              <NavigationLink href="/contact">Contact Us</NavigationLink>
             </div>
           </nav>
 
