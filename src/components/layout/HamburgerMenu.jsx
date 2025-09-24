@@ -72,7 +72,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               <Link
                 href="/"
                 onClick={() => setIsOpen(false)}
-                className="relative flex text-[3rem] leading-[4rem] font-semibold uppercase before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
+                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
               >
                 <span className="px-[2rem]">Home</span>
               </Link>
@@ -82,7 +82,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               <Link
                 href="/about"
                 onClick={() => setIsOpen(false)}
-                className="relative flex text-[3rem] leading-[4rem] font-semibold uppercase before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
+                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
               >
                 <span className="px-[2rem]">About</span>
               </Link>
@@ -92,7 +92,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               <Link
                 href="/services"
                 onClick={() => setIsOpen(false)}
-                className="relative flex text-[3rem] leading-[4rem] font-semibold uppercase before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
+                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
               >
                 <span className="px-[2rem]">Services</span>
               </Link>
@@ -106,7 +106,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               <Link
                 href="/case-studies"
                 onClick={() => setIsOpen(false)}
-                className="relative flex text-[3rem] leading-[4rem] font-semibold uppercase before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
+                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
               >
                 <span className="px-[2rem]">Case Studies</span>
               </Link>

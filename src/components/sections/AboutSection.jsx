@@ -161,7 +161,7 @@ const AboutSection = () => {
             and Australia building digital experiences that are easy to use,
             simple to manage, and designed for lasting growth.
           </div>
-          <div
+          {/* <div
             ref={flagContainerRef}
             className="mt-[2rem] flex items-center justify-center gap-[1rem] overflow-hidden xl:justify-start"
           >
@@ -175,7 +175,7 @@ const AboutSection = () => {
                 {flag}
               </span>
             ))}
-          </div>
+          </div> */}
         </h5>
 
         <div ref={btnRef} className="opacity-0">
