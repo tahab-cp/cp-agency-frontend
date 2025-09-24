@@ -195,7 +195,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex xl:px-[0rem]">
+        <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex">
           <div className="grid w-full grid-cols-8 items-center justify-items-center gap-[2rem]">
             {logoPopupsData.map((item, idx) => (
               <div key={idx}>

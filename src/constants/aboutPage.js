@@ -205,10 +205,10 @@ export const teamCardData = [
 export const pitchDeckLogoData = [
   {
     link: "",
-    src: "/images/smart-spaces-dark-logo.svg",
-    alt: "Smart Spaces Dark Logo",
-    width: 158.18,
-    height: 14.93,
+    src: "/images/game-art-dark-logo.svg",
+    alt: "Game Art Dark Logo",
+    width: 89,
+    height: 42.31,
   },
   {
     link: "",
@@ -219,17 +219,17 @@ export const pitchDeckLogoData = [
   },
   {
     link: "",
-    src: "/images/spine-dark-logo.svg",
-    alt: "Spine Dark Logo",
-    width: 119.54,
-    height: 32.41,
+    src: "/images/alert-dark-logo.svg",
+    alt: "Alert Force Dark Logo",
+    width: 148.91,
+    height: 38.23,
   },
   {
     link: "",
-    src: "/images/lola-dark-logo.svg",
-    alt: "Lola Dark Logo",
-    width: 132.68,
-    height: 30.23,
+    src: "/images/casabolanica-dark-logo.svg",
+    alt: "Casa Dark Logo",
+    width: 113,
+    height: 65,
   },
   {
     link: "",
