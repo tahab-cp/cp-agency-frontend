@@ -66,7 +66,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
           </div>
         </div>
 
-        <div className="overflow-x-hidden overflow-y-auto">
+        <div>
           <nav className="flex flex-col gap-[2rem] py-[2rem] text-white md:py-[4rem]">
             <div className="relative border-b border-white/20 pb-[2rem] md:px-[4rem]">
               <Link
