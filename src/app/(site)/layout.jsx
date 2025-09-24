@@ -22,7 +22,7 @@ export default function SiteLayout({ children }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024); // breakpoint
+    const checkMobile = () => setIsMobile(window.innerWidth < 1280); // breakpoint
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
