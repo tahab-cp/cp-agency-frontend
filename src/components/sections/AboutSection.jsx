@@ -150,8 +150,11 @@ const AboutSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
-        <h5 className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left">
-          <div className="mb-[2rem]">
+        <h5
+          ref={descRef}
+          className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left [&>*:nth-child(2)]:mb-[2rem]"
+        >
+          <div>
             We believe every website and brand should work harder for the people
             behind it.{" "}
           </div>
