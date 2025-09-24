@@ -98,16 +98,6 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
               </Link>
             </div>
 
-            <div className="relative border-b border-white/20 pb-[2rem] md:px-[4rem]">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
-              >
-                <span className="px-[2rem]">Contact</span>
-              </Link>
-            </div>
-
             {/* <div className="border-b border-white px-[2rem] pb-[2rem] md:px-[4rem]">
               <HamburgerAccordion setIsOpen={setIsOpen} />
             </div> */}
@@ -119,6 +109,16 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
                 className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
               >
                 <span className="px-[2rem]">Case Studies</span>
+              </Link>
+            </div>
+
+            <div className="relative border-b border-white/20 pb-[2rem] md:px-[4rem]">
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="relative flex text-[3rem] leading-[4rem] font-semibold capitalize before:absolute before:bottom-[-2.1rem] before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[#FFE400] before:to-[#FF37B3] before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 md:text-[4rem] md:leading-[5rem]"
+              >
+                <span className="px-[2rem]">Contact</span>
               </Link>
             </div>
           </nav>

@@ -174,8 +174,8 @@ const Footer = () => {
                 <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#3078FF]">
                   Address
                 </span>{" "}
-                <span className="text-[1.8rem] leading-[2.6rem] font-normal text-white">
-                  Manchester, M12 6PN
+                <span className="max-w-[30rem] text-[1.8rem] leading-[2.6rem] font-normal text-white">
+                  UseSpace, Paddock Street, Manchester, M12 6PN
                 </span>
               </li>
             </ul>
