@@ -110,26 +110,14 @@ const ContactUsSection = () => {
               <div className="relative size-[1.8rem]">
                 <PhoneYellowIcon />
               </div>
-              <span>Contact</span>
+              <span>Have Questions?</span>
             </h3>
 
             <ul className="mt-[1.7rem] flex flex-col gap-[.5rem]">
               <li className="flex items-center justify-between">
                 <div className="text-text-primary/70 inline-flex items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
-                  <span>Phone:</span>{" "}
-                  <Link href="" className="hover:underline">
-                    0161 820 2667
-                  </Link>
-                </div>
-
-                <ArrowRightDarkIcon className="size-[1.4rem] opacity-40" />
-              </li>
-
-              <li className="flex items-center justify-between">
-                <div className="text-text-primary/70 inline-flex items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
-                  <span>Email:</span>{" "}
-                  <Link href="" className="hover:underline">
-                    hello@cp.agency
+                  <Link href="/faq" className="hover:underline">
+                    FAQs
                   </Link>
                 </div>
 
