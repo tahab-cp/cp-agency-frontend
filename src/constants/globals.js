@@ -115,11 +115,7 @@ export const logoPopupsData = [
     popupImage: "/images/casabolanica-popup-img.png",
     href: "",
   },
-  {
-    logo: "/images/jardin-logo.png",
-    popupImage: "/images/jardin-popup-img.png",
-    href: "",
-  },
+
   {
     logo: "/images/ivy-logo.png",
     popupImage: "/images/ivy-popup-img.png",

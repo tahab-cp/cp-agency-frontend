@@ -50,7 +50,7 @@ const AboutPage = async () => {
       {/* <OurTeamSection /> */}
       <div className="relative pt-[5rem] xl:pt-[10rem]">
         <div className="absolute inset-0 z-[0]">
-          <LineStroke09 className="absolute top-[20rem] left-[-23.8rem] w-full xl:top-[10.6rem]" />
+          <LineStroke09 className="absolute top-[20rem] left-[-60rem] w-full xl:top-[20rem]" />
         </div>
 
         <CaseStudiesSection02 caseStudies={caseStudies} />

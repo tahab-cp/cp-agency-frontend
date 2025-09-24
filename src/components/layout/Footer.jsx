@@ -68,9 +68,15 @@ const Footer = () => {
         <div className="px-[2rem] xl:px-[0rem]">
           <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center justify-between gap-[4rem] rounded-[1.6rem] border-[2px] border-white bg-white/20 px-[4.5rem] pt-[2.3rem] pb-[3rem] backdrop-blur-[30px] lg:flex-row lg:gap-[0rem]">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <h5 className="text-[1.8rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[60rem] md:text-[4rem] md:leading-[4.5rem]">
-                Want a website and brand that actually grows your business?{" "}
-                <br /> Let’s make it happen.
+              <Link
+                href="tel:01618202667"
+                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+              >
+                0161 820 2667
+              </Link>
+
+              <h5 className="text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] text-white md:max-w-[45rem] md:text-[2.6rem] md:leading-[3.2rem]">
+                UseSpace, Paddock Street, Manchester, M12 6PN
               </h5>
             </div>
 
@@ -80,13 +86,6 @@ const Footer = () => {
                 className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
               >
                 hello@cp.agency
-              </Link>
-
-              <Link
-                href="tel:01618202667"
-                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
-              >
-                0161 820 2667
               </Link>
 
               <div className="flex items-center justify-end gap-[.7rem]">
@@ -196,7 +195,7 @@ const Footer = () => {
         </div>
 
         <div className="relative z-[3] mx-auto mt-[5.7rem] mb-[4.6rem] hidden max-w-[120rem] items-center justify-center gap-[3rem] rounded-[1.6rem] bg-white/15 p-[2rem] px-[2rem] xl:flex">
-          <div className="grid w-full grid-cols-8 items-center justify-items-center gap-[2rem]">
+          <div className="flex w-full items-center justify-items-center gap-[2rem]">
             {logoPopupsData.map((item, idx) => (
               <div key={idx}>
                 <LogoPopup

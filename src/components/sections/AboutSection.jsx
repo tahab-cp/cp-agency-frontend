@@ -150,15 +150,17 @@ const AboutSection = () => {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[120rem] flex-col items-center px-[3rem] xl:items-start xl:px-[0rem]">
-        <h5
-          ref={descRef}
-          className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left"
-        >
-          We believe every website and brand should work harder for the people
-          behind it. Since 2014, Creative Pixels has delivered WordPress web
-          design, creative branding, and ongoing support for businesses in the
-          UK, US, and Australia building digital experiences that are easy to
-          use, simple to manage, and designed for lasting growth.
+        <h5 className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left">
+          <div className="mb-[2rem]">
+            We believe every website and brand should work harder for the people
+            behind it.{" "}
+          </div>
+          <div>
+            Since 2014, Creative Pixels has delivered WordPress web design,
+            creative branding, and ongoing support for businesses in the UK, US,
+            and Australia building digital experiences that are easy to use,
+            simple to manage, and designed for lasting growth.
+          </div>
           <div
             ref={flagContainerRef}
             className="mt-[2rem] flex items-center justify-center gap-[1rem] overflow-hidden xl:justify-start"
@@ -187,7 +189,7 @@ const AboutSection = () => {
           className="relative -translate-y-8 transform overflow-hidden opacity-0 xl:w-[62.9rem]"
         >
           <div className="relative z-[1] flex flex-col justify-between gap-[2rem]">
-            <h3 className="absolute top-[2rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[3.4rem] md:leading-[4.8rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
+            <h3 className="absolute top-[5rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
               We create <br /> exceptional websites
             </h3>
 

@@ -148,7 +148,7 @@ const CaseStudiesGrid = ({
               {tags.map((tag) => (
                 <li
                   key={tag.id}
-                  className="bg-text-primary inline-flex h-[4rem] items-center justify-center gap-[.8rem] rounded-[1.4rem] px-[1.2rem] py-[.8rem] text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase"
+                  className="bg-text-primary inline-flex h-[4rem] items-center justify-center gap-[.8rem] rounded-[1rem] px-[1.2rem] py-[.8rem] text-[1.6rem] leading-[2.4rem] font-medium text-white uppercase"
                 >
                   <span>{tag.name}</span>
                 </li>

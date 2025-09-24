@@ -225,10 +225,9 @@ const OurServicesSection = () => {
             </h3>
 
             <p className="max-w-[90rem] text-[1.8rem] leading-[2.8rem] font-medium text-white md:text-[2.2rem] md:leading-[3.2rem] 2xl:max-w-[113.9rem]">
-              At Creative Pixels, our strength lies in our team. We have a
-              large, diverse group of designers and developers who are
-              passionate about creating digital solutions that combine
-              aesthetics with functionality.
+              Your brand deserves more than a logo. We create visual identities,
+              brand guidelines, and digital assets that help you stand out and
+              connect with your audience.
             </p>
           </div>
 
@@ -306,10 +305,9 @@ const OurServicesSection = () => {
             </h3>
 
             <p className="max-w-[92.7rem] text-[1.8rem] leading-[2.8rem] font-medium md:text-[2.2rem] md:leading-[3.2rem]">
-              At Creative Pixels, our strength lies in our team. We have a
-              large, diverse group of designers and developers who are
-              passionate about creating digital solutions that combine
-              aesthetics with functionality.
+              We build custom WordPress websites that are fast, SEO-friendly,
+              and designed to convert. From e-commerce to brochure, our sites
+              are tailored to your business goals.
             </p>
           </div>
 
@@ -393,10 +391,9 @@ const OurServicesSection = () => {
             </h3>
 
             <p className="max-w-[82.4rem] text-[1.8rem] leading-[2.8rem] font-medium text-white md:text-[2.2rem] md:leading-[3.2rem]">
-              At Creative Pixels, our strength lies in our team. We have a
-              large, diverse group of designers and developers who are
-              passionate about creating digital solutions that combine
-              aesthetics with functionality.
+              Our work doesn’t stop at launch. We provide website maintenance,
+              performance updates, and long-term support to keep your site
+              secure, scalable, and ready for growth.
             </p>
           </div>
 
