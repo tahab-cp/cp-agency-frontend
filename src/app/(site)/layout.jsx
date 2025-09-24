@@ -38,9 +38,9 @@ export default function SiteLayout({ children }) {
     }
   }, [isMobile]);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // or "auto"
-  }, [pathname]);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" }); // or "auto"
+  // }, [pathname]);
 
   return (
     <html lang="en">

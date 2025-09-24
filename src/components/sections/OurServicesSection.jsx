@@ -204,7 +204,10 @@ const OurServicesSection = () => {
         <OurServiesMarquee />
       </div>
 
-      <div className="our-services-sec relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[6.3rem] xl:pb-[7.063rem]">
+      <div
+        id="design-branding"
+        className="our-services-sec relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[6.3rem] xl:pb-[7.063rem]"
+      >
         <div className="absolute inset-0 z-[0]">
           <LineStroke11 className="absolute top-[40rem] left-1/2 w-full -translate-x-1/2 md:top-[59rem]" />
         </div>
@@ -286,7 +289,10 @@ const OurServicesSection = () => {
         </div>
       </div>
 
-      <div className="relative px-[3rem] pt-[10rem] pb-[5rem] xl:px-[0rem] xl:pt-[18.8rem] xl:pb-[8rem]">
+      <div
+        id="website-development"
+        className="relative px-[3rem] pt-[10rem] pb-[5rem] xl:px-[0rem] xl:pt-[18.8rem] xl:pb-[8rem]"
+      >
         <div className="mx-auto max-w-[120.6rem]">
           <div
             ref={gridCardRef3}
@@ -366,7 +372,10 @@ const OurServicesSection = () => {
         </div>
       </div>
 
-      <div className="our-services-sec relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[9rem] xl:pb-[7.882rem]">
+      <div
+        id="maintenance-growth"
+        className="our-services-sec relative px-[3rem] py-[5rem] xl:px-[0rem] xl:pt-[9rem] xl:pb-[7.882rem]"
+      >
         <div className="absolute inset-0 z-[0]">
           <LineStroke12 className="absolute -top-[23.7rem] right-[-89.294rem] w-full" />
         </div>

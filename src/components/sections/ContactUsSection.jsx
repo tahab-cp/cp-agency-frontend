@@ -117,7 +117,7 @@ const ContactUsSection = () => {
               <li className="flex items-center justify-between">
                 <div className="text-text-primary/70 inline-flex items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
                   <Link href="/faq" className="hover:underline">
-                    FAQs
+                    Frequently Asked Questions
                   </Link>
                 </div>
 

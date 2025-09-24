@@ -154,13 +154,11 @@ const AboutSection = () => {
           ref={descRef}
           className="mb-[2rem] max-w-[99rem] text-center text-[2rem] leading-[3rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[3.4rem] md:leading-[4.8rem] xl:text-left"
         >
-          <span className="text-[#EE8D00]">Creative Pixels</span> is an
-          independent web design and development agency based in{" "}
-          <span className="text-[#FF37B3]">Manchester</span> — crafting digital
-          experiences since 2014. We care deeply about our clients, build
-          long-term partnerships, bring over a decade of industry expertise, and
-          take pride in <span className="text-[#3078FF]">award-winning</span>,
-          pixel-perfect work.
+          We believe every website and brand should work harder for the people
+          behind it. Since 2014, Creative Pixels has delivered WordPress web
+          design, creative branding, and ongoing support for businesses in the
+          UK, US, and Australia building digital experiences that are easy to
+          use, simple to manage, and designed for lasting growth.
           <div
             ref={flagContainerRef}
             className="mt-[2rem] flex items-center justify-center gap-[1rem] overflow-hidden xl:justify-start"
