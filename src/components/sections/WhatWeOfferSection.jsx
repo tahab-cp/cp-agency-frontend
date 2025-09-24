@@ -168,13 +168,13 @@ const WhatWeOfferSection = () => {
         </span>
       </div>
 
-      <section className="offer-sec relative pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[23.5rem]">
+      <section className="offer-sec relative pt-[5rem] pb-[5rem] xl:pt-[8rem] xl:pb-[10rem]">
         {/* Decorative stroke line */}
         <div
           ref={lineRef}
           className="pointer-events-none absolute inset-0 z-[1] select-none"
         >
-          <LineStroke03 className="absolute bottom-[2rem] left-1/2 w-full -translate-x-1/2 xl:bottom-[6.3rem]" />
+          <LineStroke03 className="absolute bottom-[-8rem] left-1/2 w-full -translate-x-1/2 xl:bottom-[-6.7rem]" />
         </div>
 
         <div className="relative z-[3] flex flex-col items-center gap-[4rem] px-[3rem] md:gap-[7.6rem] xl:px-[0rem]">

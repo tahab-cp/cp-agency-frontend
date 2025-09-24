@@ -194,7 +194,7 @@ const HeroSection = () => {
 
           <ul
             ref={logoRef}
-            className="hidden h-[7rem] items-center gap-[4.5rem] opacity-0 xl:flex"
+            className="hidden h-[7rem] items-center gap-[4.5rem] opacity-0 2xl:flex"
           >
             {logoPopupsData.map((item, idx) => (
               <li key={idx}>
@@ -212,7 +212,7 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile Logos */}
-        <div className="relative z-[200] block w-full xl:hidden">
+        <div className="relative z-[200] block w-full 2xl:hidden">
           <ClientLogoSlider />
         </div>
       </div>

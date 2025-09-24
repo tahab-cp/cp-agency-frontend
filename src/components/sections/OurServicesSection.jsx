@@ -356,7 +356,7 @@ const OurServicesSection = () => {
               <div className="whitespace-nowrap">
                 <CommonBtn3
                   label="See how we helped Games Art Talent"
-                  href=""
+                  href="/case-studies/game-art-brain-studio"
                   bgColor="#FFE400"
                   textColor="#070707"
                 />
@@ -439,7 +439,7 @@ const OurServicesSection = () => {
 
               <CommonBtn3
                 label="See how we helped Ndifo"
-                href=""
+                href="/case-studies/ndifo-safari"
                 bgColor="#81F2B4"
                 textColor="#070707"
               />
