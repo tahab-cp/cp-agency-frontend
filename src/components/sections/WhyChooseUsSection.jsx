@@ -78,14 +78,14 @@ const WhyChooseUsSection = () => {
         x: 0,
         y: 0,
         scale: 1,
-        rotation: index === 0 ? 12.19 : index === 1 ? -9.32 : 5.82, // Your exact rotations
+        rotation: index === 0 ? 12.19 : index === 1 ? -9.32 : 5.82,
         top: index === 0 ? "2.2rem" : index === 1 ? "auto" : "auto",
         left: index === 0 ? "120.33px" : index === 1 ? "1.9rem" : "auto",
         bottom: index === 0 ? "auto" : index === 1 ? "1.9rem" : "1.2rem",
         right: index === 0 ? "auto" : index === 1 ? "auto" : "1.1rem",
-        zIndex: index === 0 ? 2 : index === 1 ? 1 : 3, // Your exact z-index values
+        zIndex: index === 0 ? 3 : index === 1 ? 2 : 1, // 🔥 top → bottom
         duration: 1.2,
-        delay: index * 0.4, // Stagger the deal animation
+        delay: index * 0.4,
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: card.parentElement,
@@ -129,7 +129,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         <div className="relative hidden flex-col gap-[2rem] md:flex md:h-[53rem] md:w-[62rem]">
-          <div className="rotated-card top-[2.2rem] left-[120.33px] z-[2] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FFC300] p-[2rem] md:absolute md:rotate-[12.19deg]">
+          <div className="rotated-card top-[2.2rem] left-[120.33px] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FFC300] p-[2rem] md:absolute md:rotate-[12.19deg]">
             <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">01</h5>
 
             <h3 className="max-w-[20.539rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">

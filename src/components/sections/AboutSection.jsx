@@ -192,7 +192,7 @@ const AboutSection = () => {
           className="relative -translate-y-8 transform overflow-hidden opacity-0 xl:w-[62.9rem]"
         >
           <div className="relative z-[1] flex flex-col justify-between gap-[2rem]">
-            <h3 className="absolute top-[5rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
+            <h3 className="absolute top-[1rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.5rem] leading-[3rem] font-semibold tracking-[-0.02em] text-white md:top-[5rem] md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
               We create <br /> exceptional websites
             </h3>
 
