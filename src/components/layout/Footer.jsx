@@ -240,12 +240,14 @@ const Footer = () => {
 
             <ul className="flex items-center justify-end">
               <li>
-                <Image
-                  src="/images/creative-hosting-logo.png"
-                  width={73.11}
-                  height={34.03}
-                  alt=""
-                />
+                <Link href="https://creativehosting.io/">
+                  <Image
+                    src="/images/creative-hosting-logo.png"
+                    width={73.11}
+                    height={34.03}
+                    alt=""
+                  />
+                </Link>
               </li>
 
               <li className="mx-[2rem] h-[3.293rem] w-[0.5px] bg-white" />

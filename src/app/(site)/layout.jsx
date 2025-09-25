@@ -13,9 +13,10 @@ import { usePathname } from "next/navigation";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import Loader from "@/components/common/Loader";
 import { useLoadingStore } from "@/store/useLoadingStore";
+import Flip from "gsap/Flip";
 
 // Register the plugin globally
-gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin, Flip);
 
 export default function SiteLayout({ children }) {
   const lenisRef = useRef();
