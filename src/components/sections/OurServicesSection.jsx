@@ -19,6 +19,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import CLetter2 from "@/assets/decorative-elements/c-letter-2";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const OurServicesSection = () => {
   const labelRef = useRef();
@@ -32,8 +33,11 @@ const OurServicesSection = () => {
   const gridCardRef6 = useRef();
   const lineRef = useRef(null);
   const [showButton, setShowButton] = useState(false);
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     const splitHeading = new SplitText(headingRef.current, {
       type: "lines",
       linesClass: "line",
@@ -131,7 +135,7 @@ const OurServicesSection = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isLoading]);
 
   useEffect(() => {
     (async function () {

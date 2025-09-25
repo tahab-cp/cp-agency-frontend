@@ -8,6 +8,7 @@ import { whoWeAreCardData } from "@/constants/aboutPage";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const WhoWeAreSection = () => {
   const labelRef = useRef();
@@ -17,8 +18,11 @@ const WhoWeAreSection = () => {
   const gridCardRef = useRef();
   const btnRef = useRef();
   const lineRef = useRef(null);
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     const splitHeading = new SplitText(headingRef.current, {
       type: "lines",
       linesClass: "line",
@@ -118,7 +122,7 @@ const WhoWeAreSection = () => {
         toggleActions: "play none none none",
       },
     });
-  }, []);
+  }, [isLoading]);
 
   return (
     <section className="relative px-[3rem] pt-[20rem] pb-[5rem] xl:px-[0rem] xl:pb-[9rem]">

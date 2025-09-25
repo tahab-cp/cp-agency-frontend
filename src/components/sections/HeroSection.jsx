@@ -8,6 +8,7 @@ import { logoPopupsData } from "@/constants/globals";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const HeroSection = () => {
   const badgeRef = useRef();
@@ -17,8 +18,11 @@ const HeroSection = () => {
   const headingRef2 = useRef();
   const logoRef = useRef();
   const lineRef = useRef(null);
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     const splitHeading = new SplitText(headingRef.current, {
       type: "lines",
       linesClass: "line",
@@ -143,7 +147,7 @@ const HeroSection = () => {
         },
         "<0.1",
       );
-  }, []);
+  }, [isLoading]);
 
   return (
     <section className="hero-sec relative h-[70rem] w-full overflow-hidden rounded-br-[5rem] rounded-bl-[5rem] lg:h-[79rem]">

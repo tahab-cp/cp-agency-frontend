@@ -14,6 +14,7 @@ import SubtractDarkIcon from "@/assets/icons/subtract-dark.svg";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const OurWorkSection = ({ caseStudies }) => {
   const labelRef = useRef();
@@ -26,8 +27,10 @@ const OurWorkSection = ({ caseStudies }) => {
   const lineRef2 = useRef(null);
   const lineRef3 = useRef(null);
   const [showButton, setShowButton] = useState(false);
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
     const line1 = lineRef1.current.querySelector("path");
 
     if (line1) {
@@ -153,7 +156,7 @@ const OurWorkSection = ({ caseStudies }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isLoading]);
 
   // 👇 Show 3 case studies at first
   const [visibleCount, setVisibleCount] = useState(4);

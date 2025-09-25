@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu } from "lucide-react";
 import ContactPopoverBtn from "../common/ContactPopoverBtn";
 import gsap from "gsap";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const Header = () => {
   const pathname = usePathname();
@@ -18,8 +19,11 @@ const Header = () => {
   const logoRef = useRef();
   const navRef = useRef();
   const contactRef = useRef();
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     gsap.to(headerRef.current, {
       opacity: 1,
       duration: 0.6,
@@ -50,7 +54,7 @@ const Header = () => {
       duration: 0.6,
       ease: "power2.out",
     });
-  }, []);
+  }, [isLoading]);
 
   return (
     <header

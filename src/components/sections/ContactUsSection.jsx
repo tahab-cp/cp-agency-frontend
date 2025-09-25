@@ -7,22 +7,21 @@ import TextMarquee from "../common/TextMarquee";
 import CtaSection2 from "../common/CtaSection2";
 import LineStroke14 from "@/assets/decorative-elements/line-stroke-14.svg";
 import SectionLabel2 from "../common/SectionLabel2";
-import ArrowRightDarkIcon from "@/assets/icons/arrow-right-dark.svg";
-import PhoneYellowIcon from "@/assets/icons/phone-yellow-icon.svg";
-import LocationPinkIcon from "@/assets/icons/location-pink-icon.svg";
-import BreifcaseRedIcon from "@/assets/icons/breifcase-red-icon.svg";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import RightArrowIcon from "@/assets/icons/right-arrow-icon.svg";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const ContactUsSection = () => {
   const labelRef = useRef();
   const headingRef = useRef();
   const descRef = useRef();
   const gridCardRef = useRef();
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     // Wobble/shake animation
     gsap.to(labelRef.current, {
       rotation: "+=3", // Rotate 3 degrees back and forth
@@ -60,7 +59,7 @@ const ContactUsSection = () => {
           clearProps: "all",
         },
       );
-  }, []);
+  }, [isLoading]);
 
   useEffect(() => {
     (async function () {

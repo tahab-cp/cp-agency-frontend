@@ -14,6 +14,7 @@ import LineStroke22 from "@/assets/decorative-elements/line-stroke-22.svg";
 import LineStroke23 from "@/assets/decorative-elements/line-stroke-23.svg";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 const CaseStudyDetailSection = ({ caseStudy }) => {
   const labelRef = useRef();
@@ -35,8 +36,11 @@ const CaseStudyDetailSection = ({ caseStudy }) => {
   const imgRef2 = useRef();
   const imgRef3 = useRef();
   const lineRef = useRef(null);
+  const { isLoading } = useLoadingStore(); // 👈 access global loader state
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     const gridRefs = [gridRef2, gridRef3, gridRef4, gridRef5];
     const imgRefs = [imgRef1, imgRef2, imgRef3];
 
@@ -196,7 +200,7 @@ const CaseStudyDetailSection = ({ caseStudy }) => {
         });
       }
     });
-  }, []);
+  }, [isLoading]);
 
   return (
     <section className="relative px-[3rem] pt-[15rem] pb-[5rem] md:pt-[20.6rem] xl:px-[0rem] xl:pb-[9.8rem]">

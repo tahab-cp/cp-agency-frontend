@@ -11,18 +11,19 @@ import { useEffect, useRef, useState } from "react";
 import { ReactLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import Loader from "@/components/common/Loader";
+import { useLoadingStore } from "@/store/useLoadingStore";
 
 // Register the plugin globally
 gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin);
 
-<Script src="https://app.cal.com/embed/embed.js" strategy="afterInteractive" />;
-
 export default function SiteLayout({ children }) {
   const lenisRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
+  const { isLoading, setIsLoading } = useLoadingStore();
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1280); // breakpoint
+    const checkMobile = () => setIsMobile(window.innerWidth < 1280);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -40,14 +41,28 @@ export default function SiteLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
-        <ScrollToTop />
-        <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
-        <Header />
-        <StickyHeader />
-        {children}
-        <Footer />
-        <BackToTopBtn />
+      <body className={isLoading ? "overflow-hidden" : ""}>
+        {/* Loader */}
+        {isLoading && <Loader onHidden={() => setIsLoading(false)} />}
+
+        {/* Main content with fade-in effect */}
+        <div
+          className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}
+        >
+          <ScrollToTop />
+          <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
+          <Header />
+          <StickyHeader />
+          {children}
+          <Footer />
+          <BackToTopBtn />
+        </div>
+
+        {/* Cal.com script */}
+        <Script
+          src="https://app.cal.com/embed/embed.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
