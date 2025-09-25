@@ -124,7 +124,7 @@ const PitchDeckSection = () => {
 
           <div
             ref={descRef}
-            className="mt-[2rem] mb-[2.6rem] text-[1.8rem] leading-[2.6rem] font-normal text-[#333333] opacity-0 lg:max-w-[51rem]"
+            className="mt-[2rem] mb-[2.6rem] text-[1.8rem] leading-[2.6rem] font-normal text-[#333333] opacity-0 lg:max-w-[60rem]"
           >
             Our pitch deck gives you the highlights: the projects we’ve
             delivered, the results we’ve driven, and what it’s like to work with
