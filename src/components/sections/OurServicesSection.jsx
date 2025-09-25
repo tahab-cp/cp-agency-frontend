@@ -191,9 +191,9 @@ const OurServicesSection = () => {
           ref={headingRef}
           className="text-[3.5rem] leading-[5rem] font-semibold tracking-[-0.03em] opacity-0 md:text-[7rem] md:leading-[8.4rem] md:font-bold"
         >
-          Our <span className="text-[#EE8D00]">design</span>,{" "}
-          <span className="text-[#FF37B3]">web</span> and{" "}
-          <span className="text-[#3078FF]">support services.</span>
+          Our <span className="text-[#44B276]">design</span>,{" "}
+          <span className="text-[#ffc300]">web</span> and{" "}
+          <span className="text-[#FF37B3]">support services.</span>
         </h2>
       </div>
 
@@ -220,7 +220,7 @@ const OurServicesSection = () => {
             <h3 className="relative max-w-[66.4rem] text-[4rem] leading-[5rem] font-semibold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.4rem] md:font-bold">
               Design and Branding{" "}
               <div className="absolute top-[-1.2rem] right-[1rem] inline-flex size-[4rem] items-center justify-center md:right-[-3.3rem]">
-                <ClickArrowPinkIcon />
+                <ClickArrowGreenIcon />
               </div>
             </h3>
 
@@ -253,7 +253,7 @@ const OurServicesSection = () => {
                     key={idx}
                     className={`flex flex-col gap-[3.1rem] pt-[4rem]`}
                   >
-                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FF37B3]">
+                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#44B276]">
                       {col.title}
                     </h5>
 
@@ -281,7 +281,7 @@ const OurServicesSection = () => {
               <CommonBtn3
                 label="See how we helped Unicef?"
                 href=""
-                bgColor="#FF37B3"
+                bgColor="#44B276"
               />
             </div>
           </div>
@@ -386,7 +386,7 @@ const OurServicesSection = () => {
             <h3 className="relative max-w-[80.7rem] text-[4rem] leading-[5rem] font-semibold tracking-[-0.03em] text-white md:text-[7rem] md:leading-[8.4rem] md:font-bold">
               Maintenance and Growth
               <div className="absolute top-[-2rem] right-[-2.6rem] inline-flex size-[4rem] items-center justify-center">
-                <ClickArrowGreenIcon />
+                <ClickArrowPinkIcon />
               </div>
             </h3>
 
@@ -419,7 +419,7 @@ const OurServicesSection = () => {
                     key={idx}
                     className={`flex flex-col gap-[3.1rem] pt-[2.4rem]`}
                   >
-                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#81F2B4]">
+                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FF37B3]">
                       {col.title}
                     </h5>
 
@@ -446,7 +446,7 @@ const OurServicesSection = () => {
               <CommonBtn3
                 label="See how we helped Ndifo"
                 href="/case-studies/ndifo-safari"
-                bgColor="#81F2B4"
+                bgColor="#FF37B3"
                 textColor="#070707"
               />
             </div>
