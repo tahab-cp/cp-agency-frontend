@@ -181,6 +181,8 @@ const OurWorkSection = ({ caseStudies }) => {
   }, []);
 
   useEffect(() => {
+    if (isLoading) return; // ⛔ don’t run until loader is done
+
     const numbers = gsap.utils.toArray(cardRef.current.querySelectorAll("h3"));
 
     numbers.forEach((number) => {
@@ -206,7 +208,7 @@ const OurWorkSection = ({ caseStudies }) => {
         },
       );
     });
-  }, []);
+  }, [isLoading]);
 
   return (
     <section className="pt-[18rem] md:pt-[20.6rem]">

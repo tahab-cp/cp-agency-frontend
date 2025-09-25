@@ -28,7 +28,7 @@ const Logo = ({ onComplete }) => {
 
       // master timeline
       const tl = gsap.timeline({
-        defaults: { ease: "power1.inOut" },
+        defaults: { ease: "power2.out" },
         onComplete: () => onComplete?.(),
       });
 
@@ -38,12 +38,12 @@ const Logo = ({ onComplete }) => {
       // draw outlines
       tl.to(
         paths,
-        { strokeDashoffset: 0, duration: 1.6, stagger: 0.03 },
-        0.02, // tiny offset to avoid any single-frame flash
+        { strokeDashoffset: 0, duration: 0.9, stagger: 0.015 },
+        0.02,
       );
 
       // fade in fills
-      tl.to(paths, { fillOpacity: 1, duration: 0.8, stagger: 0.02 }, ">-0.6");
+      tl.to(paths, { fillOpacity: 1, duration: 0.5, stagger: 0.01 }, ">-0.4");
     }, svgRef);
 
     return () => ctx.revert();

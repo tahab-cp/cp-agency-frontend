@@ -46,9 +46,7 @@ export default function SiteLayout({ children }) {
         {isLoading && <Loader onHidden={() => setIsLoading(false)} />}
 
         {/* Main content with fade-in effect */}
-        <div
-          className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}
-        >
+        <div>
           <ScrollToTop />
           <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
           <Header />
