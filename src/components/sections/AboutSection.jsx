@@ -213,7 +213,7 @@ const AboutSection = () => {
           {aboutCardData.map((item, idx) => (
             <div
               key={idx}
-              className="about-card flex flex-col items-center justify-between gap-[2rem] transition-colors duration-300 xl:items-start"
+              className="about-card sticky top-[7rem] left-0 flex flex-col items-center justify-between gap-[2rem] transition-colors duration-300 md:static xl:items-start"
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor = item.hoverColor)
               }
