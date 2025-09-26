@@ -4,6 +4,12 @@ import OurServicesSection from "@/components/sections/OurServicesSection";
 import LineStroke13 from "@/assets/decorative-elements/line-stroke-13.svg";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
+export const metadata = {
+  title: "Our Services | Web Design, WordPress Development & Branding",
+  description:
+    "Discover CreativePixels services - from WordPress web design and development to branding and ongoing digital support. Tailored solutions to help your business grow.",
+};
+
 const ServicesPage = async () => {
   const response = await fetchAPI("/api/case-studies", {
     populate: {

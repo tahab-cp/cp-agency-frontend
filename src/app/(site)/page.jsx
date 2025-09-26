@@ -9,9 +9,9 @@ import WhatWeOfferSection from "@/components/sections/WhatWeOfferSection";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
 export const metadata = {
-  title: "Home",
+  title: "CreativePixels | Web Design, WordPress & Branding Agency",
   description:
-    "Discover the story of CreativePixels, our vision, and how we help businesses stand out with cutting-edge design.",
+    "CreativePixels is a Manchester-based creative agency delivering WordPress websites, branding, and digital solutions for clients across the UK, US & Australia.",
 };
 
 const HomePage = async () => {

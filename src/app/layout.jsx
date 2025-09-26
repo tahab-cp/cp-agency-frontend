@@ -1,6 +1,5 @@
 import { Onest } from "next/font/google";
 import "../styles/globals.css";
-import Script from "next/script";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -10,7 +9,7 @@ const onest = Onest({
 export const metadata = {
   title: {
     default: "CreativePixels | Creative Design Agency Manchester",
-    template: "CreativePixels | %s",
+    template: "%s",
   },
   description:
     "We focus on being a design-driven creative agency through bespoke design and development, specialising in all things design and making businesses stand out.",

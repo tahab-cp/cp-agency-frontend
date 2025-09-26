@@ -9,6 +9,12 @@ import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import LineStroke09 from "@/assets/decorative-elements/line-stroke-09.svg";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
 
+export const metadata = {
+  title: "About CreativePixels | Manchester Web Design & Branding Agency",
+  description:
+    "Since 2014, CreativePixels has combined design, development, and strategy to deliver digital experiences that build trust and lasting growth. Based in Manchester, trusted worldwide.",
+};
+
 const AboutPage = async () => {
   const response = await fetchAPI("/api/case-studies", {
     populate: {
