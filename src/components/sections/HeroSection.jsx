@@ -32,11 +32,11 @@ const HeroSection = () => {
       linesClass: "line",
     });
 
-    const line = lineRef.current.querySelector("path");
+    const linePath = lineRef.current.querySelector("path");
 
-    if (line) {
+    if (linePath) {
       gsap.fromTo(
-        line,
+        linePath,
         { drawSVG: "0%" }, // start hidden
         {
           drawSVG: "100%", // fully drawn
@@ -48,13 +48,19 @@ const HeroSection = () => {
 
     const tl = gsap.timeline();
 
-    // Header animation
-    tl.to(badgeRef.current, {
+    tl.to(lineRef.current, {
       opacity: 1,
       duration: 0.6,
       ease: "power2.out",
-      delay: 0.1,
     })
+
+      // Header animation
+      .to(badgeRef.current, {
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        delay: 0.1,
+      })
 
       // FASTER SEQUENCE STARTS HERE - Use position parameters to reduce delays
       .to(
@@ -152,7 +158,7 @@ const HeroSection = () => {
   return (
     <section className="hero-sec relative h-[70rem] w-full overflow-hidden rounded-br-[5rem] rounded-bl-[5rem] lg:h-[79rem]">
       {/* Decorative stroke line */}
-      <div ref={lineRef} className="absolute inset-0 z-[1]">
+      <div ref={lineRef} className="absolute inset-0 z-[1] opacity-0">
         <LineStroke01 className="absolute bottom-[2.058rem] left-1/2 w-full -translate-x-1/2" />
       </div>
 
