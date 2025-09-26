@@ -56,12 +56,6 @@ export default function SiteLayout({ children }) {
           <Footer />
           <BackToTopBtn />
         </div>
-
-        {/* Cal.com script */}
-        <Script
-          src="https://app.cal.com/embed/embed.js"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );

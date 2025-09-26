@@ -7,7 +7,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import WhatWeOfferSection from "@/components/sections/WhatWeOfferSection";
 import { fetchAPI, getStrapiMedia } from "@/lib/strapi";
-import FlipExample from "@/components/common/FlipExample";
 
 export const metadata = {
   title: "CreativePixels | Web Design, WordPress & Branding Agency",
