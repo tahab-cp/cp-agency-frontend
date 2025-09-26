@@ -130,7 +130,9 @@ const WhyChooseUsSection = () => {
 
         <div className="relative hidden flex-col gap-[2rem] md:flex md:h-[53rem] md:w-[62rem]">
           <div className="rotated-card top-[2.2rem] left-[120.33px] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FFC300] p-[2rem] md:absolute md:rotate-[12.19deg]">
-            <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">01</h5>
+            <span className="text-[2.2rem] leading-[3.2rem] font-medium">
+              01
+            </span>
 
             <h3 className="max-w-[20.539rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
               Strategy-First Design
@@ -144,7 +146,9 @@ const WhyChooseUsSection = () => {
           </div>
 
           <div className="rotated-card bottom-[1.9rem] left-[1.9rem] z-[1] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#FF8630] p-[2rem] pb-[3rem] md:absolute md:rotate-[-9.32deg]">
-            <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">02</h5>
+            <span className="text-[2.2rem] leading-[3.2rem] font-medium">
+              02
+            </span>
 
             <h3 className="max-w-[20.539rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
               Tailored to You
@@ -158,7 +162,9 @@ const WhyChooseUsSection = () => {
           </div>
 
           <div className="rotated-card right-[-5rem] bottom-[1.2rem] z-[3] flex w-[30rem] flex-col justify-center gap-[1.6rem] rounded-[1.557rem] bg-[#F14A58] p-[2rem] pb-[3rem] md:absolute md:rotate-[5.82deg]">
-            <h5 className="text-[2.2rem] leading-[3.2rem] font-medium">03</h5>
+            <span className="text-[2.2rem] leading-[3.2rem] font-medium">
+              03
+            </span>
 
             <h3 className="max-w-[17.776rem] text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em]">
               Support That Lasts

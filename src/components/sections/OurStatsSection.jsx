@@ -100,7 +100,11 @@ const OurStatsSection = () => {
 
       <div className="relative z-[3] mx-auto flex max-w-[120rem] flex-col items-center gap-[4.4rem] 2xl:max-w-[130rem]">
         <div ref={labelRef} className="rotate-[2deg]">
-          <SectionLabel2 text="Our Stats" bgColor="bg-[#FF8630]" />
+          <SectionLabel2
+            text="Our Stats"
+            bgColor="bg-[#FFC300]"
+            textColor="text-black"
+          />
         </div>
 
         <div ref={cardRef} className="hidden grid-cols-4 gap-[2rem] lg:grid">
@@ -109,9 +113,9 @@ const OurStatsSection = () => {
               200+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FFC300] transition-all duration-300 group-hover:text-white">
+            <p className="text-[2rem] font-medium text-[#FFC300] transition-all duration-300 group-hover:text-white">
               Websites Launched
-            </h6>
+            </p>
           </div>
 
           <div className="our-stats-card group top-[8rem] transition-all duration-300 hover:!bg-[#FF37B3]">
@@ -119,9 +123,9 @@ const OurStatsSection = () => {
               15+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FF37B3] transition-all duration-300 group-hover:text-white">
+            <p className="text-[2rem] font-medium text-[#FF37B3] transition-all duration-300 group-hover:text-white">
               Years Crafting Digital Solutions
-            </h6>
+            </p>
           </div>
 
           <div className="our-stats-card group transition-all duration-300 hover:!bg-[#FF8630]">
@@ -129,9 +133,9 @@ const OurStatsSection = () => {
               150+
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#FF8630] transition-all duration-300 group-hover:text-white">
+            <p className="text-[2rem] font-medium text-[#FF8630] transition-all duration-300 group-hover:text-white">
               Clients Who Chose Us
-            </h6>
+            </p>
           </div>
 
           <div className="our-stats-card group top-[8rem] transition-all duration-300 hover:!bg-[#F14A58]">
@@ -139,9 +143,9 @@ const OurStatsSection = () => {
               95%
             </h4>
 
-            <h6 className="text-[2rem] font-medium text-[#F14A58] transition-all duration-300 group-hover:text-white">
+            <p className="text-[2rem] font-medium text-[#F14A58] transition-all duration-300 group-hover:text-white">
               Repeat & Referral Rate
-            </h6>
+            </p>
           </div>
         </div>
 

@@ -47,12 +47,12 @@ const TestimonialsMarquee = () => {
               </div>
 
               <div className="flex flex-col">
-                <h5 className="text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
+                <span className="text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
                   {item.authorName}
-                </h5>
-                <h6 className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]/50">
+                </span>
+                <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]/50">
                   {item.authorRole}
-                </h6>
+                </span>
               </div>
             </div>
           </div>

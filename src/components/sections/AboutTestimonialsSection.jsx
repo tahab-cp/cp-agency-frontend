@@ -65,7 +65,11 @@ const AboutTestimonialsSection = () => {
     <section className="py-[5rem] lg:py-[10rem]">
       <div className="flex flex-col items-center gap-[2rem] px-[3rem] text-center xl:px-[0rem]">
         <div ref={labelRef} className="rotate-[-2deg]">
-          <SectionLabel2 text="Testimonials" bgColor="bg-[#F14A58]" />
+          <SectionLabel2
+            text="Testimonials"
+            bgColor="bg-[#32284A]"
+            textColor="text-white"
+          />
         </div>
 
         <div ref={headingRef} className="opacity-0">

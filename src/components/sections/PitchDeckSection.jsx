@@ -112,7 +112,11 @@ const PitchDeckSection = () => {
       <div className="flex w-full max-w-[128rem] flex-col justify-between lg:flex-row 2xl:max-w-[132.1rem]">
         <div className="flex w-full flex-col items-center px-[3rem] py-[5rem] text-center lg:max-w-[55.6rem] lg:items-start lg:py-[8.9rem] lg:text-left xl:px-[0rem]">
           <div ref={labelRef} className="rotate-[-2deg]">
-            <SectionLabel2 text="Pitch Deck" bgColor="bg-[#FF37B3]" />
+            <SectionLabel2
+              text="Pitch Deck"
+              bgColor="bg-[#FFC300]"
+              textColor="text-black"
+            />
           </div>
 
           <div
@@ -142,20 +146,21 @@ const PitchDeckSection = () => {
 
             <button
               type="submit"
+              aria-label="Submit form"
               className="inline-flex h-[5rem] min-w-[6.2rem] cursor-pointer items-center justify-center rounded-[1.6rem] border-[2px] border-transparent bg-transparent [background:linear-gradient(#fff,#fff)padding-box,linear-gradient(90deg,#FFE400_0%,#FF37B3_100%)border-box] md:h-[6.2rem]"
             >
-              <FilledMailIcon />
+              <FilledMailIcon aria-hidden="true" />
             </button>
           </form>
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-[3rem] bg-[#EAD9FB] p-[3rem] pr-[4rem] lg:max-w-[48.7rem] lg:items-end lg:gap-[4.3rem] lg:p-[0rem] lg:pr-[6rem]">
-          <h5
+          <h3
             ref={headingRef2}
             className="text-[1.8rem] font-semibold text-[#FF37B3] opacity-0"
           >
             Trusted by:
-          </h5>
+          </h3>
 
           <div
             ref={logoRef}

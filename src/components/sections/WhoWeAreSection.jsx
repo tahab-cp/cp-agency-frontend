@@ -134,7 +134,11 @@ const WhoWeAreSection = () => {
       <div className="relative z-[3] mx-auto max-w-[120rem] 2xl:max-w-[141.6rem]">
         <div className="flex flex-col items-center gap-[2.1rem] text-center">
           <div ref={labelRef} className="rotate-[-2deg]">
-            <SectionLabel2 text="Who We Are" />
+            <SectionLabel2
+              text="Who We Are"
+              bgColor="bg-[#FFC300]"
+              textColor="text-black"
+            />
           </div>
 
           <h1
@@ -202,7 +206,7 @@ const WhoWeAreSection = () => {
         </div>
 
         <div className="flex flex-col items-center gap-[4rem] text-center">
-          <h5
+          <h2
             ref={descRef2}
             className="max-w-[125rem] overflow-hidden text-[2rem] leading-[3.5rem] font-semibold tracking-[-0.02em] text-[#333333] md:text-[2.8rem] md:leading-[4rem] lg:text-[3.4rem] lg:leading-[4.8rem] xl:[&>*:nth-child(3)]:mb-[2rem] md:[&>*:nth-child(4)]:mb-[2rem] [&>*:nth-child(7)]:mb-[2rem]"
           >
@@ -216,7 +220,7 @@ const WhoWeAreSection = () => {
               Our approach is simple: build with clarity, care, and long-term
               growth in mind.
             </div>
-          </h5>
+          </h2>
 
           <div ref={btnRef} className="opacity-0">
             <CommonBtn3
