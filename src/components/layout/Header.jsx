@@ -120,10 +120,11 @@ const Header = () => {
           {/* Hamburger Button */}
           <div className="xl:hidden">
             <button
+              aria-label="Open menu"
               onClick={() => setIsOpen(true)}
               className="inline-flex size-[4rem] items-center justify-center rounded-full border border-white"
             >
-              <Menu className="size-[2.3rem] text-white" />
+              <Menu aria-hidden="true" className="size-[2.3rem] text-white" />
             </button>
           </div>
         </div>

@@ -58,10 +58,11 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             <ContactPopoverBtn />
 
             <button
+              aria-label="Close menu"
               onClick={() => setIsOpen(false)}
               className="inline-flex size-[4rem] items-center justify-center rounded-full border border-[#ffffff]"
             >
-              <X className="size-[2.3rem] text-white" />
+              <X aria-hidden="true" className="size-[2.3rem] text-white" />
             </button>
           </div>
         </div>

@@ -186,8 +186,8 @@ const OurServicesSection = () => {
         <div ref={labelRef} className="rotate-[-2deg]">
           <SectionLabel2
             text="Our Services"
-            bgColor="bg-[#EE8D00]"
-            textColor="text-white"
+            bgColor="bg-[#FFC300]"
+            textColor="text-black"
           />
         </div>
 
@@ -257,9 +257,9 @@ const OurServicesSection = () => {
                     key={idx}
                     className={`flex flex-col gap-[3.1rem] pt-[4rem]`}
                   >
-                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#44B276]">
+                    <h4 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#44B276]">
                       {col.title}
-                    </h5>
+                    </h4>
 
                     <ul className="flex flex-col gap-[1.4rem]">
                       {col.links.map((link, idx) => (
@@ -337,9 +337,9 @@ const OurServicesSection = () => {
                     key={idx}
                     className={`flex flex-col gap-[3.1rem] pt-[4rem]`}
                   >
-                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FED202]">
+                    <h4 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FED202]">
                       {col.title}
-                    </h5>
+                    </h4>
 
                     <ul className="flex flex-col gap-[1.4rem]">
                       {col.links.map((link, idx) => (
@@ -423,9 +423,9 @@ const OurServicesSection = () => {
                     key={idx}
                     className={`flex flex-col gap-[3.1rem] pt-[2.4rem]`}
                   >
-                    <h5 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FF37B3]">
+                    <h4 className="text-[2.2rem] leading-[3.2rem] font-medium text-[#FF37B3]">
                       {col.title}
-                    </h5>
+                    </h4>
 
                     <ul className="flex flex-col gap-[1.4rem]">
                       {col.links.map((link, idx) => (
