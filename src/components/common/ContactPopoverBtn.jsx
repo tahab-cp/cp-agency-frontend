@@ -32,12 +32,15 @@ const ContactPopoverBtn = () => {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger className="!border-0 !outline-0">
+      <PopoverTrigger
+        aria-label="Contact options"
+        className="!border-0 !outline-0"
+      >
         <i
           className="header-cta-btn relative inline-flex size-[4.6rem] cursor-pointer items-center justify-center rounded-full bg-[#32284A]"
           onMouseEnter={() => setOpen(true)}
         >
-          <PhoneFillIcon />
+          <PhoneFillIcon aria-hidden="true" />
 
           <div className="outline-text-primary absolute top-[.2rem] right-[.2rem] size-[.8rem] animate-pulse rounded-full bg-[#7EE972] outline-[3.5px]" />
         </i>
