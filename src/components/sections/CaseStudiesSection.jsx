@@ -62,7 +62,7 @@ const CaseStudiesSection = ({ caseStudies }) => {
       <div className="relative mx-auto max-w-[120rem] px-[3rem] xl:px-[0rem]">
         <div className="top-[6rem] flex flex-col items-center gap-[2rem] text-center xl:sticky">
           <div ref={labelRef} className="rotate-[-2deg]">
-            <SectionLabel2 text="Case Studies" textColor="text-white" />
+            <SectionLabel2 text="Case Studies" textColor="text-black" />
           </div>
 
           <div ref={titleRef} className="opacity-0">

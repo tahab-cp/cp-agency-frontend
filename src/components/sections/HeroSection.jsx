@@ -182,6 +182,7 @@ const HeroSection = () => {
 
           <p
             ref={descRef}
+            aria-label="Smart websites, standout branding, and ongoing support everything you need…"
             className="max-w-[70rem] overflow-hidden text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[2.2rem] md:leading-[3.2rem] md:font-medium"
           >
             Smart websites, standout branding, and ongoing support everything
@@ -195,12 +196,12 @@ const HeroSection = () => {
 
         {/* Logos */}
         <div className="flex max-w-[120rem] flex-col items-center gap-[4rem] px-[3rem] text-center 2xl:max-w-[136rem] 2xl:px-[0rem]">
-          <h6
+          <h3
             ref={headingRef2}
             className="translate-y-5 transform text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[1.8rem] md:leading-[2.6rem]"
           >
             Trusted by brands in the UK, US & Australia
-          </h6>
+          </h3>
 
           <ul
             ref={logoRef}
