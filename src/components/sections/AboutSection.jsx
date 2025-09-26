@@ -13,16 +13,10 @@ import { Flip } from "gsap/Flip";
 gsap.registerPlugin(Flip);
 
 const AboutSection = () => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
   const descRef = useRef();
   const btnRef = useRef();
   const gridCardRef1 = useRef();
   const gridCardRef2 = useRef();
-  const flagContainerRef = useRef(null);
-  const flagRefs = useRef([]);
-  const flags = ["🇬🇧", "🇦🇺", "🇺🇸"];
 
   useEffect(() => {
     const splitDesc = new SplitText(descRef.current, {
@@ -86,61 +80,7 @@ const AboutSection = () => {
         },
       },
     );
-
-    // Set initial state
-    gsap.set(flagRefs.current, { y: 20, opacity: 0, display: "none" });
-    gsap.set(flagRefs.current[0], { y: 0, opacity: 1, display: "inline" });
-
-    let current = 0;
-
-    const cycleFlags = () => {
-      const next = (current + 1) % flags.length;
-
-      const tl = gsap.timeline({
-        onComplete: () => {
-          current = next;
-          cycleFlags(); // keep cycling
-        },
-      });
-
-      tl.to(flagRefs.current[current], {
-        y: -20,
-        opacity: 0,
-        duration: 1.3,
-        ease: "power2.inOut",
-        onComplete: () =>
-          gsap.set(flagRefs.current[current], { display: "none" }),
-      })
-        .set(flagRefs.current[next], { display: "inline" })
-        .fromTo(
-          flagRefs.current[next],
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.3, ease: "power2.inOut" },
-          "<0.2",
-        );
-    };
-
-    cycleFlags();
   }, []);
-
-  const handleTogglePlay = () => {
-    if (!videoRef.current) return;
-
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleToggleMute = () => {
-    if (!videoRef.current) return;
-
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
 
   return (
     <section className="relative py-[5rem] xl:py-[10rem]">
@@ -166,21 +106,6 @@ const AboutSection = () => {
             <span className="text-[#FF37B3]">digital experiences</span> that are
             easy to use, simple to manage, and designed for lasting growth.
           </div>
-          {/* <div
-            ref={flagContainerRef}
-            className="mt-[2rem] flex items-center justify-center gap-[1rem] overflow-hidden xl:justify-start"
-          >
-            We work with clients in
-            {flags.map((flag, index) => (
-              <span
-                key={index}
-                ref={(el) => (flagRefs.current[index] = el)}
-                className="inline-block min-w-[2.5rem]"
-              >
-                {flag}
-              </span>
-            ))}
-          </div> */}
         </h5>
 
         <div ref={btnRef} className="opacity-0">
@@ -193,8 +118,8 @@ const AboutSection = () => {
           ref={gridCardRef1}
           className="relative -translate-y-8 transform overflow-hidden opacity-0 xl:w-[62.9rem]"
         >
-          <div className="relative z-[1] flex flex-col justify-between gap-[2rem]">
-            <h3 className="absolute top-[1rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.2rem] leading-[2.6rem] font-semibold tracking-[-0.02em] text-white md:top-[5rem] md:text-[3.4rem] md:leading-[4rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
+          <div className="relative z-[1] flex h-full flex-col justify-between gap-[2rem] overflow-hidden rounded-[2rem]">
+            <h3 className="absolute top-[1rem] left-1/2 z-[10] w-full -translate-x-1/2 text-center text-[2.2rem] leading-[2.6rem] font-semibold tracking-[-0.02em] text-white md:top-[5rem] md:text-[3.4rem] md:leading-[4rem] xl:top-[3rem] xl:left-[4rem] xl:-translate-x-0 xl:text-left">
               We create <br /> exceptional websites
             </h3>
 
