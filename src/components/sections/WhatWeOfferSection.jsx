@@ -291,13 +291,12 @@ const WhatWeOfferSection = () => {
             <div className="flex w-full flex-col items-center justify-center gap-[2rem] text-center md:flex-row md:justify-between md:text-left">
               <p className="text-[2.4rem] leading-[3.2rem] font-semibold tracking-[-0.02em] text-white">
                 Want a website and brand that actually grows your business?
-                Let’s make it happen.
               </p>
 
               <div className="min-w-max">
                 <CommonBtn3
                   href="/contact"
-                  label="Book a Call"
+                  label="Let's make it happen"
                   bgColor="#EE8D00"
                 />
               </div>
