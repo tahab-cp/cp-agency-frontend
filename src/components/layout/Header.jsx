@@ -85,7 +85,7 @@ const Header = () => {
               <NavigationLink href="/">Home</NavigationLink>
             </div>
             <div>
-              <NavigationLink href="/about">About CP</NavigationLink>
+              <NavigationLink href="/about">About</NavigationLink>
             </div>
             {/* <div>
               <NavigationDropdown />
@@ -97,7 +97,7 @@ const Header = () => {
               <NavigationLink href="/case-studies">Case Studies</NavigationLink>
             </div>
             <div>
-              <NavigationLink href="/contact">Contact Us</NavigationLink>
+              <NavigationLink href="/contact">Contact</NavigationLink>
             </div>
           </nav>
 

@@ -159,10 +159,12 @@ const AboutSection = () => {
             behind it.{" "}
           </div>
           <div>
-            Since 2014, Creative Pixels has delivered WordPress web design,
-            creative branding, and ongoing support for businesses in the UK, US,
-            and Australia building digital experiences that are easy to use,
-            simple to manage, and designed for lasting growth.
+            Since 2014, <span className="text-[#EE8D00]">Creative Pixels</span>{" "}
+            has delivered WordPress web design, creative branding, and ongoing
+            support for <span className="text-[#3078FF]">businesses</span> in
+            the UK, US, and Australia building{" "}
+            <span className="text-[#FF37B3]">digital experiences</span> that are
+            easy to use, simple to manage, and designed for lasting growth.
           </div>
           {/* <div
             ref={flagContainerRef}

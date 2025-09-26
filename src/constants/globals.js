@@ -430,10 +430,10 @@ export const footerLinksCardData = [
     title: "Quick Links",
     links: [
       { label: "Home", href: "/" },
-      { label: "About Us", href: "/about" },
+      { label: "About", href: "/about" },
       { label: "Services", href: "/services" },
       { label: "Case Studies", href: "/case-studies" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "Contact", href: "/contact" },
       { label: "Sitemap", href: "/" },
     ],
   },
@@ -449,10 +449,8 @@ export const footerLinksCardData = [
   {
     title: "Legal",
     links: [
-      { label: "Partnership", href: "/services" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Cookies Policy", href: "/cookies-policy" },
-      { label: "FAQs", href: "/faq" },
     ],
   },
 ];
