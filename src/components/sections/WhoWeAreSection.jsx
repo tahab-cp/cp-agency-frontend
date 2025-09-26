@@ -219,7 +219,11 @@ const WhoWeAreSection = () => {
           </h5>
 
           <div ref={btnRef} className="opacity-0">
-            <CommonBtn3 href="/" label="Work With Us" bgColor="#FF37B3" />
+            <CommonBtn3
+              href="/contact"
+              label="Work With Us"
+              bgColor="#FF37B3"
+            />
           </div>
         </div>
       </div>

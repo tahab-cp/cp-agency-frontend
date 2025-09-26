@@ -101,116 +101,6 @@ const ContactUsSection = () => {
           </div>
         </div>
 
-        {/* <div
-          ref={gridCardRef}
-          className="mt-[4rem] grid w-full grid-cols-1 gap-[3.3rem] md:grid-cols-2 xl:grid-cols-3"
-        >
-          <div className="contact-us-card">
-            <h3 className="flex items-center gap-[1rem] text-[2.8rem] leading-[4rem] font-semibold tracking-[-0.02em] text-[#FFC300] md:text-[3.4rem] md:leading-[4.8rem]">
-              <div className="relative size-[1.8rem]">
-                <PhoneYellowIcon />
-              </div>
-              <span>Contact</span>
-            </h3>
-
-            <ul className="mt-[1.7rem] flex flex-col gap-[.5rem]">
-              <li className="flex items-center justify-between">
-                <div className="text-text-primary/70 inline-flex items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
-                  <span>Phone:</span>{" "}
-                  <Link href="" className="hover:underline">
-                    0161 820 2667
-                  </Link>
-                </div>
-
-                <ArrowRightDarkIcon className="size-[1.4rem] opacity-40" />
-              </li>
-
-              <li className="flex items-center justify-between">
-                <div className="text-text-primary/70 inline-flex items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
-                  <span>Email:</span>{" "}
-                  <Link href="" className="hover:underline">
-                    hello@cp.agency
-                  </Link>
-                </div>
-
-                <ArrowRightDarkIcon className="size-[1.4rem] opacity-40" />
-              </li>
-            </ul>
-          </div>
-
-          <div className="contact-us-card">
-            <h3 className="flex items-center gap-[1rem] text-[2.8rem] leading-[4rem] font-semibold tracking-[-0.02em] text-[#FF37B3] md:text-[3.4rem] md:leading-[4.8rem]">
-              <div className="relative h-[2.041rem] w-[1.6rem]">
-                <LocationPinkIcon />
-              </div>
-              <span>Location</span>
-            </h3>
-
-            <ul className="mt-[1.7rem] flex flex-col gap-[.5rem]">
-              <li className="flex items-start justify-between">
-                <p className="text-text-primary/70 inline-flex max-w-[25rem] items-center gap-[.4rem] text-[1.6rem] leading-[2.4rem] font-normal md:text-[1.8rem] md:leading-[2.6rem]">
-                  Location: UseSpace, Paddock Street, Manchester, M12 6PN
-                </p>
-
-                <ArrowRightDarkIcon className="size-[1.4rem] opacity-40" />
-              </li>
-            </ul>
-          </div>
-
-          <div className="contact-us-card">
-            <h3 className="flex items-center gap-[1rem] text-[2.8rem] leading-[4rem] font-semibold tracking-[-0.02em] text-[#F14A58] md:text-[3.4rem] md:leading-[4.8rem]">
-              <div className="relative h-[2rem] w-[2.4rem]">
-                <BreifcaseRedIcon />
-              </div>
-              <span>Quick Call</span>
-            </h3>
-
-            <div className="mt-[1.7rem] flex flex-col gap-[.5rem]">
-              <button
-                data-cal-namespace="15min"
-                data-cal-link="hassan-iqbal-mznzu9/15min"
-                data-cal-config='{"layout":"month_view","theme":"dark"}'
-                className="common-btn-1-parent inline-flex cursor-pointer items-center"
-              >
-                <div
-                  className={`common-btn-1 overflow-hidden bg-black whitespace-nowrap`}
-                >
-                  <div className="gradient-layer" />
-
-                  <div className="fill-layer" />
-
-                  <span className="relative z-10">Book a Call</span>
-                </div>
-
-                <i className="relative z-[0] mx-[-.3rem]">
-                  <svg
-                    width="17"
-                    height="18"
-                    viewBox="0 0 17 18"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.475586 0C1.85901 2.39049 4.44175 4 7.40234 4C10.3629 4 12.9457 2.39049 14.3291 0H16.4023V18H14.3291C12.9457 15.6095 10.3629 14 7.40234 14C4.44175 14 1.85901 15.6095 0.475586 18H0.402344V0H0.475586Z"
-                      fill="#FF37B3"
-                    />
-                  </svg>
-                </i>
-
-                <div className={`common-btn-arrow-1 overflow-hidden bg-black`}>
-                  <div className="gradient-layer" />
-
-                  <div className="fill-layer" />
-
-                  <i className="relative z-10">
-                    <RightArrowIcon className="fill-white" />
-                  </i>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div> */}
-
         <div
           ref={gridCardRef}
           className="mt-[4rem] grid w-full grid-cols-1 items-center gap-[2rem] text-center md:grid-cols-2 lg:text-left xl:grid-cols-3"
@@ -246,12 +136,9 @@ const ContactUsSection = () => {
               LOCATION
             </h6>
 
-            <Link
-              href=""
-              className="text-[3rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-[#3078FF]"
-            >
+            <span className="text-[3rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-[#3078FF]">
               Manchester, M12 6PN
-            </Link>
+            </span>
           </div>
         </div>
       </div>

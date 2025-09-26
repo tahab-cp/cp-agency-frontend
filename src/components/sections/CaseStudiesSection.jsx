@@ -79,7 +79,7 @@ const CaseStudiesSection = ({ caseStudies }) => {
           ref={gridRef}
           className="mt-20 hidden flex-col gap-[4rem] opacity-0 xl:flex"
         >
-          {caseStudies.map((cs, idx) => (
+          {caseStudies.slice(0, 4).map((cs, idx) => (
             <div
               key={idx}
               className="sticky top-[35rem] xl:top-[28rem]" // 👈 adjust this to your header height

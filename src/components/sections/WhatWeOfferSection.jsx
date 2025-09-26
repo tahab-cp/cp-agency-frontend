@@ -192,7 +192,7 @@ const WhatWeOfferSection = () => {
           >
             {/* Card 1 with yellow cursor */}
             <Link
-              href="/case-studies"
+              href="/services#website-development"
               className="offer-grid-card group flex h-[36.4rem] flex-col items-center text-center hover:!border-[#ffc300] hover:!bg-[#ffc300] xl:text-left"
             >
               <div className="flex flex-col gap-[1.4rem] p-[2rem] md:p-[3rem]">
@@ -223,7 +223,7 @@ const WhatWeOfferSection = () => {
             {/* Card 2 with blue cursor */}
             <Link
               ref={lineRef}
-              href="/case-studies"
+              href="/services#design-branding"
               className="offer-grid-card group flex h-[36.4rem] flex-col items-center text-center hover:!border-[#44B276] hover:!bg-[#44B276] xl:text-left"
             >
               <div className="flex flex-col gap-[1.4rem] p-[2rem] md:p-[3rem]">

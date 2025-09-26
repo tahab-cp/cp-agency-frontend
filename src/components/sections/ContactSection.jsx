@@ -90,12 +90,9 @@ const ContactSection = () => {
                 LOCATION
               </h6>
 
-              <Link
-                href=""
-                className="text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-[#3078FF]"
-              >
+              <span className="text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-[#3078FF]">
                 Manchester, M12 6PN
-              </Link>
+              </span>
             </div>
           </div>
         </div>

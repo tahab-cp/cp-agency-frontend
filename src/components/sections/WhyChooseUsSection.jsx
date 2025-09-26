@@ -124,7 +124,7 @@ const WhyChooseUsSection = () => {
           </div>
 
           <div ref={btnRef} className="opacity-0">
-            <CommonBtn3 href="/" label="Request a Callback" />
+            <CommonBtn3 href="/contact" label="Request a Callback" />
           </div>
         </div>
 
