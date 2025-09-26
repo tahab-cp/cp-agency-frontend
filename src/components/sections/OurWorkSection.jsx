@@ -245,7 +245,11 @@ const OurWorkSection = ({ caseStudies }) => {
       <div className="relative z-[1] mx-auto max-w-[120.3rem] px-[3rem] xl:px-[0rem]">
         <div className="flex flex-col items-center gap-[2rem] text-center xl:items-start xl:text-left">
           <div ref={labelRef} className="rotate-[2deg]">
-            <SectionLabel2 text="Our Work" />
+            <SectionLabel2
+              text="Our Work"
+              bgColor="bg-[#FFC300]"
+              textColor="text-black"
+            />
           </div>
 
           <div className="flex w-full flex-col items-center justify-between gap-[2rem] xl:flex-row xl:gap-[0rem]">
