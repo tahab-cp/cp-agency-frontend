@@ -70,7 +70,7 @@ const Footer = () => {
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               <Link
                 href="tel:01618202667"
-                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+                className="relative text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[linear-gradient(90deg,#FFE400_0%,#FF37B3_100%)] after:transition-all after:duration-300 hover:after:w-full md:text-[4.8rem] md:leading-[6rem]"
               >
                 0161 820 2667
               </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
             <div className="flex flex-col items-center gap-[.658rem] text-center lg:items-end lg:text-right">
               <Link
                 href="mailto:hello@cp.agency"
-                className="text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white md:text-[4.8rem] md:leading-[6rem]"
+                className="relative text-[3rem] leading-[4rem] font-semibold tracking-[-0.02em] text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[linear-gradient(90deg,#FFE400_0%,#FF37B3_100%)] after:transition-all after:duration-300 hover:after:w-full md:text-[4.8rem] md:leading-[6rem]"
               >
                 hello@cp.agency
               </Link>
