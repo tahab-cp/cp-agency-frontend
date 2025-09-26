@@ -15,6 +15,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { useLoadingStore } from "@/store/useLoadingStore";
+import { getCalApi } from "@calcom/embed-react";
 
 const OurWorkSection = ({ caseStudies }) => {
   const labelRef = useRef();

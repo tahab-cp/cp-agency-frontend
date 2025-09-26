@@ -11,6 +11,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useLoadingStore } from "@/store/useLoadingStore";
+import { getCalApi } from "@calcom/embed-react";
 
 const ContactUsSection = () => {
   const labelRef = useRef();

@@ -20,6 +20,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import CLetter2 from "@/assets/decorative-elements/c-letter-2";
 import { useLoadingStore } from "@/store/useLoadingStore";
+import { getCalApi } from "@calcom/embed-react";
 
 const OurServicesSection = () => {
   const labelRef = useRef();
