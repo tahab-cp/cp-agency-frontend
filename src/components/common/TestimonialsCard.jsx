@@ -26,12 +26,12 @@ const TestimonialsCard = ({ review, authorImage, authorName, authorRole }) => {
         </div>
 
         <div className="flex flex-col">
-          <h5 className="text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
+          <span className="text-[1.8rem] leading-[2.6rem] font-normal text-[#f6f6f6]">
             {authorName}
-          </h5>
-          <h6 className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]">
+          </span>
+          <span className="text-[1.6rem] leading-[2.4rem] font-medium text-[#f6f6f6]">
             {authorRole}
-          </h6>
+          </span>
         </div>
       </div>
     </div>

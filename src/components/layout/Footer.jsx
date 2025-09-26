@@ -92,10 +92,11 @@ const Footer = () => {
                 {socialLinks.map((item, idx) => (
                   <Link
                     key={idx}
+                    aria-label={item.name} // 👈 accessible name
                     href={item.href}
                     className="inline-flex size-[4.5rem] items-center justify-center rounded-[1.6rem] bg-white/15 transition-all duration-200 hover:-translate-y-2 md:size-[5rem]"
                   >
-                    <item.icon />
+                    <item.icon aria-hidden="true" />
                   </Link>
                 ))}
               </div>
@@ -215,7 +216,7 @@ const Footer = () => {
               ))}
             </div>
 
-            <CommonBtn3 label="Book a Call" href="/contact" bgColor="#3078FF" />
+            <CommonBtn3 label="Book a Call" href="/contact" bgColor="#1E5ACC" />
           </div>
         </div>
 
@@ -245,7 +246,7 @@ const Footer = () => {
                     src="/images/creative-hosting-logo.png"
                     width={73.11}
                     height={34.03}
-                    alt=""
+                    alt="Creative Hosting" // 👈 meaningful alt text
                   />
                 </Link>
               </li>

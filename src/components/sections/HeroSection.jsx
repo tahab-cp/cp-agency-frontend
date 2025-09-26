@@ -180,13 +180,13 @@ const HeroSection = () => {
             strategy.
           </h1>
 
-          <h5
+          <p
             ref={descRef}
             className="max-w-[70rem] overflow-hidden text-[1.4rem] leading-[2.4rem] font-normal text-white opacity-0 md:text-[2.2rem] md:leading-[3.2rem] md:font-medium"
           >
             Smart websites, standout branding, and ongoing support everything
             you need to grow with confidence.
-          </h5>
+          </p>
 
           <div ref={ctaBtnRef} className="opacity-0">
             <CommonBtn2 />

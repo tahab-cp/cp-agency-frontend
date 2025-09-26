@@ -60,9 +60,9 @@ const ContactSection = () => {
         <div ref={cardRef1} className="w-full">
           <div className="contact-details-bg mt-[4.5rem] mb-[3.7rem] flex w-full flex-col items-center justify-between gap-[4rem] px-[4rem] py-[3.5rem] text-center lg:flex-row lg:gap-[0rem] lg:text-left">
             <div className="flex flex-col">
-              <h6 className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
+              <span className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
                 GIVE US A CALL
-              </h6>
+              </span>
 
               <Link
                 href="tel:01618202667"
@@ -73,9 +73,9 @@ const ContactSection = () => {
             </div>
 
             <div className="flex flex-col">
-              <h6 className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
+              <span className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
                 EMAIL US
-              </h6>
+              </span>
 
               <Link
                 href="mailto:hello@cp.agency"
@@ -86,9 +86,9 @@ const ContactSection = () => {
             </div>
 
             <div className="flex flex-col">
-              <h6 className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
+              <span className="text-[2.6rem] leading-[3.2rem] font-semibold tracking-[-0.02em] uppercase">
                 LOCATION
-              </h6>
+              </span>
 
               <span className="text-[3.4rem] leading-[4.8rem] font-semibold tracking-[-0.02em] text-[#3078FF]">
                 Manchester, M12 6PN
