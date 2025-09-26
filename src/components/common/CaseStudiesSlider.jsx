@@ -47,9 +47,9 @@ const CaseStudiesSlider = ({ caseStudies }) => {
             </div>
 
             <div className="mt-[3rem] flex h-full flex-col justify-between">
-              <h4 className="my-[1rem] line-clamp-2 max-w-[50rem] text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] md:text-[3.4rem] md:leading-[4.8rem]">
+              <h3 className="my-[1rem] line-clamp-2 max-w-[50rem] text-[2rem] leading-[2.8rem] font-semibold tracking-[-0.02em] md:text-[3.4rem] md:leading-[4.8rem]">
                 {cs.title}
-              </h4>
+              </h3>
 
               <div className="mb-[2rem] flex w-full flex-col items-center justify-between gap-[2rem] xl:flex-row">
                 <div className="flex flex-col items-center gap-[1.1rem] xl:flex-row">
